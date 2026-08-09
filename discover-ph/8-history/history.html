@@ -3,31 +3,937 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>History — Tara.</title>
+<title>History — Tara. A modern guide to the Philippines</title>
+<meta name="description" content="Stories that shaped a nation — from precolonial barangays and Southeast Asian trade to revolution, war, and the Philippines being written today." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../1-homepage/style.css" />
-<style>
-  .placeholder{
-    min-height: 100svh;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    text-align:center; padding: 0 var(--gutter);
-    background: var(--sand);
-  }
-  .placeholder_eyebrow{ font-size:0.78rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color: var(--coral); margin: 0 0 18px; }
-  .placeholder_title{ font-family: var(--font-display); font-weight:600; font-size: clamp(2.2rem, 5vw, 3.6rem); color: var(--ink); margin: 0 0 20px; }
-  .placeholder_lede{ font-size: 1.05rem; color: rgba(8,38,43,0.68); max-width: 46ch; margin: 0 0 36px; }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Fraunces:opsz,wght@9..144,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="history.css" />
 </head>
 <body>
 
-<section class="placeholder">
-  <p class="placeholder_eyebrow">Coming soon</p>
-  <h1 class="placeholder_title">History</h1>
-  <p class="placeholder_lede">This page is still being built. Check back soon for more on History.</p>
-  <a href="../1-homepage/home.html" class="btn btn--primary">Back to Home</a>
+<!-- ==========================================================================
+     HEADER
+     ========================================================================== -->
+<header class="site-header" id="siteHeader">
+  <div class="site-header_inner">
+    <a href="../1-homepage/home.html" class="brand">
+      <svg class="brand_mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 L14.5 9.5 L22 12 L14.5 14.5 L12 22 L9.5 14.5 L2 12 L9.5 9.5 Z" fill="currentColor"/></svg>
+      <span class="brand_word">Tara<span class="brand_dot">.</span></span>
+    </a>
+
+    <nav class="primary-nav">
+      <ul class="primary-nav_list">
+        <li class="nav-item">
+          <a href="#" class="primary-nav_link" aria-haspopup="true" aria-expanded="false">
+            About Philippines
+            <svg class="primary-nav_chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </a>
+          <div class="primary-nav_dropdown">
+            <a href="../8-history/history.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">History</span>
+              <span class="primary-nav_dropdown-desc">Thousands of years, one archipelago</span>
+            </a>
+            <a href="#" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Culture</span>
+              <span class="primary-nav_dropdown-desc">Art, faith, and everyday life</span>
+            </a>
+            <a href="#" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">People &amp; Traditions</span>
+              <span class="primary-nav_dropdown-desc">Who Filipinos are, and why</span>
+            </a>
+            <a href="#" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Geography</span>
+              <span class="primary-nav_dropdown-desc">7,641 islands, three regions</span>
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="primary-nav_link" aria-haspopup="true" aria-expanded="false">
+            Attractions
+            <svg class="primary-nav_chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </a>
+          <div class="primary-nav_dropdown primary-nav_dropdown--single">
+            <a href="#" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Islands &amp; Beaches</span>
+            </a>
+            <a href="#" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Cities &amp; Heritage Towns</span>
+            </a>
+          </div>
+        </li>
+        <li><a href="#" class="primary-nav_link">Food</a></li>
+        <li><a href="#" class="primary-nav_link">Plan Your Trip</a></li>
+      </ul>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span class="menu-toggle_bar"></span>
+      <span class="menu-toggle_bar"></span>
+      <span class="menu-toggle_bar"></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav_scrim" id="mobileScrim"></div>
+<nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <ul class="mobile-nav_list">
+    <li class="mobile-nav_item">
+      <div class="mobile-nav_row">
+        <a href="#" class="mobile-nav_link">About Philippines</a>
+        <button class="mobile-nav_submenu-toggle" aria-expanded="false" aria-label="Toggle submenu">
+          <svg class="mobile-nav_chevron" width="12" height="7" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="mobile-nav_submenu">
+        <a href="../8-history/history.html" class="mobile-nav_submenu-link is-active">History</a>
+        <a href="#" class="mobile-nav_submenu-link">Culture</a>
+        <a href="#" class="mobile-nav_submenu-link">People &amp; Traditions</a>
+        <a href="#" class="mobile-nav_submenu-link">Geography</a>
+      </div>
+    </li>
+    <li class="mobile-nav_item">
+      <div class="mobile-nav_row">
+        <a href="#" class="mobile-nav_link">Attractions</a>
+        <button class="mobile-nav_submenu-toggle" aria-expanded="false" aria-label="Toggle submenu">
+          <svg class="mobile-nav_chevron" width="12" height="7" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="mobile-nav_submenu">
+        <a href="#" class="mobile-nav_submenu-link">Islands &amp; Beaches</a>
+        <a href="#" class="mobile-nav_submenu-link">Cities &amp; Heritage Towns</a>
+      </div>
+    </li>
+    <li><a href="#" class="mobile-nav_link">Food</a></li>
+    <li><a href="#" class="mobile-nav_link">Plan Your Trip</a></li>
+  </ul>
+  <p class="mobile-nav_tagline">7,641 Islands. Countless Stories.</p>
+</nav>
+
+<main>
+
+<!-- ==========================================================================
+     1. HERO
+     ========================================================================== -->
+<section class="h-hero">
+  <div class="h-hero_bg" aria-hidden="true"></div>
+  <div class="h-hero_collage" aria-hidden="true">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Laguna%20Copper-Plate%20Inscription%2C%20c.%2010th%20Century%20AD%20%2832154702683%29.jpg?width=600" alt="" loading="lazy" class="h-hero_collage-img h-hero_collage-img--a" />
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Puerto%20de%20Cavite%201734%20Velarde%20Map.jpg?width=600" alt="" loading="lazy" class="h-hero_collage-img h-hero_collage-img--b" />
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20full.jpg?width=500" alt="" loading="lazy" class="h-hero_collage-img h-hero_collage-img--c" />
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Corazon%20Aquino%20inauguration.jpg?width=600" alt="" loading="lazy" class="h-hero_collage-img h-hero_collage-img--d" />
+  </div>
+  <div class="h-hero_grain" aria-hidden="true"></div>
+  <div class="h-hero_inner">
+    <p class="h-hero_eyebrow reveal">A Tara. Original — History</p>
+    <h1 class="h-hero_title reveal">Stories That<br>Shaped a Nation</h1>
+    <p class="h-hero_lede reveal">Long before maps drew a line around 7,641 islands, people were already here — trading across seas, worshipping their own gods, ruling their own barangays. What we call the Philippines today was built over thousands of years, through Indigenous cultures and regional trade, colonization and resistance, revolution and war, exile and independence. This is that story, told through the people who lived it.</p>
+    <a href="#before" class="h-hero_scroll reveal" aria-label="Scroll to begin the timeline">
+      <span>Begin the story</span>
+      <svg width="14" height="22" viewBox="0 0 14 22" fill="none"><rect x="1" y="1" width="12" height="20" rx="6" stroke="currentColor" stroke-width="1.4"/><circle class="h-hero_scroll-dot" cx="7" cy="7" r="2" fill="currentColor"/></svg>
+    </a>
+  </div>
 </section>
 
+<!-- ==========================================================================
+     2. BEFORE THE PHILIPPINES (precolonial, immersive)
+     ========================================================================== -->
+<section class="h-section h-section--precolonial" id="before">
+  <div class="h-section_intro">
+    <p class="section-eyebrow reveal">Long Before 1521</p>
+    <h2 class="h-section_title reveal">Before the Philippines</h2>
+    <p class="h-section_lede reveal">There was no "Philippines" waiting to be found. There were hundreds of communities — coastal, riverine, upland, island — each with its own rulers, gods, and reasons for being exactly where they were.</p>
+  </div>
+
+  <figure class="h-artifact reveal">
+    <div class="h-artifact_media">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Laguna%20Copper-Plate%20Inscription%2C%20c.%2010th%20Century%20AD%20%2832154702683%29.jpg?width=1000" alt="The Laguna Copperplate Inscription, a copper document dated to 900 CE and inscribed in Old Malay, Sanskrit, and Old Javanese or Old Tagalog script." loading="lazy" />
+    </div>
+    <figcaption class="h-artifact_caption">
+      <span class="h-artifact_tag">Artifact — Historical Document</span>
+      <h3>The Laguna Copperplate Inscription</h3>
+      <p><strong>c. 900 CE</strong> · Found near Lumban, Laguna, in 1987 · Now held by the National Museum of the Philippines</p>
+      <p>The earliest known calendar-dated document from the islands — a debt-acquittance record naming Tondo and neighboring polities, proof of organized, literate governance centuries before Spanish contact.</p>
+      <p class="h-artifact_source">Photo: Howhontanozaz, via Wikimedia Commons (CC0)</p>
+    </figcaption>
+  </figure>
+
+  <div class="h-precolonial_grid">
+    <article class="h-precolonial_card reveal">
+      <h3>Barangays, not one kingdom</h3>
+      <p>The basic political unit across the islands was the <em>barangay</em> — named for the balangay boats that carried settlers along the coasts. Each was led by a <em>datu</em>, governing through customary law, kinship obligation, and personal alliance rather than a centralized state. Some barangays were tiny; others, like Manila, Tondo, and Cebu, were prosperous trading polities with their own rulers and fleets.</p>
+    </article>
+    <article class="h-precolonial_card reveal">
+      <h3>A maritime economy</h3>
+      <p>Fishing, wet-rice and swidden agriculture, and boatbuilding shaped daily life. Communities in the Cordillera carved the rice terraces still farmed today; coastal societies built ocean-going vessels and read the monsoon winds the way sailors elsewhere read the stars.</p>
+    </article>
+    <article class="h-precolonial_card reveal">
+      <h3>Skilled hands, valued goods</h3>
+      <p>Goldsmithing reached a level of sophistication that still surprises archaeologists — the Surigao Treasure's regalia rivals anything produced in the region. Weaving, pottery, and metalwork were not craft on the margins; they were currency, dowry, and status.</p>
+    </article>
+    <article class="h-precolonial_card reveal">
+      <h3>Belief before the bell tower</h3>
+      <p>Communities held their own cosmologies — spirits of land, sea, and ancestor (<em>anito</em>, <em>diwata</em>), interpreted by babaylan and catalonan, ritual specialists who were often women. Oral epics like the Hinilawod and Ulahingan preserved history and values long before anyone wrote them down.</p>
+    </article>
+    <article class="h-precolonial_card reveal">
+      <h3>Tongues in the hundreds</h3>
+      <p>Well over a hundred languages were — and still are — spoken across the archipelago, evidence not of fragmentation but of how long and how independently these societies had developed, each fluent in its own geography.</p>
+    </article>
+    <article class="h-precolonial_card reveal">
+      <h3>Luzon, Visayas, Mindanao — never one story</h3>
+      <p>A highland rice community in the Cordillera, a Visayan port town built on trade, and a Muslim sultanate in Mindanao had almost nothing in common politically — and that is the point. "The Philippines" is a name that arrived later and was stretched over a diversity that predates it.</p>
+    </article>
+  </div>
+
+  <p class="h-section_note reveal">Historians describe this period through archaeology, oral tradition, and early foreign accounts — not a single written record kept by the societies themselves, since most Philippine writing systems (like baybayin) were used for short inscriptions, not chronicles. That absence isn't absence of history. It's a different way of keeping it.</p>
+</section>
+
+<!-- ==========================================================================
+     3. AN ARCHIPELAGO CONNECTED BY SEA
+     ========================================================================== -->
+<section class="h-section h-section--sea">
+  <div class="h-sea_inner">
+    <p class="section-eyebrow section-eyebrow--light reveal">Regional Connections</p>
+    <h2 class="h-section_title h-section_title--light reveal">An Archipelago<br>Connected by Sea</h2>
+    <p class="h-section_lede h-section_lede--light reveal">The islands sat inside one of the busiest trade corridors on earth — not cut off from the world, but woven into it.</p>
+
+    <figure class="h-artifact h-artifact--light reveal">
+      <div class="h-artifact_media">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Puerto%20de%20Cavite%201734%20Velarde%20Map.jpg?width=1000" alt="Detail of the Murillo Velarde map of 1734, the first scientific map of the Philippine archipelago, showing the port of Cavite." loading="lazy" />
+      </div>
+      <figcaption class="h-artifact_caption">
+        <span class="h-artifact_tag h-artifact_tag--light">Artifact — Historical Map</span>
+        <h3>Carta Hydrographica y Chorographica de las Yslas Filipinas</h3>
+        <p><strong>1734</strong> · Manila · Engraved by Nicolás de la Cruz Bagay, drawn by Francisco Suárez, directed by Fr. Pedro Murillo Velarde</p>
+        <p>The first scientific map of the entire archipelago, made by a Filipino artist and a Filipino engraver working under a Spanish Jesuit — itself evidence of the region's place inside wider maritime and scholarly networks.</p>
+        <p class="h-artifact_source h-artifact_source--light">Image: Wikimedia Commons, public domain</p>
+      </figcaption>
+    </figure>
+
+    <div class="h-sea_points">
+      <div class="h-sea_point reveal">
+        <span class="h-sea_point-num">China</span>
+        <p>Chinese traders had been sailing to the islands since at least the Song dynasty, exchanging porcelain, silk, and metal goods for pearls, wax, and forest products — a relationship visible today in centuries of Chinese ceramics recovered from Philippine soil.</p>
+      </div>
+      <div class="h-sea_point reveal">
+        <span class="h-sea_point-num">Southeast Asia</span>
+        <p>Ties with Champa, Srivijaya, Majapahit, and later Malacca and Brunei brought shared vocabulary, court customs, and material culture — the Philippines was a working part of a maritime Southeast Asian world, not its edge.</p>
+      </div>
+      <div class="h-sea_point reveal">
+        <span class="h-sea_point-num">Islam in the South</span>
+        <p>By the 15th century, Islam had taken root in Sulu and Mindanao through trade and scholarship, giving rise to the Sultanates of Sulu and Maguindanao — organized states with their own diplomacy, long before Spain ever anchored offshore.</p>
+      </div>
+    </div>
+    <p class="h-section_note h-section_note--light reveal">The sea didn't separate these communities. It was the road between them.</p>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     4. 1521 — THE FIRST SPANISH ENCOUNTER
+     ========================================================================== -->
+<section class="h-section h-section--1521">
+  <div class="h-1521_inner">
+    <p class="section-eyebrow reveal">1521</p>
+    <h2 class="h-section_title reveal">The First Spanish Encounter</h2>
+    <div class="h-1521_grid">
+      <div class="h-1521_story reveal">
+        <p>In March 1521, Ferdinand Magellan's fleet — sailing for Spain, searching for a westward route to the Spice Islands — reached the Visayas. It was not an empty shore he found. Rajah Humabon of Cebu received the expedition, exchanged gifts, and was baptized along with hundreds of his people, a mix of genuine interest, diplomacy, and calculation: an alliance with a foreign power could strengthen Humabon's own position among rival chiefdoms.</p>
+        <p>Humabon asked Magellan to help subdue a rival datu, Lapulapu of Mactan, who refused Spanish authority outright. On April 27, 1521, Magellan led a landing force onto Mactan's shore. Lapulapu's warriors met them and, fighting on their own ground with local knowledge of the tides, defeated the Spanish force. Magellan was killed in the shallows.</p>
+      </div>
+      <aside class="h-1521_quote reveal">
+        <blockquote>Lapulapu didn't repel a "discovery." He defended a datu-ship that had governed itself long before any ship appeared on the horizon.</blockquote>
+      </aside>
+    </div>
+
+    <figure class="h-artifact h-artifact--dark reveal">
+      <div class="h-artifact_media">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mactan%20Shrine%20In%20Punta%20Enga%C3%B1o%2C%20Lapu-Lapu%20City%2C%20Cebu.jpg?width=1000" alt="The Lapu-Lapu Monument, a 20-metre bronze statue at the Mactan Shrine in Lapu-Lapu City, Cebu, erected in 1981 to commemorate the datu's victory over Magellan's landing force." loading="lazy" />
+      </div>
+      <figcaption class="h-artifact_caption">
+        <span class="h-artifact_tag">Modern Photograph — Not a Historical Image</span>
+        <h3>The Lapu-Lapu Monument, Mactan Shrine</h3>
+        <p><strong>Statue erected 1981</strong> · Punta Engaño, Lapu-Lapu City, Cebu</p>
+        <p>No contemporary portrait of Lapulapu survives — this bronze monument, raised on the site of the battle over four centuries later, is how the nation chose to remember him. It's a memorial, not a record.</p>
+        <p class="h-artifact_source">Photo via Wikimedia Commons (CC BY-SA 3.0)</p>
+      </figcaption>
+    </figure>
+
+    <div class="h-1521_note reveal">
+      <h3>Why this date matters</h3>
+      <p>1521 is remembered because it's the first documented encounter between Philippine societies and a European power, not because Philippine history began there. Framing Magellan as the "discoverer" erases the rulers, laws, and cultures already in place. What Mactan actually shows is resistance succeeding — a local leader defeating a European expedition nearly fifty years before Spain would return to stay.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     5. SPANISH COLONIAL PERIOD (deep editorial)
+     ========================================================================== -->
+<section class="h-section h-section--spanish" id="spanish">
+  <div class="h-section_intro">
+    <p class="section-eyebrow reveal">1565 – 1898</p>
+    <h2 class="h-section_title reveal">Three Centuries of Spanish Rule</h2>
+    <p class="h-section_lede reveal">Spain did not conquer the islands quickly, and it never fully conquered all of them. What it built instead was a colonial order that reshaped land, faith, and daily life for more than three hundred years.</p>
+  </div>
+
+  <figure class="h-artifact reveal">
+    <div class="h-artifact_media">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fort%20Santiago%2C%20Intramuros.JPG?width=1100" alt="Fort Santiago, the citadel at the heart of Intramuros, Manila's walled Spanish colonial city, photographed in the present day." loading="lazy" />
+    </div>
+    <figcaption class="h-artifact_caption">
+      <span class="h-artifact_tag">Contemporary Photograph</span>
+      <h3>Fort Santiago, Intramuros</h3>
+      <p>Manila, Philippines · Built from 1593, on the site of Rajah Sulayman's fortified settlement</p>
+      <p>Legazpi's colonial seat, later a Spanish military headquarters, a WWII Japanese garrison, and Rizal's final prison before execution — one structure carrying three centuries of layered history.</p>
+      <p class="h-artifact_source">Photo: Elmer B. Domingo, via Wikimedia Commons (CC BY-SA 3.0)</p>
+    </figcaption>
+  </figure>
+
+  <div class="h-spanish_columns">
+    <article class="h-spanish_col reveal">
+      <span class="h-spanish_col-mark">01</span>
+      <h3>A colony takes shape</h3>
+      <p>Miguel López de Legazpi arrived in 1565 and established the first permanent Spanish settlement in Cebu, then moved the colonial seat to Manila in 1571 after taking the city from Rajah Sulayman. Manila's defensible harbor and existing trade links made it the obvious capital — and the walled city of Intramuros became the seat of Spanish power in Asia.</p>
+      <p>Spanish administration layered itself over, rather than erased, existing local structures. Datus were folded into the colonial system as principalía, local elites who collected tribute and kept order — a strategy that let a small colonial presence govern a vast, scattered population.</p>
+    </article>
+    <article class="h-spanish_col reveal">
+      <span class="h-spanish_col-mark">02</span>
+      <h3>Cross and control</h3>
+      <p>Catholic missionaries — Augustinians, Franciscans, Dominicans, Jesuits — did the work colonial soldiers alone could not: converting the majority of the lowland population within a few generations. Parish churches became centers of both worship and administration, and friars accumulated land, authority, and influence that would outlast Spanish rule itself.</p>
+      <p>The <em>encomienda</em> system granted Spanish colonists the right to collect tribute and labor from designated territories, in exchange for "protection" and religious instruction. In practice it enabled forced labor, heavy taxation, and abuse that provincial governors in Madrid were rarely able to check from across an ocean.</p>
+    </article>
+    <article class="h-spanish_col reveal">
+      <span class="h-spanish_col-mark">03</span>
+      <h3>The galleon and the world</h3>
+      <p>From 1565 to 1815, the Manila–Acapulco Galleon Trade linked China, Southeast Asia, the Americas, and Europe through Manila's port — Chinese silk and porcelain sailed east to Mexico, and Mexican silver sailed west to fund the colony. It made Manila one of the first genuinely global trading cities, and it also meant the colony was run largely as a commercial and strategic outpost, not a settled homeland.</p>
+    </article>
+  </div>
+
+  <blockquote class="h-pullquote reveal">"Bayan" — homeland, nation, town — did not yet mean the Philippines. For most of the Spanish period, it meant wherever you were from.</blockquote>
+
+  <p class="h-section_note reveal">Resistance never stopped. Uprisings led by figures like Francisco Dagohoy in Bohol — a revolt that lasted 85 years, among the longest in colonial history anywhere — and dozens of smaller revolts across the islands show that Spanish control was contested from the very start, even where it looked, on paper, most secure.</p>
+</section>
+
+<!-- ==========================================================================
+     6. FAITH, POWER & RESISTANCE
+     ========================================================================== -->
+<section class="h-section h-section--faith">
+  <div class="h-faith_inner">
+    <p class="section-eyebrow section-eyebrow--light reveal">Faith, Power &amp; Resistance</p>
+    <h2 class="h-section_title h-section_title--light reveal">A Faith Made Local</h2>
+    <div class="h-faith_grid">
+      <div class="h-faith_text reveal">
+        <p>Catholicism became, and remains, central to Filipino life — but it did not simply replace what came before. Older beliefs in spirits, healing, and ritual blended with Catholic devotion into practices still visible today: the Black Nazarene procession, faith healers who invoke both saints and anito, fiestas that layer patron-saint feast days over older agricultural calendars.</p>
+        <p>Conversion was not uniform or complete. In the highlands of the Cordillera and across much of Mindanao and Sulu, Spanish religious and military authority never took hold. The Muslim sultanates in the south fought a centuries-long series of conflicts against Spanish incursions — the so-called "Moro Wars" — and never fell under sustained Spanish control, a fact with consequences that still shape Mindanao's relationship with the rest of the country today.</p>
+      </div>
+      <div class="h-faith_text reveal">
+        <p>Elsewhere, resistance took different shapes: uprisings by babaylan-led movements defending Indigenous belief, tax and labor revolts by exhausted principalía, and quieter, everyday refusals — a village slow to pay tribute, a ritual practiced in secret.</p>
+        <p>None of this fits a clean story of colonization as either gift or catastrophe. It was both a rupture and a synthesis — one that left the Philippines with a Catholic majority unlike anywhere else in Asia, and a southern Mindanao that Spain, despite three centuries of trying, never fully colonized at all.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     7. THE RISE OF FILIPINO IDENTITY
+     ========================================================================== -->
+<section class="h-section h-section--identity" id="identity">
+  <div class="h-section_intro">
+    <p class="section-eyebrow reveal">Late 1800s</p>
+    <h2 class="h-section_title reveal">When a People Became a Nation</h2>
+    <p class="h-section_lede reveal">"Filipino" once meant a Spaniard born in the islands. By the 1880s, a new generation had claimed the word for themselves — and started asking who the colony was really for.</p>
+  </div>
+
+  <div class="h-identity_layout">
+    <figure class="h-artifact h-artifact--portrait reveal">
+      <div class="h-artifact_media">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20full.jpg?width=700" alt="Portrait photograph of José Rizal, taken in the 1890s, shortly before the Propaganda Movement gave way to armed revolution." loading="lazy" />
+      </div>
+      <figcaption class="h-artifact_caption">
+        <span class="h-artifact_tag">Historical Photograph</span>
+        <h3>José Rizal</h3>
+        <p>Portrait, circa 1890s</p>
+        <p class="h-artifact_source">Photo: public domain, via Wikimedia Commons</p>
+      </figcaption>
+    </figure>
+
+    <div class="h-identity_flow">
+      <article class="h-identity_step reveal">
+        <h3>An educated class, and its limits</h3>
+        <p>Wealthier families increasingly sent sons to study in Manila and Europe. There, young ilustrados encountered liberal and nationalist ideas — and the sharp contrast between how they were treated abroad and how the colony treated ordinary Filipinos at home.</p>
+      </article>
+      <article class="h-identity_step reveal">
+        <h3>The Propaganda Movement</h3>
+        <p>From Spain, writers including José Rizal, Marcelo H. del Pilar, and Graciano López Jaena used newspapers, novels, and pamphlets to push for reform — representation in the Spanish Cortes, an end to friar abuses, equal treatment under the law. They were not yet calling for independence; they wanted the colony reformed, not overthrown.</p>
+      </article>
+      <article class="h-identity_step reveal">
+        <h3>Rizal's novels, and their cost</h3>
+        <p>Rizal's <em>Noli Me Tángere</em> and <em>El Filibusterismo</em> exposed clerical abuse and colonial injustice to a readership that recognized every character. The novels made him a target. Colonial authorities, alarmed by growing unrest, implicated Rizal in a revolution he had not organized.</p>
+      </article>
+      <article class="h-identity_step reveal">
+        <h3>Gomburza, and the turn toward anger</h3>
+        <p>The 1872 execution of three Filipino priests — Mariano Gómez, José Burgos, and Jacinto Zamora — on flimsy evidence of involvement in a mutiny radicalized a generation that included the young Rizal, whose brother had known Burgos personally. It became a founding grievance for everything that followed: proof that reform through petition had limits.</p>
+      </article>
+    </div>
+  </div>
+  <p class="h-section_note reveal">The Propaganda Movement did not start a revolution. But it gave the coming revolution its vocabulary — and its martyrs.</p>
+</section>
+
+<!-- ==========================================================================
+     8. REVOLUTION — THE FIGHT FOR INDEPENDENCE
+     ========================================================================== -->
+<section class="h-section h-section--revolution" id="revolution">
+  <div class="h-revolution_inner">
+    <p class="section-eyebrow reveal">1892 – 1898</p>
+    <h2 class="h-section_title h-section_title--light reveal">The Fight for Independence</h2>
+
+    <div class="h-revolution_portraits">
+      <figure class="h-artifact h-artifact--dark h-artifact--portrait reveal">
+        <div class="h-artifact_media">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Andr%C3%A9s%20Bonifacio.jpg?width=700" alt="The only surviving photograph believed to depict Andrés Bonifacio, founder of the Katipunan, circa 1896." loading="lazy" />
+        </div>
+        <figcaption class="h-artifact_caption">
+          <span class="h-artifact_tag">Historical Photograph</span>
+          <h3>Andrés Bonifacio</h3>
+          <p>Founder, Katipunan · Photograph, c. 1896</p>
+          <p class="h-artifact_source">Public domain, via Wikimedia Commons</p>
+        </figcaption>
+      </figure>
+      <figure class="h-artifact h-artifact--dark h-artifact--portrait reveal">
+        <div class="h-artifact_media">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Emilio%20Aguinaldo%20%28ca.%201898%29.jpg?width=700" alt="Portrait photograph of Emilio Aguinaldo, circa 1898, the year he declared Philippine independence and led the First Philippine Republic." loading="lazy" />
+        </div>
+        <figcaption class="h-artifact_caption">
+          <span class="h-artifact_tag">Historical Photograph</span>
+          <h3>Emilio Aguinaldo</h3>
+          <p>First Philippine President · Portrait, c. 1898</p>
+          <p class="h-artifact_source">Public domain, via Wikimedia Commons</p>
+        </figcaption>
+      </figure>
+    </div>
+
+    <ol class="h-revolution_strip">
+      <li class="h-revolution_beat reveal">
+        <span class="h-revolution_year">1892</span>
+        <h3>The Katipunan is founded</h3>
+        <p>After Rizal's exile to Mindanao, Andrés Bonifacio — a self-educated warehouse clerk, not an ilustrado — co-founded the Katipunan, a secret society committed to armed independence rather than reform. It grew in the shadows of Manila for four years.</p>
+      </li>
+      <li class="h-revolution_beat reveal">
+        <span class="h-revolution_year">1896</span>
+        <h3>The revolution breaks into the open</h3>
+        <p>Spanish authorities discovered the Katipunan in August 1896. Bonifacio and his followers tore up their tax certificates — the Cry of Pugad Lawin — and revolution spread across the provinces around Manila.</p>
+      </li>
+      <li class="h-revolution_beat reveal">
+        <span class="h-revolution_year">1896</span>
+        <h3>Rizal is executed</h3>
+        <p>Rizal, who had opposed premature armed revolt, was tried and executed in December 1896 for inspiring a revolution he had not led — a death that made him a martyr for both sides of the movement he'd never fully joined.</p>
+      </li>
+      <li class="h-revolution_beat reveal">
+        <span class="h-revolution_year">1897</span>
+        <h3>A movement divides itself</h3>
+        <p>Rivalry between Bonifacio's faction and Emilio Aguinaldo's Cavite-based leadership split the revolution from within. At the Tejeros Convention, Aguinaldo was elected president of a new revolutionary government; Bonifacio, refusing to accept the result, was later tried and executed on Aguinaldo's orders — a wound in the movement's founding story that historians still debate.</p>
+      </li>
+      <li class="h-revolution_beat reveal">
+        <span class="h-revolution_year">1898</span>
+        <h3>Independence is declared</h3>
+        <p>On June 12, 1898, from his home in Kawit, Cavite, Aguinaldo declared Philippine independence from Spain — a bold act, though one made under the shadow of an American naval fleet already in Manila Bay, and one Spain and, soon, the United States refused to recognize.</p>
+      </li>
+    </ol>
+    <p class="h-section_note h-section_note--light reveal">Independence wasn't handed down. It was fought for, argued over, and paid for — sometimes by revolutionaries at each other's hands, not only Spain's.</p>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     9. 1898 — A NEW EMPIRE ARRIVES
+     ========================================================================== -->
+<section class="h-section h-section--newempire">
+  <div class="h-section_intro">
+    <p class="section-eyebrow reveal">1898 – 1902</p>
+    <h2 class="h-section_title reveal">A New Empire Arrives</h2>
+  </div>
+  <div class="h-newempire_grid">
+    <div class="h-newempire_text reveal">
+      <p>The Spanish-American War, fought largely over Cuba, reached Manila Bay in May 1898, where Commodore George Dewey destroyed the Spanish fleet. Filipino revolutionary forces, allied with the United States in practice if not in formal treaty, besieged Spanish Manila on land.</p>
+      <p>Then Spain and the United States negotiated privately. The December 1898 Treaty of Paris transferred sovereignty over the Philippines from Spain to the United States for $20 million — a transaction between two foreign powers that included no Filipino signature and no Filipino consent.</p>
+    </div>
+    <div class="h-newempire_text reveal">
+      <p>The contradiction was immediate and stark: Filipinos had just declared independence, and now found a second colonial power claiming the same islands. War broke out in February 1899. The Philippine-American War would prove far bloodier and longer than the revolution against Spain — guerrilla resistance continued in some regions for years, and estimates of Filipino deaths, including from war-related famine and disease, run into the hundreds of thousands.</p>
+      <p>Aguinaldo was captured in 1901. Organized resistance was largely suppressed by 1902, though fighting continued in Muslim Mindanao and elsewhere well beyond that official date.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     10. AMERICAN PERIOD
+     ========================================================================== -->
+<section class="h-section h-section--american" id="american">
+  <div class="h-section_intro">
+    <p class="section-eyebrow reveal">1902 – 1941</p>
+    <h2 class="h-section_title reveal">A Different Kind of Colonial Rule</h2>
+    <p class="h-section_lede reveal">American rule was still colonial rule — but it invested in the colony differently than Spain had, and that investment reshaped the islands in ways still visible today.</p>
+  </div>
+  <div class="h-american_grid">
+    <div class="h-american_item reveal"><h3>Public education</h3><p>A public school system, taught in English by American "Thomasite" teachers and later Filipino educators, expanded literacy dramatically and made English a language of opportunity and, eventually, of Filipino literature itself.</p></div>
+    <div class="h-american_item reveal"><h3>Infrastructure &amp; health</h3><p>Roads, ports, and a public health system cut mortality from diseases like cholera and smallpox — genuine gains that coexisted with a colonial economy still structured around exporting raw materials to the United States.</p></div>
+    <div class="h-american_item reveal"><h3>A managed democracy</h3><p>Limited Filipino participation in government grew steadily — a National Assembly, then a bicameral legislature — training a political class that would later run an independent republic, even as ultimate authority still sat with an American governor-general.</p></div>
+    <div class="h-american_item reveal"><h3>The Commonwealth</h3><p>The 1935 Commonwealth, under President Manuel L. Quezon, was designed as a ten-year transition to full independence — self-rule in most domestic matters, American control retained over defense and foreign affairs.</p></div>
+  </div>
+  <p class="h-section_note reveal">Call it benevolent or call it strategic — American colonial policy was both a genuine modernization and a continuation of foreign control. The two are not contradictions. They happened at the same time.</p>
+</section>
+
+<!-- ==========================================================================
+     11. JAPANESE OCCUPATION
+     ========================================================================== -->
+<section class="h-section h-section--war" id="war">
+  <div class="h-war_inner">
+    <p class="section-eyebrow section-eyebrow--light reveal">1941 – 1945</p>
+    <h2 class="h-section_title h-section_title--light reveal">War Comes to the Islands</h2>
+    <p class="h-section_lede h-section_lede--light reveal">The Commonwealth's ten-year clock toward independence had barely started when it was interrupted by the most destructive war the islands had ever seen.</p>
+
+    <figure class="h-artifact h-artifact--dark reveal">
+      <div class="h-artifact_media">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Photograph%20of%20American%20Prisoners%20Using%20Improvised%20Litters%20to%20Carry%20Comrades%2C%2005-1942%20-%20NARA%20-%20535564.tif?width=1000" alt="American prisoners of war using improvised litters to carry wounded comrades during the Bataan Death March, May 1942." loading="lazy" />
+      </div>
+      <figcaption class="h-artifact_caption">
+        <span class="h-artifact_tag">Historical Photograph</span>
+        <h3>The Bataan Death March</h3>
+        <p><strong>May 1942</strong> · Bataan Peninsula to Camp O'Donnell, Luzon</p>
+        <p>Roughly 75,000 exhausted Filipino and American prisoners of war were forced to march for days without adequate food, water, or rest; thousands died along the way.</p>
+        <p class="h-artifact_source">U.S. National Archives (NARA), public domain, via Wikimedia Commons</p>
+      </figcaption>
+    </figure>
+
+    <div class="h-war_stack">
+      <div class="h-war_row reveal">
+        <h3>Invasion and Bataan</h3>
+        <p>Japan invaded the Philippines within hours of Pearl Harbor. Filipino and American forces held out on the Bataan Peninsula for months before being overwhelmed in April 1942. Roughly 75,000 exhausted, starving prisoners of war were forced on the Bataan Death March to prison camps — thousands died of exhaustion, disease, and violence along the way.</p>
+      </div>
+      <div class="h-war_row reveal">
+        <h3>Occupation and resistance</h3>
+        <p>Japanese occupation brought censorship, forced labor, and widespread hunger. Guerrilla movements — organized by former soldiers, communities, and, in some regions, communist-led Hukbalahap fighters — waged an underground war for three years, often at devastating cost to the civilians who sheltered them.</p>
+      </div>
+      <div class="h-war_row reveal">
+        <h3>The Battle of Manila</h3>
+        <p>The 1945 battle to retake Manila from entrenched Japanese forces destroyed much of what had been one of Asia's most beautiful cities, including nearly all of Intramuros, and killed an estimated 100,000 Filipino civilians — one of the deadliest urban battles of the entire war.</p>
+      </div>
+    </div>
+    <p class="h-section_note h-section_note--light reveal">Liberation, when it came in 1945, arrived on top of ruins. The human cost of the war — Filipino, American, Japanese — is still, in a real sense, unfinished business for the families who carry it.</p>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     12. INDEPENDENCE (concise)
+     ========================================================================== -->
+<section class="h-section h-section--independence">
+  <div class="h-independence_inner">
+    <p class="section-eyebrow reveal">July 4, 1946</p>
+    <h2 class="h-section_title reveal">A Nation Reborn</h2>
+    <p class="h-independence_text reveal">On July 4, 1946, the United States formally recognized Philippine independence, ending nearly half a century of American rule. The new republic inherited a capital in ruins, an economy shattered by war, and a population that had just survived occupation — independence arrived less as a triumphant finish line than as the difficult start of rebuilding almost everything at once.</p>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     13. POSTWAR PHILIPPINES (compact timeline)
+     ========================================================================== -->
+<section class="h-section h-section--postwar">
+  <div class="h-section_intro">
+    <p class="section-eyebrow reveal">1946 – 1972</p>
+    <h2 class="h-section_title reveal">The Third Republic</h2>
+  </div>
+  <ul class="h-postwar_list">
+    <li class="reveal"><strong>Reconstruction</strong> — Manila and other cities rebuilt through the late 1940s and '50s, aided in part by U.S. war-damage payments tied to continued American economic access.</li>
+    <li class="reveal"><strong>A fragile democracy</strong> — regular elections and a free press coexisted with entrenched political dynasties, landlessness among tenant farmers, and a persistent communist-led insurgency rooted in that inequality.</li>
+    <li class="reveal"><strong>Economic strain</strong> — growth was real but uneven, and by the late 1960s inflation, debt, and social unrest were feeding growing frustration with the political establishment.</li>
+    <li class="reveal"><strong>Rising tension</strong> — student protests, labor unrest, and a Muslim separatist movement in Mindanao all intensified through the early 1970s, setting the stage for the crisis to come.</li>
+  </ul>
+</section>
+
+<!-- ==========================================================================
+     14. MARTIAL LAW
+     ========================================================================== -->
+<section class="h-section h-section--martial" id="martial">
+  <div class="h-martial_inner">
+    <p class="section-eyebrow section-eyebrow--light reveal">1972 – 1981</p>
+    <h2 class="h-section_title h-section_title--light reveal">A Nation Under Control</h2>
+    <p class="h-section_lede h-section_lede--light reveal">On September 23, 1972, President Ferdinand Marcos announced he had placed the entire Philippines under martial law, citing threats from communist insurgency and civil unrest.</p>
+
+    <div class="h-martial_facts">
+      <div class="h-martial_fact reveal">
+        <h3>What changed immediately</h3>
+        <p>Congress was shut down. Independent media outlets were seized or shuttered. Political opponents, journalists, activists, and student leaders were arrested without warrant, and civil liberties including habeas corpus were suspended for years at a time.</p>
+      </div>
+      <div class="h-martial_fact reveal">
+        <h3>Documented human rights abuses</h3>
+        <p>Philippine and international human rights bodies, along with a class-action judgment in U.S. federal court, have documented thousands of cases of arbitrary detention, torture, and extrajudicial killing during this period, along with enforced disappearances that in many cases were never resolved.</p>
+      </div>
+      <div class="h-martial_fact reveal">
+        <h3>Economic record</h3>
+        <p>Early martial law years saw infrastructure spending and GDP growth financed heavily by foreign debt. By the early 1980s, cronyism, capital flight, and the debt burden had tipped the economy into crisis — a downturn most economic historians link directly to the era's governance.</p>
+      </div>
+      <div class="h-martial_fact reveal">
+        <h3>Resistance continued</h3>
+        <p>Opposition never disappeared — from underground press, to the Catholic Church, to armed insurgencies on both the left and in Muslim Mindanao, to exiled politicians organizing abroad. Martial law was formally lifted in 1981, though Marcos retained sweeping powers until 1986.</p>
+      </div>
+    </div>
+    <p class="h-section_note h-section_note--light reveal">This section relies on court records, human rights documentation, and government archives rather than political rhetoric from any side. The scale of what was documented is why this period remains one of the most studied and most contested in modern Philippine history.</p>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     15. PEOPLE POWER — EMOTIONAL PEAK
+     ========================================================================== -->
+<section class="h-section h-section--edsa" id="edsa">
+  <div class="h-edsa_inner">
+    <p class="section-eyebrow reveal">February 1986</p>
+    <h2 class="h-edsa_title reveal">The Revolution on EDSA</h2>
+
+    <div class="h-edsa_story">
+      <p class="reveal">In August 1983, opposition leader Benigno "Ninoy" Aquino Jr. was assassinated on the airport tarmac moments after returning from exile — a killing that galvanized a public already exhausted by a decade of authoritarian rule and economic collapse. Grief turned into organizing.</p>
+      <p class="reveal">Under mounting international and domestic pressure, Marcos called a snap presidential election in February 1986 against Ninoy's widow, Corazon Aquino. The official count, tallied by a government body, was later contested by independent observers and computer technicians who walked out over evidence of fraud.</p>
+      <p class="reveal">When a small breakaway group of military officers announced their defection, Cardinal Jaime Sin appealed over the radio for ordinary citizens to protect them. Hundreds of thousands of Filipinos answered — filling Epifanio de los Santos Avenue for four days, offering flowers and food to soldiers ordered to disperse them, forming human barricades in front of tanks.</p>
+      <p class="reveal">On February 25, 1986, Ferdinand Marcos left the country. Corazon Aquino was sworn in as president the same day. Not a single shot was fired at the crowds on EDSA.</p>
+    </div>
+
+    <figure class="h-artifact h-artifact--edsa reveal">
+      <div class="h-artifact_media">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Corazon%20Aquino%20inauguration.jpg?width=1000" alt="Corazon Aquino takes her oath of office as President of the Philippines at Club Filipino, San Juan, on February 25, 1986." loading="lazy" />
+      </div>
+      <figcaption class="h-artifact_caption">
+        <span class="h-artifact_tag">Historical Photograph</span>
+        <h3>Corazon Aquino's inauguration</h3>
+        <p><strong>February 25, 1986</strong> · Club Filipino, San Juan</p>
+        <p>Sworn in as the eleventh president and the country's first woman head of state, on the same day Ferdinand Marcos left the country.</p>
+        <p class="h-artifact_source">Presidential Museum and Library, Philippines (public domain), via Wikimedia Commons</p>
+      </figcaption>
+    </figure>
+
+    <blockquote class="h-pullquote h-pullquote--edsa reveal">Four days. No army defeated. A government fell because a million people stood in a road and refused to move.</blockquote>
+
+    <p class="h-section_note reveal">EDSA restored the constitutional institutions martial law had suspended — a free press, an independent legislature, competitive elections — and gave the Philippines an international reputation as a template for peaceful, "people power" transitions, one other movements around the world would later cite by name.</p>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     16. THE PHILIPPINES TODAY
+     ========================================================================== -->
+<section class="h-section h-section--today" id="today">
+  <div class="h-section_intro">
+    <p class="section-eyebrow reveal">Present Day</p>
+    <h2 class="h-section_title reveal">A Nation Still Becoming</h2>
+  </div>
+  <div class="h-today_grid">
+    <div class="h-today_col reveal">
+      <h3>A restored, imperfect democracy</h3>
+      <p>The 1987 Constitution rebuilt democratic institutions with safeguards written specifically against a repeat of martial law. Elections remain competitive and closely watched, even as political dynasties, disinformation, and weak party structures continue to shape — and sometimes strain — how that democracy actually functions.</p>
+    </div>
+    <div class="h-today_col reveal">
+      <h3>One country, many centers</h3>
+      <p>Manila's density and influence coexist with distinct regional identities in Cebu, Davao, Iloilo, and dozens of provinces that have never simply orbited the capital. Urbanization keeps redrawing where Filipinos actually live and work.</p>
+    </div>
+    <div class="h-today_col reveal">
+      <h3>A diaspora that never fully left</h3>
+      <p>Tens of millions of Filipinos live and work abroad, sending remittances that anchor the national economy and building communities from Riyadh to Rome to Los Angeles — a global Filipino identity as real, now, as any drawn on a map at home.</p>
+    </div>
+    <div class="h-today_col reveal">
+      <h3>Culture, exported</h3>
+      <p>Filipino food, music, and digital culture — from OPM to a global presence in call centers, nursing, seafaring, and content creation — now travel outward on their own terms, part of a soft-power identity the country is still actively shaping.</p>
+    </div>
+  </div>
+  <p class="h-section_note reveal">Development is real and uneven at once — rapid in some provinces, painfully slow in others. Poverty, climate vulnerability, and unresolved conflict in parts of Mindanao remain open chapters, not footnotes. History here isn't finished. It's still being negotiated, this year, by the people living it.</p>
+</section>
+
+<!-- ==========================================================================
+     17. PEOPLE WHO SHAPED THE STORY
+     ========================================================================== -->
+<section class="h-section h-section--people" id="people">
+  <div class="h-section_intro">
+    <p class="section-eyebrow reveal">Eleven Lives</p>
+    <h2 class="h-section_title reveal">People Who Shaped the Story</h2>
+    <p class="h-section_lede reveal">History is made by people, not eras — and rarely by people without contradiction.</p>
+  </div>
+
+  <div class="h-people_grid">
+    <article class="h-people_card reveal">
+      <span class="h-people_period">d. 1521</span>
+      <h3>Lapulapu</h3>
+      <p class="h-people_role">Datu of Mactan</p>
+      <p>Defeated Ferdinand Magellan's landing force at the Battle of Mactan, killing the explorer and delaying Spanish colonization by decades. What survives of him is mostly legend layered onto a single documented battle.</p>
+    </article>
+    <article class="h-people_card h-people_card--photo reveal">
+      <img class="h-people_photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20full.jpg?width=400" alt="Portrait photograph of José Rizal, circa 1890s." loading="lazy" />
+      <span class="h-people_period">1861 – 1896</span>
+      <h3>José Rizal</h3>
+      <p class="h-people_role">Writer, reformist</p>
+      <p>His novels exposed colonial abuse and shaped Filipino national consciousness, though he opposed the armed revolution he was executed for allegedly inspiring — a reformist, not the revolutionary he's often remembered as.</p>
+    </article>
+    <article class="h-people_card h-people_card--photo reveal">
+      <img class="h-people_photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Andr%C3%A9s%20Bonifacio.jpg?width=400" alt="Photograph believed to depict Andrés Bonifacio, circa 1896." loading="lazy" />
+      <span class="h-people_period">1863 – 1897</span>
+      <h3>Andrés Bonifacio</h3>
+      <p class="h-people_role">Founder, Katipunan</p>
+      <p>Organized the secret society that launched the armed revolution against Spain. Lost a leadership struggle to Aguinaldo's faction and was executed by fellow revolutionaries — a founding hero killed by the movement he founded.</p>
+    </article>
+    <article class="h-people_card h-people_card--photo reveal">
+      <img class="h-people_photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Emilio%20Aguinaldo%20%28ca.%201898%29.jpg?width=400" alt="Portrait photograph of Emilio Aguinaldo, circa 1898." loading="lazy" />
+      <span class="h-people_period">1869 – 1964</span>
+      <h3>Emilio Aguinaldo</h3>
+      <p class="h-people_role">First Philippine President</p>
+      <p>Led the revolutionary government and declared independence in 1898, then led resistance against the United States. His role in Bonifacio's execution remains one of the most debated episodes of the revolution.</p>
+    </article>
+    <article class="h-people_card reveal">
+      <span class="h-people_period">1864 – 1903</span>
+      <h3>Apolinario Mabini</h3>
+      <p class="h-people_role">"Brains of the Revolution"</p>
+      <p>Paralyzed from the waist down, Mabini served as Aguinaldo's chief adviser and wrote much of the revolutionary government's political philosophy, arguing independence had to be paired with genuine reform, not just a change of rulers.</p>
+    </article>
+    <article class="h-people_card reveal">
+      <span class="h-people_period">1731 – 1763</span>
+      <h3>Gabriela Silang</h3>
+      <p class="h-people_role">Revolutionary leader, Ilocos</p>
+      <p>Took command of an anti-Spanish uprising in the Ilocos region after her husband Diego's assassination, leading fighters for months before being captured and executed — among the earliest recorded women to lead an armed revolt in the islands.</p>
+    </article>
+    <article class="h-people_card reveal">
+      <span class="h-people_period">1850 – 1896</span>
+      <h3>Marcelo H. del Pilar</h3>
+      <p class="h-people_role">Propagandist, journalist</p>
+      <p>Edited the reformist newspaper <em>La Solidaridad</em> from exile in Spain, using satire and legal argument to attack friar abuses — a strategist of the Propaganda Movement's public campaign.</p>
+    </article>
+    <article class="h-people_card reveal">
+      <span class="h-people_period">1856 – 1896</span>
+      <h3>Graciano López Jaena</h3>
+      <p class="h-people_role">Orator, founding editor</p>
+      <p>Founded <em>La Solidaridad</em> and used his skill as an orator to argue for Filipino representation and reform, dying in poverty in Spain before seeing any of it realized.</p>
+    </article>
+    <article class="h-people_card reveal">
+      <span class="h-people_period">c. 1619 – 1671</span>
+      <h3>Sultan Kudarat</h3>
+      <p class="h-people_role">Sultan of Maguindanao</p>
+      <p>Led sustained resistance against Spanish expansion into Mindanao, uniting Muslim communities and successfully keeping much of the region outside Spanish control for the remainder of the colonial period.</p>
+    </article>
+    <article class="h-people_card reveal">
+      <span class="h-people_period">1932 – 1983</span>
+      <h3>Benigno Aquino Jr.</h3>
+      <p class="h-people_role">Opposition senator</p>
+      <p>The most prominent political critic of Marcos's martial law government, imprisoned for years before exile. His 1983 assassination on returning home became the catalyst for the movement that ended Marcos's rule.</p>
+    </article>
+    <article class="h-people_card h-people_card--photo reveal">
+      <img class="h-people_photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Corazon%20Aquino%20inauguration.jpg?width=400" alt="Corazon Aquino at her inauguration as President of the Philippines, February 25, 1986." loading="lazy" />
+      <span class="h-people_period">1933 – 2009</span>
+      <h3>Corazon Aquino</h3>
+      <p class="h-people_role">11th President</p>
+      <p>A political outsider before her husband's assassination, she became the figurehead of the 1986 revolution and the country's first woman president, tasked with rebuilding democratic institutions from scratch under enormous pressure.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     18. PLACES WHERE HISTORY HAPPENED
+     ========================================================================== -->
+<section class="h-section h-section--places" id="places">
+  <div class="h-section_intro">
+    <p class="section-eyebrow reveal">Ten Places</p>
+    <h2 class="h-section_title reveal">Places Where History Happened</h2>
+    <p class="h-section_lede reveal">You can still stand in most of these places. History here isn't only in books — it's in the walls.</p>
+  </div>
+  <div class="h-places_grid">
+    <article class="h-places_card reveal"><h3>Intramuros, Manila</h3><p>The walled Spanish colonial city, seat of power for over three centuries and largely destroyed in 1945 — parts have been carefully rebuilt, and its cobblestones still trace the original street plan.</p></article>
+    <article class="h-places_card reveal"><h3>Mactan, Cebu</h3><p>Where Lapulapu's forces defeated Magellan's landing party in 1521 — a shoreline battle site now marked by monuments to both men.</p></article>
+    <article class="h-places_card reveal"><h3>Kawit, Cavite</h3><p>Emilio Aguinaldo's ancestral home, where Philippine independence from Spain was declared on June 12, 1898 — now a museum preserving the balcony where the flag was first unfurled.</p></article>
+    <article class="h-places_card reveal"><h3>Barasoain Church, Malolos</h3><p>Site of the 1899 Malolos Congress, which drafted Asia's first democratic constitution — the short-lived First Philippine Republic's political heart.</p></article>
+    <article class="h-places_card reveal"><h3>Corregidor Island</h3><p>The fortified island guarding Manila Bay's entrance, site of fierce fighting in both the fall and the liberation of the Philippines during World War II.</p></article>
+    <article class="h-places_card reveal"><h3>Bataan</h3><p>Where Filipino and American forces made their last stand in early 1942, and where the Death March began — now marked by memorials along the original route.</p></article>
+    <article class="h-places_card reveal"><h3>EDSA, Metro Manila</h3><p>The highway that gave its name to the 1986 revolution — a working city artery that, for four days, became the site of a bloodless uprising watched by the world.</p></article>
+    <article class="h-places_card reveal"><h3>Malacañang Palace</h3><p>The official presidential residence since Spanish times, witness to colonial governors, wartime occupation, martial law, and every peaceful transfer of power since.</p></article>
+    <article class="h-places_card reveal"><h3>Vigan, Ilocos Sur</h3><p>One of the best-preserved Spanish colonial towns in Asia, its cobblestone streets and ancestral houses offering a rare, intact look at colonial-era daily life.</p></article>
+    <article class="h-places_card reveal"><h3>Cebu</h3><p>The site of the first Spanish settlement, the first Catholic baptisms in the islands, and centuries earlier, a thriving pre-colonial trading port in its own right.</p></article>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     18B. THEN & NOW
+     ========================================================================== -->
+<section class="h-section h-section--thennow" id="thennow">
+  <div class="h-section_intro">
+    <p class="section-eyebrow reveal">One Place, Two Moments</p>
+    <h2 class="h-section_title reveal">Then &amp; Now</h2>
+    <p class="h-section_lede reveal">Drag the slider. The same ground, decades apart — a reminder that "history" and "today" are often the same few hundred square meters.</p>
+  </div>
+
+  <div class="h-tn_grid">
+    <figure class="h-tn_card reveal" style="--tn-pos:50%">
+      <div class="h-tn_frame">
+        <img class="h-tn_before" src="https://commons.wikimedia.org/wiki/Special:FilePath/Manila%20Walled%20City%20Destruction%20May%201945.jpg?width=1000" alt="Intramuros, Manila's walled city, reduced to ruins after the Battle of Manila, May 1945." loading="lazy" />
+        <div class="h-tn_after">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fort%20Santiago%2C%20Intramuros.JPG?width=1000" alt="Fort Santiago, Intramuros, restored and photographed in the present day." loading="lazy" />
+        </div>
+        <div class="h-tn_handle" aria-hidden="true"></div>
+      </div>
+      <input class="h-tn_range" type="range" min="0" max="100" value="50" aria-label="Slide to compare Intramuros in 1945 and today" />
+      <figcaption>
+        <h3>Intramuros, Manila</h3>
+        <p><span class="h-tn_label h-tn_label--then">1945 — after the Battle of Manila</span> · <span class="h-tn_label h-tn_label--now">Today — Fort Santiago, restored</span></p>
+        <p class="h-artifact_source">Then: U.S. National Archives (NARA), public domain. Now: Elmer B. Domingo, CC BY-SA 3.0. Both via Wikimedia Commons.</p>
+      </figcaption>
+    </figure>
+  </div>
+
+  <p class="h-section_note reveal">Only the San Agustin Church survived the 1945 battle intact inside the walls. Everything else standing in Intramuros today — including Fort Santiago's restored gates — was rebuilt from what the war left behind.</p>
+</section>
+
+<!-- ==========================================================================
+     19. INTERACTIVE TIMELINE
+     ========================================================================== -->
+<section class="h-section h-section--timeline" id="timeline">
+  <div class="h-section_intro">
+    <p class="section-eyebrow section-eyebrow--light reveal">The Whole Arc</p>
+    <h2 class="h-section_title h-section_title--light reveal">Follow the Timeline</h2>
+    <p class="h-section_lede h-section_lede--light reveal">Tap any point to open its story.</p>
+  </div>
+
+  <ol class="h-timeline" id="interactiveTimeline">
+    <li class="h-timeline_item reveal" data-open="true">
+      <button class="h-timeline_head" aria-expanded="true">
+        <span class="h-timeline_year">—</span>
+        <span class="h-timeline_label">Precolonial Philippines</span>
+        <svg class="h-timeline_chevron" width="14" height="8" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="h-timeline_body"><p>Hundreds of independent barangays and sultanates thrive across the islands, linked by trade with China, Southeast Asia, and the Islamic world — centuries of history before any European ship arrives.</p></div>
+    </li>
+    <li class="h-timeline_item reveal">
+      <button class="h-timeline_head" aria-expanded="false">
+        <span class="h-timeline_year">1521</span>
+        <span class="h-timeline_label">Magellan arrives</span>
+        <svg class="h-timeline_chevron" width="14" height="8" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="h-timeline_body"><p>Magellan's expedition reaches the Visayas. Rajah Humabon allies with the Spanish; Lapulapu refuses and defeats them at Mactan, killing Magellan.</p></div>
+    </li>
+    <li class="h-timeline_item reveal">
+      <button class="h-timeline_head" aria-expanded="false">
+        <span class="h-timeline_year">1565</span>
+        <span class="h-timeline_label">Spanish colonization begins</span>
+        <svg class="h-timeline_chevron" width="14" height="8" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="h-timeline_body"><p>Miguel López de Legazpi establishes the first permanent Spanish settlement in Cebu, beginning over three centuries of colonial rule.</p></div>
+    </li>
+    <li class="h-timeline_item reveal">
+      <button class="h-timeline_head" aria-expanded="false">
+        <span class="h-timeline_year">1571</span>
+        <span class="h-timeline_label">Manila becomes the colonial capital</span>
+        <svg class="h-timeline_chevron" width="14" height="8" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="h-timeline_body"><p>Legazpi takes Manila from Rajah Sulayman and establishes it as the seat of Spanish power, launching the Manila–Acapulco Galleon Trade.</p></div>
+    </li>
+    <li class="h-timeline_item reveal">
+      <button class="h-timeline_head" aria-expanded="false">
+        <span class="h-timeline_year">1896</span>
+        <span class="h-timeline_label">Philippine Revolution</span>
+        <svg class="h-timeline_chevron" width="14" height="8" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="h-timeline_body"><p>The Katipunan's uprising against Spain begins after discovery by colonial authorities; José Rizal is executed in December, becoming its most famous martyr.</p></div>
+    </li>
+    <li class="h-timeline_item reveal">
+      <button class="h-timeline_head" aria-expanded="false">
+        <span class="h-timeline_year">1898</span>
+        <span class="h-timeline_label">Declaration of Independence</span>
+        <svg class="h-timeline_chevron" width="14" height="8" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="h-timeline_body"><p>Emilio Aguinaldo declares independence in Kawit — even as Spain secretly negotiates to hand the islands to the United States instead.</p></div>
+    </li>
+    <li class="h-timeline_item reveal">
+      <button class="h-timeline_head" aria-expanded="false">
+        <span class="h-timeline_year">1899</span>
+        <span class="h-timeline_label">Philippine-American War</span>
+        <svg class="h-timeline_chevron" width="14" height="8" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="h-timeline_body"><p>War breaks out between Filipino revolutionaries and American forces over control of the islands — bloodier and longer than the fight against Spain.</p></div>
+    </li>
+    <li class="h-timeline_item reveal">
+      <button class="h-timeline_head" aria-expanded="false">
+        <span class="h-timeline_year">1935</span>
+        <span class="h-timeline_label">Commonwealth established</span>
+        <svg class="h-timeline_chevron" width="14" height="8" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="h-timeline_body"><p>A ten-year transitional government under Manuel L. Quezon prepares the islands for full independence from the United States.</p></div>
+    </li>
+    <li class="h-timeline_item reveal">
+      <button class="h-timeline_head" aria-expanded="false">
+        <span class="h-timeline_year">1942–45</span>
+        <span class="h-timeline_label">Japanese occupation</span>
+        <svg class="h-timeline_chevron" width="14" height="8" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="h-timeline_body"><p>Japanese forces occupy the islands; Bataan falls, the Death March follows, and guerrilla resistance fights on until liberation devastates Manila in 1945.</p></div>
+    </li>
+    <li class="h-timeline_item reveal">
+      <button class="h-timeline_head" aria-expanded="false">
+        <span class="h-timeline_year">1946</span>
+        <span class="h-timeline_label">Philippine independence</span>
+        <svg class="h-timeline_chevron" width="14" height="8" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="h-timeline_body"><p>The United States formally recognizes Philippine independence on July 4 — a republic reborn amid the ruins of war.</p></div>
+    </li>
+    <li class="h-timeline_item reveal">
+      <button class="h-timeline_head" aria-expanded="false">
+        <span class="h-timeline_year">1972</span>
+        <span class="h-timeline_label">Martial Law</span>
+        <svg class="h-timeline_chevron" width="14" height="8" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="h-timeline_body"><p>Ferdinand Marcos places the entire country under martial law, beginning nearly a decade and a half of authoritarian rule and documented human rights abuses.</p></div>
+    </li>
+    <li class="h-timeline_item reveal">
+      <button class="h-timeline_head" aria-expanded="false">
+        <span class="h-timeline_year">1986</span>
+        <span class="h-timeline_label">People Power Revolution</span>
+        <svg class="h-timeline_chevron" width="14" height="8" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="h-timeline_body"><p>Millions gather peacefully on EDSA; Marcos leaves the country and Corazon Aquino is sworn in, ending martial law rule.</p></div>
+    </li>
+    <li class="h-timeline_item reveal">
+      <button class="h-timeline_head" aria-expanded="false">
+        <span class="h-timeline_year">1987</span>
+        <span class="h-timeline_label">New Constitution</span>
+        <svg class="h-timeline_chevron" width="14" height="8" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="h-timeline_body"><p>A new Constitution rebuilds democratic institutions with explicit safeguards against a repeat of authoritarian rule.</p></div>
+    </li>
+    <li class="h-timeline_item reveal">
+      <button class="h-timeline_head" aria-expanded="false">
+        <span class="h-timeline_year">Now</span>
+        <span class="h-timeline_label">Present-day Philippines</span>
+        <svg class="h-timeline_chevron" width="14" height="8" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="h-timeline_body"><p>A diverse, still-developing democracy shaped by all of the above — and by tens of millions of Filipinos writing its next chapters at home and abroad.</p></div>
+    </li>
+  </ol>
+</section>
+
+<!-- ==========================================================================
+     20. CLOSING
+     ========================================================================== -->
+<section class="h-closing">
+  <div class="h-closing_inner">
+    <p class="h-closing_eyebrow reveal">Before You Go</p>
+    <h2 class="h-closing_title reveal">The Philippines is not one story.</h2>
+    <p class="h-closing_text reveal">It's thousands of them — barangays and sultanates, missionaries and revolutionaries, soldiers and survivors, migrants and stay-behinds. Every region carries a version of this history that a single page can only gesture toward. The most honest way to understand it is the way Filipinos have always understood it: locally, in fragments, passed down and argued over, still being written.</p>
+    <a href="#before" class="h-closing_cta reveal">Continue exploring the Philippines</a>
+    <nav class="h-closing_links reveal" aria-label="Continue exploring">
+      <a href="#">Culture</a>
+      <a href="#">People &amp; Traditions</a>
+      <a href="#">Geography</a>
+      <a href="#">Food</a>
+    </nav>
+  </div>
+</section>
+
+</main>
+
+<footer class="h-footer">
+  <div class="h-footer_inner">
+    <a href="../1-homepage/home.html" class="brand">
+      <span class="brand_word">Tara<span class="brand_dot">.</span></span>
+    </a>
+    <p>7,641 Islands. Countless Stories.</p>
+  </div>
+</footer>
+
+<script src="history.js"></script>
 </body>
 </html>
