@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Tara. — 7,641 Islands. Countless Stories.</title>
+<meta name="description" content="Discover the Philippines beyond the usual spots — attractions, destinations, experiences, and local stories across 7,641 islands." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============ SITE HEADER (sticky / glass) ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="site-header_inner">
+
+<a href="home.html" class="brand" aria-label="Tara. Home">
+      <span class="brand_mark" aria-hidden="true">
+        <svg viewBox="0 0 640 640" width="30" height="30" fill="currentColor">
+          <path d="M320 32C328.4 32 336.3 36.4 340.6 43.7L396.1 136.3L500.9 110C509.1 108 517.8 110.4 523.7 116.3C529.6 122.2 532 131 530 139.1L503.7 243.8L596.4 299.3C603.6 303.6 608.1 311.5 608.1 319.9C608.1 328.3 603.7 336.2 596.4 340.5L503.7 396.1L530 500.8C532 509 529.6 517.7 523.7 523.6C517.8 529.5 509 532 500.9 530L396.2 503.7L340.7 596.4C336.4 603.6 328.5 608.1 320.1 608.1C311.7 608.1 303.8 603.7 299.5 596.4L243.9 503.7L139.2 530C131 532 122.4 529.6 116.4 523.7C110.4 517.8 108 509 110 500.8L136.2 396.1L43.6 340.6C36.4 336.2 32 328.4 32 320C32 311.6 36.4 303.7 43.7 299.4L136.3 243.9L110 139.1C108 130.9 110.3 122.3 116.3 116.3C122.3 110.3 131 108 139.2 110L243.9 136.2L299.4 43.6L301.2 41C305.7 35.3 312.6 31.9 320 31.9zM320 176C240.5 176 176 240.5 176 320C176 399.5 240.5 464 320 464C399.5 464 464 399.5 464 320C464 240.5 399.5 176 320 176zM320 416C267 416 224 373 224 320C224 267 267 224 320 224C373 224 416 267 416 320C416 373 373 416 320 416z"/>
+        </svg>
+      </span>
+      <span class="brand_word">Tara<span class="brand_dot">.</span></span>
+    </a>
+
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <ul class="primary-nav_list">
+        <li>
+  <a href="home.html" class="primary-nav_link" data-nav>Home</a></li>
+
+        <li class="nav-item nav-item--has-dropdown">
+          <a
+            href="../2-about-page/about.html"
+            class="primary-nav_link"
+            data-nav
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            About Philippines
+            <svg class="primary-nav_chevron" width="10" height="7" viewBox="0 0 10 7" fill="none" aria-hidden="true">
+              <path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <div class="primary-nav_dropdown" data-dropdown>
+            <a href="../2-about-page/about.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Overview</span>
+              <span class="primary-nav_dropdown-desc">Explore the Philippines at a glance.</span>
+            </a>
+            <a href="../8-history/history.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">History</span>
+              <span class="primary-nav_dropdown-desc">Stories that shaped the nation.</span>
+            </a>
+            <a href="../9-culture/culture.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Culture</span>
+              <span class="primary-nav_dropdown-desc">Filipino traditions and identity.</span>
+            </a>
+            <a href="../10-food/food.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Food</span>
+              <span class="primary-nav_dropdown-desc">Dishes, flavors, and traditions.</span>
+            </a>
+            <a href="../11-people/people.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">People &amp; Traditions</span>
+              <span class="primary-nav_dropdown-desc">Communities, customs, celebrations.</span>
+            </a>
+            <a href="../12-geography/geography.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Geography</span>
+              <span class="primary-nav_dropdown-desc">Islands, regions, and landscapes.</span>
+            </a>
+          </div>
+        </li>
+
+        <li><a href="../7-news/news.html" class="primary-nav_link" data-nav>News</a></li>
+
+        <li class="nav-item nav-item--has-dropdown">
+          <a
+            href="../3-attraction-page/attraction.html"
+            class="primary-nav_link"
+            data-nav
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Attractions
+            <svg class="primary-nav_chevron" width="10" height="7" viewBox="0 0 10 7" fill="none" aria-hidden="true">
+              <path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <div class="primary-nav_dropdown primary-nav_dropdown--single" data-dropdown>
+            <a href="../3-attraction-page/attraction.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">All Attractions</span>
+            </a>
+            <a href="../3-attraction-page/attraction.html?category=beaches" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Beaches</span>
+            </a>
+            <a href="../3-attraction-page/attraction.html?category=islands" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Islands</span>
+            </a>
+            <a href="../3-attraction-page/attraction.html?category=mountains" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Mountains</span>
+            </a>
+            <a href="../3-attraction-page/attraction.html?category=waterfalls" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Waterfalls</span>
+            </a>
+            <a href="../3-attraction-page/attraction.html?category=adventure" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Adventure</span>
+            </a>
+            <a href="../3-attraction-page/attraction.html?category=heritage" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Heritage Sites</span>
+            </a>
+          </div>
+        </li>
+
+        <li><a href="../5-directory/directory.html" class="primary-nav_link" data-nav>Directory</a></li>
+        <li><a href="../4-contact-page/contact.html" class="primary-nav_link" data-nav>Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span class="menu-toggle_bar"></span>
+      <span class="menu-toggle_bar"></span>
+      <span class="menu-toggle_bar"></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- ============ MOBILE NAV DRAWER ============ -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <nav aria-label="Mobile">
+    <ul class="mobile-nav_list">
+      <li>
+  <a href="home.html" class="primary-nav_link" data-nav>Home</a></li>
+      <li class="mobile-nav_item">
+        <div class="mobile-nav_row">
+          <a href="../2-about-page/about.html" class="mobile-nav_link">About Philippines</a>
+          <button
+            type="button"
+            class="mobile-nav_submenu-toggle"
+            aria-expanded="false"
+            aria-controls="mobileSubmenuAbout"
+            aria-label="Toggle About Philippines submenu"
+          >
+            <svg class="mobile-nav_chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <ul class="mobile-nav_submenu" id="mobileSubmenuAbout">
+          <li><a href="../2-about-page/about.html" class="mobile-nav_submenu-link">Overview</a></li>
+          <li><a href="../8-history/history.html" class="mobile-nav_submenu-link">History</a></li>
+          <li><a href="../9-culture/culture.html" class="mobile-nav_submenu-link">Culture</a></li>
+          <li><a href="../10-food/food.html" class="mobile-nav_submenu-link">Food</a></li>
+          <li><a href="../11-people/people.html" class="mobile-nav_submenu-link">People &amp; Traditions</a></li>
+          <li><a href="../12-geography/geography.html" class="mobile-nav_submenu-link">Geography</a></li>
+        </ul>
+      </li>
+
+      <li><a href="../7-news/news.html" class="mobile-nav_link">News</a></li>
+
+      <li class="mobile-nav_item">
+        <div class="mobile-nav_row">
+          <a href="../3-attraction-page/attraction.html" class="mobile-nav_link">Attractions</a>
+          <button
+            type="button"
+            class="mobile-nav_submenu-toggle"
+            aria-expanded="false"
+            aria-controls="mobileSubmenuAttractions"
+            aria-label="Toggle Attractions submenu"
+          >
+            <svg class="mobile-nav_chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <ul class="mobile-nav_submenu" id="mobileSubmenuAttractions">
+          <li><a href="../3-attraction-page/attraction.html" class="mobile-nav_submenu-link">All Attractions</a></li>
+          <li><a href="../3-attraction-page/attraction.html?category=beaches" class="mobile-nav_submenu-link">Beaches</a></li>
+          <li><a href="../3-attraction-page/attraction.html?category=islands" class="mobile-nav_submenu-link">Islands</a></li>
+          <li><a href="../3-attraction-page/attraction.html?category=mountains" class="mobile-nav_submenu-link">Mountains</a></li>
+          <li><a href="../3-attraction-page/attraction.html?category=waterfalls" class="mobile-nav_submenu-link">Waterfalls</a></li>
+          <li><a href="../3-attraction-page/attraction.html?category=adventure" class="mobile-nav_submenu-link">Adventure</a></li>
+          <li><a href="../3-attraction-page/attraction.html?category=heritage" class="mobile-nav_submenu-link">Heritage Sites</a></li>
+        </ul>
+      </li>
+
+      <li><a href="../5-directory/directory.html" class="mobile-nav_link">Directory</a></li>
+      <li><a href="../4-contact-page/contact.html" class="mobile-nav_link">Contact Us</a></li>
+    </ul>
+  </nav>
+  <p class="mobile-nav_tagline">7,641 islands. Countless stories.</p>
+</div>
+<div class="mobile-nav_scrim" id="mobileNavScrim"></div>
+
+<main>
+
+  <!-- ============ 01 — HERO ============ -->
+  <section class="hero">
+    <div class="hero_media" aria-hidden="true">
+      <img
+        src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1920&q=80"
+        alt=""
+        class="hero_img"
+        loading="eager"
+      />
+      <div class="hero_scrim"></div>
+    </div>
+
+    <div class="hero_content">
+      <p class="hero_eyebrow">7,641 Islands &nbsp;·&nbsp; Countless Stories</p>
+      <h1 class="hero_title">
+        Tara,<br /><em>Philippines.</em>
+      </h1>
+      <p class="hero_lede">
+        Explore the Philippines beyond the usual spots — discover
+        hidden gems, local stories, unforgettable places, and the
+        experiences that make every journey worth taking.
+      </p>
+
+      <div class="hero_ctas">
+        <a href="../3-attraction-page/attraction.html" class="btn btn--primary">Explore Attractions</a>
+        <a href="../2-about-page/about.html" class="btn btn--ghost">Discover the Islands</a>
+      </div>
+    </div>
+
+    <a href="#discover" class="hero_scroll-cue" aria-label="Scroll to learn more">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ============ 02 — DESTINATION DISCOVERY ============ -->
+  <section class="discover" id="discover">
+    <div class="discover_head reveal">
+      <p class="section-eyebrow">Where to next</p>
+      <h2 class="discover_title">Find your next escape.</h2>
+      <p class="discover_lede">
+        From quiet islands to mountain towns and vibrant cities, discover
+        a Philippines worth getting lost in.
+      </p>
+    </div>
+
+    <div class="discover_grid">
+
+      <a href="../3-attraction-page/attraction.html" class="dest-card reveal">
+        <div class="dest-card_media">
+          <img
+            src="https://images.unsplash.com/photo-1519101236449-ac8098e16f15?auto=format&fit=crop&w=1000&q=80"
+            alt="Longtail boats near a limestone islet in Palawan"
+            class="dest-card_img"
+            loading="lazy"
+          />
+          <div class="dest-card_scrim"></div>
+        </div>
+        <div class="dest-card_content">
+          <span class="dest-card_category">Island Life</span>
+          <h3 class="dest-card_name">Palawan</h3>
+          <span class="dest-card_arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="../3-attraction-page/attraction.html" class="dest-card reveal">
+        <div class="dest-card_media">
+          <img
+            src="https://images.unsplash.com/photo-1565113218386-934429f84cc2?auto=format&fit=crop&w=1000&q=80"
+            alt="Aerial view of a turquoise sandbar off Siargao"
+            class="dest-card_img"
+            loading="lazy"
+          />
+          <div class="dest-card_scrim"></div>
+        </div>
+        <div class="dest-card_content">
+          <span class="dest-card_category">Surf &amp; Soul</span>
+          <h3 class="dest-card_name">Siargao</h3>
+          <span class="dest-card_arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="../3-attraction-page/attraction.html" class="dest-card reveal">
+        <div class="dest-card_media">
+          <img
+            src="https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&w=1000&q=80"
+            alt="Turquoise cascade at Kawasan Falls, Cebu"
+            class="dest-card_img"
+            loading="lazy"
+          />
+          <div class="dest-card_scrim"></div>
+        </div>
+        <div class="dest-card_content">
+          <span class="dest-card_category">Adventure</span>
+          <h3 class="dest-card_name">Cebu</h3>
+          <span class="dest-card_arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="../3-attraction-page/attraction.html" class="dest-card reveal">
+        <div class="dest-card_media">
+          <img
+            src="https://images.unsplash.com/photo-1548710332-3e03e8220a79?auto=format&fit=crop&w=1000&q=80"
+            alt="Terraced mountainside near Sagada"
+            class="dest-card_img"
+            loading="lazy"
+          />
+          <div class="dest-card_scrim"></div>
+        </div>
+        <div class="dest-card_content">
+          <span class="dest-card_category">Mountain Escape</span>
+          <h3 class="dest-card_name">Sagada</h3>
+          <span class="dest-card_arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="discover_footer reveal">
+      <a href="../3-attraction-page/attraction.html" class="text-link">
+        Explore all destinations
+        <span class="text-link_arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ 03 — BRAND STORY / HIDDEN GEMS ============ -->
+  <section class="gems" id="gems">
+    <div class="gems_media reveal">
+      <img
+        src="https://images.unsplash.com/photo-1573790387438-4da905039392?auto=format&fit=crop&w=1400&q=80"
+        alt="A quiet, lesser-visited cove somewhere in the Philippine islands"
+        class="gems_img"
+        loading="lazy"
+      />
+    </div>
+    <div class="gems_content">
+      <div class="gems_inner reveal">
+        <p class="section-eyebrow">Beyond the usual spots</p>
+        <h2 class="gems_title">There&rsquo;s more to&nbsp;the Philippines.</h2>
+        <p class="gems_body">
+          There&rsquo;s more to the Philippines than the places you&rsquo;ve
+          seen a hundred times. Discover quiet beaches, hidden trails,
+          local communities, and stories waiting to be explored.
+        </p>
+        <a href="../3-attraction-page/attraction.html" class="text-link text-link--underline">
+          Discover hidden gems
+          <span class="text-link_arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+
+        <div class="gems_stat">
+          <span class="gems_stat_number">7,641</span>
+          <span class="gems_stat_label">islands to explore</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 — EXPERIENCES ============ -->
+  <section class="experiences" id="experiences">
+    <div class="experiences_head reveal">
+      <p class="section-eyebrow section-eyebrow--light">What moves you</p>
+      <h2 class="experiences_title">Make the trip yours.</h2>
+      <p class="experiences_lede">
+        Whether you&rsquo;re chasing waves, climbing mountains, tasting local
+        flavors, or slowing down by the sea, find an experience that feels
+        like yours.
+      </p>
+    </div>
+
+    <div class="experiences_grid">
+      <a href="../3-attraction-page/attraction.html" class="exp-tile exp-tile--hop reveal">
+        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80" alt="" class="exp-tile_img" loading="lazy" />
+        <div class="exp-tile_scrim"></div>
+        <div class="exp-tile_content">
+          <h3 class="exp-tile_title">Island Hopping</h3>
+          <p class="exp-tile_desc">Find your next island escape.</p>
+          <span class="exp-tile_arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+
+      <a href="../3-attraction-page/attraction.html" class="exp-tile exp-tile--adv reveal">
+        <img src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=900&q=80" alt="" class="exp-tile_img" loading="lazy" />
+        <div class="exp-tile_scrim"></div>
+        <div class="exp-tile_content">
+          <h3 class="exp-tile_title">Adventure</h3>
+          <p class="exp-tile_desc">Take the road less traveled.</p>
+          <span class="exp-tile_arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+
+      <a href="../3-attraction-page/attraction.html" class="exp-tile exp-tile--food reveal">
+        <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=900&q=80" alt="" class="exp-tile_img" loading="lazy" />
+        <div class="exp-tile_scrim"></div>
+        <div class="exp-tile_content">
+          <h3 class="exp-tile_title">Food &amp; Culture</h3>
+          <p class="exp-tile_desc">Taste the stories of the Philippines.</p>
+          <span class="exp-tile_arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+
+      <a href="../3-attraction-page/attraction.html" class="exp-tile exp-tile--beach reveal">
+        <img src="https://images.unsplash.com/photo-1552733407-5d5c46c3bf65?auto=format&fit=crop&w=900&q=80" alt="" class="exp-tile_img" loading="lazy" />
+        <div class="exp-tile_scrim"></div>
+        <div class="exp-tile_content">
+          <h3 class="exp-tile_title">Beaches</h3>
+          <p class="exp-tile_desc">Slow down by the sea.</p>
+          <span class="exp-tile_arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+
+      <a href="../3-attraction-page/attraction.html" class="exp-tile exp-tile--nature reveal">
+        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80" alt="" class="exp-tile_img" loading="lazy" />
+        <div class="exp-tile_scrim"></div>
+        <div class="exp-tile_content">
+          <h3 class="exp-tile_title">Nature</h3>
+          <p class="exp-tile_desc">Get closer to the wild.</p>
+          <span class="exp-tile_arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+
+      <a href="../3-attraction-page/attraction.html" class="exp-tile exp-tile--history reveal">
+        <img src="https://images.unsplash.com/photo-1590523278191-995cbcda646b?auto=format&fit=crop&w=1200&q=80" alt="" class="exp-tile_img" loading="lazy" />
+        <div class="exp-tile_scrim"></div>
+        <div class="exp-tile_content">
+          <h3 class="exp-tile_title">History</h3>
+          <p class="exp-tile_desc">Walk through stories that shaped the islands.</p>
+          <span class="exp-tile_arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ 05 — FEATURED ATTRACTIONS ============ -->
+  <section class="featured" id="featured">
+    <div class="featured_head reveal">
+      <div>
+        <p class="section-eyebrow">Bucket list</p>
+        <h2 class="featured_title">Worth the journey.</h2>
+        <p class="featured_lede">Places that deserve a spot on your itinerary.</p>
+      </div>
+      <div class="featured_head-actions">
+        <a href="../3-attraction-page/attraction.html" class="text-link">
+          View all attractions
+          <span class="text-link_arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <div class="featured_controls">
+          <button type="button" class="featured_nav-btn" id="featuredPrev" aria-label="Previous attraction">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button type="button" class="featured_nav-btn" id="featuredNext" aria-label="Next attraction">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="featured_track" id="featuredTrack">
+      <a href="../3-attraction-page/attraction.html" class="featured-card reveal">
+        <div class="featured-card_media">
+          <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1100&q=80" alt="Kayangan Lake surrounded by limestone cliffs in Coron" loading="lazy" />
+        </div>
+        <span class="featured-card_label">Lake</span>
+        <h3 class="featured-card_name">Kayangan Lake</h3>
+        <p class="featured-card_place">Coron, Palawan</p>
+      </a>
+
+      <a href="../3-attraction-page/attraction.html" class="featured-card reveal">
+        <div class="featured-card_media">
+          <img src="https://images.unsplash.com/photo-1518623001395-125242310d0c?auto=format&fit=crop&w=1100&q=80" alt="The Chocolate Hills of Bohol at golden hour" loading="lazy" />
+        </div>
+        <span class="featured-card_label">Landmark</span>
+        <h3 class="featured-card_name">Chocolate Hills</h3>
+        <p class="featured-card_place">Bohol</p>
+      </a>
+
+      <a href="../3-attraction-page/attraction.html" class="featured-card reveal">
+        <div class="featured-card_media">
+          <img src="https://images.unsplash.com/photo-1500759285222-a95626b934cb?auto=format&fit=crop&w=1100&q=80" alt="The Banaue Rice Terraces carved into the mountainside" loading="lazy" />
+        </div>
+        <span class="featured-card_label">Heritage</span>
+        <h3 class="featured-card_name">Banaue Rice Terraces</h3>
+        <p class="featured-card_place">Ifugao</p>
+      </a>
+
+      <a href="../3-attraction-page/attraction.html" class="featured-card reveal">
+        <div class="featured-card_media">
+          <img src="https://images.unsplash.com/photo-1590123166745-6ea6d0e37c14?auto=format&fit=crop&w=1100&q=80" alt="Nacpan Beach's long stretch of golden sand" loading="lazy" />
+        </div>
+        <span class="featured-card_label">Beach</span>
+        <h3 class="featured-card_name">Nacpan Beach</h3>
+        <p class="featured-card_place">Palawan</p>
+      </a>
+
+      <a href="../3-attraction-page/attraction.html" class="featured-card reveal">
+        <div class="featured-card_media">
+          <img src="https://images.unsplash.com/photo-1586263426392-3b3e0748f618?auto=format&fit=crop&w=1100&q=80" alt="The turquoise cascades of Kawasan Falls" loading="lazy" />
+        </div>
+        <span class="featured-card_label">Waterfall</span>
+        <h3 class="featured-card_name">Kawasan Falls</h3>
+        <p class="featured-card_place">Cebu</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ 06 — STORIES / NEWS ============ -->
+  <section class="stories" id="stories">
+    <div class="stories_head reveal">
+      <p class="section-eyebrow">Read up</p>
+      <h2 class="stories_title">Stories from the islands.</h2>
+      <p class="stories_lede">
+        Travel guides, local stories, culture, food, and inspiration for
+        your next journey.
+      </p>
+    </div>
+
+    <div class="stories_grid">
+      <a href="../7-news/news.html" class="story-feature reveal">
+        <div class="story-feature_media">
+          <img src="https://images.unsplash.com/photo-1565113218386-934429f84cc2?auto=format&fit=crop&w=1200&q=80" alt="A surfer walking toward the waves in Siargao at sunrise" loading="lazy" />
+        </div>
+        <div class="story-feature_content">
+          <span class="story_meta">Travel &nbsp;·&nbsp; 5 min read</span>
+          <h3 class="story-feature_title">The best time to explore Siargao</h3>
+        </div>
+      </a>
+
+      <div class="stories_list">
+        <a href="../7-news/news.html" class="story-row reveal">
+          <div class="story-row_media">
+            <img src="https://images.unsplash.com/photo-1548710332-3e03e8220a79?auto=format&fit=crop&w=400&q=80" alt="" loading="lazy" />
+          </div>
+          <div class="story-row_content">
+            <span class="story_meta">Culture &nbsp;·&nbsp; 7 min read</span>
+            <h3 class="story-row_title">A weekend in Sagada</h3>
+          </div>
+        </a>
+
+        <a href="../7-news/news.html" class="story-row reveal">
+          <div class="story-row_media">
+            <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=400&q=80" alt="" loading="lazy" />
+          </div>
+          <div class="story-row_content">
+            <span class="story_meta">Food &nbsp;·&nbsp; 4 min read</span>
+            <h3 class="story-row_title">10 Filipino dishes worth traveling for</h3>
+          </div>
+        </a>
+
+        <a href="../7-news/news.html" class="story-row reveal">
+          <div class="story-row_media">
+            <img src="https://images.unsplash.com/photo-1519101236449-ac8098e16f15?auto=format&fit=crop&w=400&q=80" alt="" loading="lazy" />
+          </div>
+          <div class="story-row_content">
+            <span class="story_meta">Travel &nbsp;·&nbsp; 6 min read</span>
+            <h3 class="story-row_title">Hidden beaches you&rsquo;ll want to keep secret</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="stories_footer reveal">
+      <a href="../7-news/news.html" class="text-link text-link--underline">
+        View all stories
+        <span class="text-link_arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ 07 — INTERACTIVE MAP ============ -->
+  <section class="map-section" id="map">
+    <div class="map-section_head reveal">
+      <p class="section-eyebrow section-eyebrow--light">Explore by region</p>
+      <h2 class="map-section_title">Where will your story take you?</h2>
+      <p class="map-section_lede">
+        Explore the islands, regions, and destinations that make the
+        Philippines unforgettable.
+      </p>
+    </div>
+
+    <div class="map-section_body reveal">
+      <div class="map-visual" role="group" aria-label="Select a region of the Philippines">
+        <svg class="map-svg" viewBox="0 0 320 520" aria-hidden="true">
+          <!-- Luzon (north) -->
+          <path class="map-landmass is-active" data-region="luzon" d="M150 18c26 4 42 26 46 52 5 32-10 46-4 74 5 24 22 30 16 54-6 24-30 24-38 46-7 20 4 34-8 48-10 12-30 8-40-4-12-14-6-32-16-48-9-15-27-16-32-38-5-22 12-32 10-56-2-26-20-38-14-64 6-27 32-38 40-60 6-17 20-8 40-4z"/>
+          <!-- Visayas (middle) -->
+          <path class="map-landmass" data-region="visayas" d="M96 300c16-6 30 4 46 2 18-2 28-16 44-12 18 4 20 24 36 30 14 5 30-2 40 10 9 11 0 26-12 30-14 5-26-6-40-4-16 2-24 18-40 16-14-2-16-18-30-22-16-5-34 4-46-6-11-9-8-26 2-36 0 0-2-6 0-8z"/>
+          <!-- Mindanao (south) -->
+          <path class="map-landmass" data-region="mindanao" d="M90 400c22-10 40 6 62 4 24-2 38-20 60-14 20 6 24 28 42 36 16 7 36-2 48 12 11 13 2 32-14 38-18 7-36-6-54-4-20 2-32 20-52 18-18-2-22-20-40-26-20-7-42 4-56-10-13-13-6-34 4-54z"/>
+        </svg>
+
+        <div class="map-legend">
+          <button type="button" class="map-legend_item is-active" data-region-btn="luzon">
+            <span class="map-legend_dot"></span>Luzon
+          </button>
+          <button type="button" class="map-legend_item" data-region-btn="visayas">
+            <span class="map-legend_dot"></span>Visayas
+          </button>
+          <button type="button" class="map-legend_item" data-region-btn="mindanao">
+            <span class="map-legend_dot"></span>Mindanao
+          </button>
+        </div>
+      </div>
+
+      <div class="map-panel">
+        <p class="map-panel_eyebrow" id="mapPanelRegion">Luzon</p>
+        <ul class="map-panel_list" id="mapPanelList">
+          <li>Sagada</li>
+          <li>Banaue</li>
+          <li>Palawan</li>
+        </ul>
+        <a href="../3-attraction-page/attraction.html" class="text-link text-link--underline map-panel_cta">
+          Explore this region
+          <span class="text-link_arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 08 — FINAL CTA ============ -->
+  <section class="final-cta">
+    <div class="final-cta_media" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?auto=format&fit=crop&w=1920&q=80" alt="" loading="lazy" />
+      <div class="final-cta_scrim"></div>
+    </div>
+    <div class="final-cta_content reveal">
+      <h2 class="final-cta_title">Your next story starts here.</h2>
+      <p class="final-cta_lede">The Philippines is waiting. Where will you go first?</p>
+      <a href="../3-attraction-page/attraction.html" class="btn btn--primary">Explore the Philippines</a>
+      <a href="../2-about-page/about.html" class="text-link text-link--light">
+        Start exploring
+        <span class="text-link_arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="site-footer_top">
+    <div class="site-footer_brand">
+      <span class="brand_word">Tara<span class="brand_dot">.</span></span>
+      <p>7,641 islands. Countless stories.</p>
+    </div>
+
+    <nav class="site-footer_nav" aria-label="Footer">
+      <div class="site-footer_col">
+        <p class="site-footer_col-title">Site</p>
+        <a href="home.html">Home</a>
+        <a href="../2-about-page/about.html">About Philippines</a>
+        <a href="../7-news/news.html">News</a>
+        <a href="../3-attraction-page/attraction.html">Attractions</a>
+        <a href="../5-directory/directory.html">Directory</a>
+        <a href="../4-contact-page/contact.html">Contact Us</a>
+      </div>
+      <div class="site-footer_col">
+        <p class="site-footer_col-title">Explore</p>
+        <a href="../7-news/news.html">Travel Guides</a>
+        <a href="../3-attraction-page/attraction.html">Destinations</a>
+        <a href="home.html#experiences">Experiences</a>
+        <a href="../13-privacy/privacy.html">Privacy Policy</a>
+        <a href="../14-terms/terms.html">Terms</a>
+      </div>
+    </nav>
+
+    <div class="site-footer_social">
+      <p class="site-footer_col-title">Follow</p>
+      <a href="#" aria-label="Tara. on Facebook">Facebook</a>
+      <a href="#" aria-label="Tara. on Instagram">Instagram</a>
+      <a href="#" aria-label="Tara. on YouTube">YouTube</a>
+    </div>
+  </div>
+
+  <div class="site-footer_bottom">
+    <p>&copy; 2026 Tara. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

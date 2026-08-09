@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>About the Philippines — Tara.</title>
+<meta name="description" content="More than 7,000 islands. Discover the Philippines' geography, history, culture, food, and people — an editorial introduction from Tara." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="about.css" />
+</head>
+<body>
+
+<!-- ============ SITE HEADER (sticky / glass) — unchanged from homepage ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="site-header_inner">
+
+<a href="home.html" class="brand" aria-label="Tara. Home">
+      <span class="brand_mark" aria-hidden="true">
+        <svg viewBox="0 0 640 640" width="30" height="30" fill="currentColor">
+          <path d="M320 32C328.4 32 336.3 36.4 340.6 43.7L396.1 136.3L500.9 110C509.1 108 517.8 110.4 523.7 116.3C529.6 122.2 532 131 530 139.1L503.7 243.8L596.4 299.3C603.6 303.6 608.1 311.5 608.1 319.9C608.1 328.3 603.7 336.2 596.4 340.5L503.7 396.1L530 500.8C532 509 529.6 517.7 523.7 523.6C517.8 529.5 509 532 500.9 530L396.2 503.7L340.7 596.4C336.4 603.6 328.5 608.1 320.1 608.1C311.7 608.1 303.8 603.7 299.5 596.4L243.9 503.7L139.2 530C131 532 122.4 529.6 116.4 523.7C110.4 517.8 108 509 110 500.8L136.2 396.1L43.6 340.6C36.4 336.2 32 328.4 32 320C32 311.6 36.4 303.7 43.7 299.4L136.3 243.9L110 139.1C108 130.9 110.3 122.3 116.3 116.3C122.3 110.3 131 108 139.2 110L243.9 136.2L299.4 43.6L301.2 41C305.7 35.3 312.6 31.9 320 31.9zM320 176C240.5 176 176 240.5 176 320C176 399.5 240.5 464 320 464C399.5 464 464 399.5 464 320C464 240.5 399.5 176 320 176zM320 416C267 416 224 373 224 320C224 267 267 224 320 224C373 224 416 267 416 320C416 373 373 416 320 416z"/>
+        </svg>
+      </span>
+      <span class="brand_word">Tara<span class="brand_dot">.</span></span>
+    </a>
+
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <ul class="primary-nav_list">
+        <li><a href="../1-homepage/home.html" class="primary-nav_link" data-nav>Home</a></li>
+
+        <li class="nav-item nav-item--has-dropdown">
+          <a
+            href="about.html"
+            class="primary-nav_link"
+            data-nav
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            About Philippines
+            <svg class="primary-nav_chevron" width="10" height="7" viewBox="0 0 10 7" fill="none" aria-hidden="true">
+              <path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <div class="primary-nav_dropdown" data-dropdown>
+            <a href="about.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Overview</span>
+              <span class="primary-nav_dropdown-desc">Explore the Philippines at a glance.</span>
+            </a>
+            <a href="history.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">History</span>
+              <span class="primary-nav_dropdown-desc">Stories that shaped the nation.</span>
+            </a>
+            <a href="culture.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Culture</span>
+              <span class="primary-nav_dropdown-desc">Filipino traditions and identity.</span>
+            </a>
+            <a href="food.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Food</span>
+              <span class="primary-nav_dropdown-desc">Dishes, flavors, and traditions.</span>
+            </a>
+            <a href="people.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">People &amp; Traditions</span>
+              <span class="primary-nav_dropdown-desc">Communities, customs, celebrations.</span>
+            </a>
+            <a href="geography.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Geography</span>
+              <span class="primary-nav_dropdown-desc">Islands, regions, and landscapes.</span>
+            </a>
+          </div>
+        </li>
+
+        <li><a href="news.html" class="primary-nav_link" data-nav>News</a></li>
+
+        <li class="nav-item nav-item--has-dropdown">
+          <a
+            href="attractions.html"
+            class="primary-nav_link"
+            data-nav
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Attractions
+            <svg class="primary-nav_chevron" width="10" height="7" viewBox="0 0 10 7" fill="none" aria-hidden="true">
+              <path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <div class="primary-nav_dropdown primary-nav_dropdown--single" data-dropdown>
+            <a href="attractions.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">All Attractions</span>
+            </a>
+            <a href="attractions.html?category=beaches" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Beaches</span>
+            </a>
+            <a href="attractions.html?category=islands" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Islands</span>
+            </a>
+            <a href="attractions.html?category=mountains" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Mountains</span>
+            </a>
+            <a href="attractions.html?category=waterfalls" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Waterfalls</span>
+            </a>
+            <a href="attractions.html?category=adventure" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Adventure</span>
+            </a>
+            <a href="attractions.html?category=heritage" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Heritage Sites</span>
+            </a>
+          </div>
+        </li>
+
+        <li><a href="directory.html" class="primary-nav_link" data-nav>Directory</a></li>
+        <li><a href="contact.html" class="primary-nav_link" data-nav>Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span class="menu-toggle_bar"></span>
+      <span class="menu-toggle_bar"></span>
+      <span class="menu-toggle_bar"></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- ============ MOBILE NAV DRAWER — unchanged from homepage ============ -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <nav aria-label="Mobile">
+    <ul class="mobile-nav_list">
+      <li><a href="home.html" class="mobile-nav_link">Home</a></li>
+
+      <li class="mobile-nav_item">
+        <div class="mobile-nav_row">
+          <a href="about.html" class="mobile-nav_link">About Philippines</a>
+          <button
+            type="button"
+            class="mobile-nav_submenu-toggle"
+            aria-expanded="false"
+            aria-controls="mobileSubmenuAbout"
+            aria-label="Toggle About Philippines submenu"
+          >
+            <svg class="mobile-nav_chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <ul class="mobile-nav_submenu" id="mobileSubmenuAbout">
+          <li><a href="about.html" class="mobile-nav_submenu-link">Overview</a></li>
+          <li><a href="history.html" class="mobile-nav_submenu-link">History</a></li>
+          <li><a href="culture.html" class="mobile-nav_submenu-link">Culture</a></li>
+          <li><a href="food.html" class="mobile-nav_submenu-link">Food</a></li>
+          <li><a href="people.html" class="mobile-nav_submenu-link">People &amp; Traditions</a></li>
+          <li><a href="geography.html" class="mobile-nav_submenu-link">Geography</a></li>
+        </ul>
+      </li>
+
+      <li><a href="news.html" class="mobile-nav_link">News</a></li>
+
+      <li class="mobile-nav_item">
+        <div class="mobile-nav_row">
+          <a href="attractions.html" class="mobile-nav_link">Attractions</a>
+          <button
+            type="button"
+            class="mobile-nav_submenu-toggle"
+            aria-expanded="false"
+            aria-controls="mobileSubmenuAttractions"
+            aria-label="Toggle Attractions submenu"
+          >
+            <svg class="mobile-nav_chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <ul class="mobile-nav_submenu" id="mobileSubmenuAttractions">
+          <li><a href="attractions.html" class="mobile-nav_submenu-link">All Attractions</a></li>
+          <li><a href="attractions.html?category=beaches" class="mobile-nav_submenu-link">Beaches</a></li>
+          <li><a href="attractions.html?category=islands" class="mobile-nav_submenu-link">Islands</a></li>
+          <li><a href="attractions.html?category=mountains" class="mobile-nav_submenu-link">Mountains</a></li>
+          <li><a href="attractions.html?category=waterfalls" class="mobile-nav_submenu-link">Waterfalls</a></li>
+          <li><a href="attractions.html?category=adventure" class="mobile-nav_submenu-link">Adventure</a></li>
+          <li><a href="attractions.html?category=heritage" class="mobile-nav_submenu-link">Heritage Sites</a></li>
+        </ul>
+      </li>
+
+      <li><a href="directory.html" class="mobile-nav_link">Directory</a></li>
+      <li><a href="contact.html" class="mobile-nav_link">Contact Us</a></li>
+    </ul>
+  </nav>
+  <p class="mobile-nav_tagline">7,641 islands. Countless stories.</p>
+</div>
+<div class="mobile-nav_scrim" id="mobileNavScrim"></div>
+
+<main id="main">
+
+<!-- ============ 01 — EDITORIAL HERO ============ -->
+<section class="about_hero">
+  <div class="about_hero-media">
+    <img
+      class="about_hero-img"
+      src="https://picsum.photos/seed/tara-hero-islands/1800/1200"
+      alt="Aerial view of Philippine islands surrounded by turquoise water"
+    />
+  </div>
+  <div class="about_hero-scrim" aria-hidden="true"></div>
+
+  <div class="about_hero-content">
+    <p class="about_hero-eyebrow">About the Philippines</p>
+    <h1 class="about_hero-title">More Than 7,000 Islands.</h1>
+    <p class="about_hero-lede">Discover a country shaped by islands, histories, cultures, and the people who call them home.</p>
+  </div>
+
+  <div class="about_hero-scroll" aria-hidden="true">
+    <span class="about_hero-scroll-cue"><span></span></span>
+    <span class="about_hero-scroll-label">Scroll to explore</span>
+  </div>
+</section>
+
+<!-- ============ 02 — PHILIPPINES AT A GLANCE ============ -->
+<section class="about_glance" id="glance" aria-labelledby="glance-title">
+  <div class="about_kicker reveal">
+    <div class="about_kicker-text">
+      <p class="section-eyebrow">The Philippines at a Glance</p>
+      <h2 class="about_title" id="glance-title">An archipelago of thousands of islands and diverse communities.</h2>
+      <p class="about_lede">Situated in Southeast Asia between the South China Sea and the Pacific Ocean, the Philippines is one of the world's largest archipelagos — a nation built not on a single landmass, but on the connections between thousands of them.</p>
+    </div>
+    <span class="about_num" aria-hidden="true">01</span>
+  </div>
+
+  <div class="about_glance-stats">
+    <div class="about_stat reveal">
+      <p class="about_stat-value">7,641</p>
+      <p class="about_stat-label">Islands, from major landmasses to tiny sandbars</p>
+    </div>
+    <div class="about_stat reveal">
+      <p class="about_stat-value">3</p>
+      <p class="about_stat-label">Major island groups — Luzon, Visayas, and Mindanao</p>
+    </div>
+    <div class="about_stat reveal">
+      <p class="about_stat-value">Manila</p>
+      <p class="about_stat-label">The capital city, on the island of Luzon</p>
+    </div>
+    <div class="about_stat reveal">
+      <p class="about_stat-value">FIL / EN</p>
+      <p class="about_stat-label">Filipino and English, the two official languages</p>
+    </div>
+    <div class="about_stat reveal">
+      <p class="about_stat-value">₱ PHP</p>
+      <p class="about_stat-label">The Philippine peso, the national currency</p>
+    </div>
+    <div class="about_stat reveal">
+      <p class="about_stat-value">Tropical</p>
+      <p class="about_stat-label">A maritime climate of wet and dry seasons year-round</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 — A COUNTRY OF ISLANDS ============ -->
+<section class="about_islands" id="islands" aria-labelledby="islands-title">
+  <div class="about_kicker reveal">
+    <div class="about_kicker-text">
+      <p class="section-eyebrow">A Country of Islands</p>
+      <h2 class="about_title" id="islands-title">Three island groups, one nation.</h2>
+      <p class="about_lede">Every Philippine map begins with Luzon, Visayas, and Mindanao — three island groups that each carry their own landscapes, histories, and identities, together forming the archipelago.</p>
+    </div>
+    <span class="about_num" aria-hidden="true">02</span>
+  </div>
+
+  <div class="about_island-rows">
+
+    <article class="about_island-row reveal">
+      <div class="about_island-media">
+        <img src="https://picsum.photos/seed/tara-luzon-terraces/1000/780" alt="Terraced rice fields carved into mountains in Luzon" loading="lazy" />
+      </div>
+      <div class="about_island-copy">
+        <p class="about_island-index">01 — Luzon</p>
+        <h3 class="about_island-name">Luzon</h3>
+        <p class="about_island-desc">The country's largest island group, home to the capital, mountain landscapes, rice terraces, volcanoes, and some of its most historic cities.</p>
+        <ul class="about_island-traits">
+          <li>Capital region</li>
+          <li>Rice terraces</li>
+          <li>Volcanic peaks</li>
+          <li>Colonial cities</li>
+        </ul>
+        <a href="geography.html" class="text-link">
+          <span>Explore Philippine Geography</span>
+          <svg class="text-link_arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+            <path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+
+    <article class="about_island-row about_island-row--reverse reveal">
+      <div class="about_island-media">
+        <img src="https://picsum.photos/seed/tara-visayas-beach/1000/780" alt="Turquoise beach and boats in the Visayas islands" loading="lazy" />
+      </div>
+      <div class="about_island-copy">
+        <p class="about_island-index">02 — Visayas</p>
+        <h3 class="about_island-name">Visayas</h3>
+        <p class="about_island-desc">A constellation of islands known for beaches, festivals, marine life, heritage towns, and a distinct regional identity.</p>
+        <ul class="about_island-traits">
+          <li>Island beaches</li>
+          <li>Marine biodiversity</li>
+          <li>Festivals</li>
+          <li>Heritage towns</li>
+        </ul>
+        <a href="geography.html" class="text-link">
+          <span>Explore Philippine Geography</span>
+          <svg class="text-link_arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+            <path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+
+    <article class="about_island-row reveal">
+      <div class="about_island-media">
+        <img src="https://picsum.photos/seed/tara-mindanao-mountains/1000/780" alt="Mountains and forest landscape in Mindanao" loading="lazy" />
+      </div>
+      <div class="about_island-copy">
+        <p class="about_island-index">03 — Mindanao</p>
+        <h3 class="about_island-name">Mindanao</h3>
+        <p class="about_island-desc">A richly diverse southern region shaped by Indigenous cultures, Islamic heritage, mountains, forests, and vibrant communities.</p>
+        <ul class="about_island-traits">
+          <li>Indigenous cultures</li>
+          <li>Islamic heritage</li>
+          <li>Rainforests</li>
+          <li>Highland communities</li>
+        </ul>
+        <a href="geography.html" class="text-link">
+          <span>Explore Philippine Geography</span>
+          <svg class="text-link_arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+            <path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ 04 — THE LANDSCAPE OF THE PHILIPPINES ============ -->
+<section class="about_landscape" id="landscape" aria-labelledby="landscape-title">
+  <div class="about_kicker reveal">
+    <div class="about_kicker-text">
+      <p class="section-eyebrow">The Landscape of the Philippines</p>
+      <h2 class="about_title" id="landscape-title">Landscapes That Shape a Nation</h2>
+      <p class="about_lede">From coral reefs to cloud-wrapped peaks, Philippine geography has deeply influenced how Filipino communities live, work, celebrate, and travel — every region telling a different story of land and sea.</p>
+    </div>
+    <span class="about_num" aria-hidden="true">03</span>
+  </div>
+
+  <div class="about_landscape-feature reveal">
+    <img src="https://picsum.photos/seed/tara-landscape-feature/1800/900" alt="Panoramic view of Philippine coastline and limestone cliffs" loading="lazy" />
+  </div>
+
+  <div class="about_landscape-grid">
+    <div class="about_landscape-item reveal">
+      <img src="https://picsum.photos/seed/tara-land-beach/500/620" alt="White sand beach lined with palm trees" loading="lazy" />
+      <div class="about_landscape-item-scrim" aria-hidden="true"></div>
+      <span class="about_landscape-item-label">Beaches</span>
+    </div>
+    <div class="about_landscape-item reveal">
+      <img src="https://picsum.photos/seed/tara-land-mountains/500/620" alt="Misty mountain range at sunrise" loading="lazy" />
+      <div class="about_landscape-item-scrim" aria-hidden="true"></div>
+      <span class="about_landscape-item-label">Mountains</span>
+    </div>
+    <div class="about_landscape-item reveal">
+      <img src="https://picsum.photos/seed/tara-land-falls/500/620" alt="Waterfall cascading through tropical forest" loading="lazy" />
+      <div class="about_landscape-item-scrim" aria-hidden="true"></div>
+      <span class="about_landscape-item-label">Waterfalls</span>
+    </div>
+    <div class="about_landscape-item reveal">
+      <img src="https://picsum.photos/seed/tara-land-reef/500/620" alt="Coral reef teeming with marine life" loading="lazy" />
+      <div class="about_landscape-item-scrim" aria-hidden="true"></div>
+      <span class="about_landscape-item-label">Coral Reefs</span>
+    </div>
+  </div>
+
+  <div class="about_landscape-footer reveal">
+    <a href="geography.html" class="text-link">
+      <span>Explore Philippine Geography</span>
+      <svg class="text-link_arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+        <path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============ 05 — A CULTURE SHAPED BY MANY WORLDS ============ -->
+<section class="about_culture" id="culture" aria-labelledby="culture-title">
+  <div class="about_kicker reveal">
+    <div class="about_kicker-text">
+      <p class="section-eyebrow section-eyebrow--light">A Culture Shaped by Many Worlds</p>
+      <h2 class="about_title about_title--light" id="culture-title">A Culture of Many Layers.</h2>
+    </div>
+    <span class="about_num about_num--light" aria-hidden="true">04</span>
+  </div>
+
+  <div class="about_culture-body">
+    <div class="about_culture-text reveal">
+      <p>Filipino identity has never been shaped by one influence alone. It carries the imprint of Indigenous traditions and Austronesian heritage, centuries of exchange with neighboring Asian cultures, long periods of Spanish and American rule, and generations of Chinese and other trading communities.</p>
+      <p><strong>But the story isn't one of simple mixture.</strong> Filipinos continuously adapted, preserved, and reshaped these influences — turning languages, faiths, cuisines, and customs into something distinctly their own, and continuing to do so today as global culture reaches every corner of the archipelago.</p>
+      <a href="culture.html" class="text-link text-link--light about_culture-cta">
+        <span>Discover Filipino Culture</span>
+        <svg class="text-link_arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+          <path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <ul class="about_culture-threads reveal">
+      <li class="about_culture-thread"><span class="about_culture-thread-mark">01</span><span class="about_culture-thread-label">Indigenous &amp; Austronesian roots</span></li>
+      <li class="about_culture-thread"><span class="about_culture-thread-mark">02</span><span class="about_culture-thread-label">Regional Asian trade and exchange</span></li>
+      <li class="about_culture-thread"><span class="about_culture-thread-mark">03</span><span class="about_culture-thread-label">Centuries of Spanish influence</span></li>
+      <li class="about_culture-thread"><span class="about_culture-thread-mark">04</span><span class="about_culture-thread-label">American-era institutions</span></li>
+      <li class="about_culture-thread"><span class="about_culture-thread-mark">05</span><span class="about_culture-thread-label">Chinese &amp; trading communities</span></li>
+      <li class="about_culture-thread"><span class="about_culture-thread-mark">06</span><span class="about_culture-thread-label">A living, contemporary identity</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 06 — THE FILIPINO SPIRIT ============ -->
+<section class="about_spirit" id="spirit" aria-labelledby="spirit-title">
+  <div class="about_spirit-media">
+    <img src="https://picsum.photos/seed/tara-bayanihan/1800/1300" alt="A Filipino community gathered together in celebration" loading="lazy" />
+  </div>
+  <div class="about_spirit-scrim" aria-hidden="true"></div>
+
+  <div class="about_spirit-content reveal">
+    <p class="section-eyebrow section-eyebrow--light">The Filipino Spirit</p>
+    <h2 class="about_spirit-title" id="spirit-title">More Than Hospitality.</h2>
+    <p class="about_spirit-text">Bayanihan — the spirit of communal effort — runs through Filipino life: in family bonds that stretch across generations and oceans, in respect for elders, in celebrations that bring entire neighborhoods together, and in a resilience shaped by typhoons, distance, and history. Hospitality here isn't a performance for guests. It's simply how community is practiced, every day.</p>
+    <a href="people.html" class="text-link text-link--light">
+      <span>Meet the People &amp; Traditions</span>
+      <svg class="text-link_arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+        <path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============ 07 — FOOD AS STORYTELLING ============ -->
+<section class="about_food" id="food" aria-labelledby="food-title">
+  <div class="about_kicker reveal">
+    <div class="about_kicker-text">
+      <p class="section-eyebrow">Food as Storytelling</p>
+      <h2 class="about_title" id="food-title">Every Region Has a Story to Taste.</h2>
+      <p class="about_lede">Filipino cuisine is regional, historical, and deeply tied to family and community — every dish carrying the memory of the trade routes, colonizers, and home kitchens that shaped it.</p>
+    </div>
+    <span class="about_num" aria-hidden="true">05</span>
+  </div>
+
+  <div class="about_food-body">
+    <div class="about_food-feature reveal">
+      <img src="https://picsum.photos/seed/tara-adobo/1000/900" alt="A pot of Filipino adobo simmering with soy sauce and vinegar" loading="lazy" />
+      <div class="about_food-feature-scrim" aria-hidden="true"></div>
+      <div class="about_food-feature-tag">
+        <p class="about_dish-name">Adobo</p>
+        <p class="about_dish-desc">Often called the unofficial national dish</p>
+      </div>
+    </div>
+
+    <div class="about_food-side">
+      <div class="about_dish-card reveal">
+        <img src="https://picsum.photos/seed/tara-sinigang/700/420" alt="A bowl of Filipino sinigang sour soup" loading="lazy" />
+        <div class="about_dish-card-scrim" aria-hidden="true"></div>
+        <span class="about_dish-card-tag">Sinigang</span>
+      </div>
+      <div class="about_dish-card reveal">
+        <img src="https://picsum.photos/seed/tara-lechon/700/420" alt="Whole roasted lechon pig, a Filipino feast centerpiece" loading="lazy" />
+        <div class="about_dish-card-scrim" aria-hidden="true"></div>
+        <span class="about_dish-card-tag">Lechon</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="about_food-strip reveal">
+    <span><strong>Pancit</strong> — noodles for long life</span>
+    <span><strong>Kare-kare</strong> — peanut oxtail stew</span>
+    <span><strong>Kinilaw</strong> — vinegar-cured raw fish</span>
+    <span>and hundreds of regional dishes still waiting to be discovered</span>
+  </p>
+
+  <div class="about_food-footer reveal">
+    <a href="food.html" class="text-link">
+      <span>Taste the Philippines</span>
+      <svg class="text-link_arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+        <path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============ 08 — A SHORT HISTORY OF THE PHILIPPINES ============ -->
+<section class="about_history" id="history" aria-labelledby="history-title">
+  <div class="about_kicker reveal">
+    <div class="about_kicker-text">
+      <p class="section-eyebrow section-eyebrow--light">A Short History of the Philippines</p>
+      <h2 class="about_title about_title--light" id="history-title">A Nation Shaped by History.</h2>
+      <p class="about_lede about_lede--light">A brief walk through the events that shaped the archipelago — from its earliest settlers to the country it is today.</p>
+    </div>
+    <span class="about_num about_num--light" aria-hidden="true">06</span>
+  </div>
+
+  <div class="about_timeline">
+    <div class="about_timeline-item reveal">
+      <p class="about_timeline-era">Pre-1500s</p>
+      <div>
+        <h3 class="about_timeline-title">Early Austronesian Communities</h3>
+        <p class="about_timeline-desc">Seafaring Austronesian peoples settle the islands, establishing the languages and traditions that underlie Filipino culture today.</p>
+      </div>
+    </div>
+    <div class="about_timeline-item reveal">
+      <p class="about_timeline-era">Pre-1521</p>
+      <div>
+        <h3 class="about_timeline-title">Pre-Colonial Societies &amp; Trade</h3>
+        <p class="about_timeline-desc">Independent kingdoms and barangays flourish, connected by regional trade with China, India, and neighboring Southeast Asia.</p>
+      </div>
+    </div>
+    <div class="about_timeline-item reveal">
+      <p class="about_timeline-era">1565–1898</p>
+      <div>
+        <h3 class="about_timeline-title">Spanish Colonial Period</h3>
+        <p class="about_timeline-desc">Over three centuries of Spanish rule reshape religion, governance, and daily life across the archipelago.</p>
+      </div>
+    </div>
+    <div class="about_timeline-item reveal">
+      <p class="about_timeline-era">1896</p>
+      <div>
+        <h3 class="about_timeline-title">The Philippine Revolution</h3>
+        <p class="about_timeline-desc">A national movement rises against colonial rule, laying the foundation for Philippine independence.</p>
+      </div>
+    </div>
+    <div class="about_timeline-item reveal">
+      <p class="about_timeline-era">1898–1946</p>
+      <div>
+        <h3 class="about_timeline-title">The American Period</h3>
+        <p class="about_timeline-desc">American governance introduces new institutions, education systems, and infrastructure across the islands.</p>
+      </div>
+    </div>
+    <div class="about_timeline-item reveal">
+      <p class="about_timeline-era">1941–1945</p>
+      <div>
+        <h3 class="about_timeline-title">Japanese Occupation</h3>
+        <p class="about_timeline-desc">World War II brings occupation and hardship, followed by liberation and a costly path to rebuilding.</p>
+      </div>
+    </div>
+    <div class="about_timeline-item reveal">
+      <p class="about_timeline-era">1946</p>
+      <div>
+        <h3 class="about_timeline-title">Independence</h3>
+        <p class="about_timeline-desc">The Philippines formally gains its independence, beginning a new chapter of nation-building.</p>
+      </div>
+    </div>
+    <div class="about_timeline-item reveal">
+      <p class="about_timeline-era">1946–1986</p>
+      <div>
+        <h3 class="about_timeline-title">Post-War Philippines</h3>
+        <p class="about_timeline-desc">Decades of political change, growth, and reform shape the young republic, through periods of both progress and struggle.</p>
+      </div>
+    </div>
+    <div class="about_timeline-item reveal">
+      <p class="about_timeline-era">Today</p>
+      <div>
+        <h3 class="about_timeline-title">Contemporary Philippines</h3>
+        <p class="about_timeline-desc">A democratic, fast-growing nation continues to define its place in the region and the world.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="about_history-footer reveal">
+    <a href="history.html" class="text-link text-link--light">
+      <span>Explore Philippine History</span>
+      <svg class="text-link_arrow" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+        <path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============ 09 — THE PHILIPPINES TODAY ============ -->
+<section class="about_today" id="today" aria-labelledby="today-title">
+  <div class="about_kicker reveal">
+    <div class="about_kicker-text">
+      <p class="section-eyebrow">The Philippines Today</p>
+      <h2 class="about_title" id="today-title">A Living, Changing Country.</h2>
+    </div>
+    <span class="about_num" aria-hidden="true">07</span>
+  </div>
+
+  <div class="about_today-body">
+    <div class="about_today-media reveal">
+      <img src="https://picsum.photos/seed/tara-manila-skyline/900/720" alt="Modern Philippine city skyline at dusk" loading="lazy" />
+    </div>
+    <div class="about_today-text reveal">
+      <p>The Philippines is not only a historical or tropical destination — it is a living, changing country. Cities are growing rapidly, driven by one of Asia's youngest populations, while millions of overseas Filipinos maintain strong ties to home from every corner of the globe.</p>
+      <p>Creative industries, technology, and entrepreneurship are thriving alongside traditional communities that continue to carry their customs forward — a modern Filipino identity built on both roots and reinvention.</p>
+      <div class="about_today-facts">
+        <div class="about_today-fact"><span class="about_today-fact-mark">—</span><span class="about_today-fact-text">One of the <strong>youngest populations</strong> in Asia</span></div>
+        <div class="about_today-fact"><span class="about_today-fact-mark">—</span><span class="about_today-fact-text">Millions-strong <strong>overseas Filipino</strong> communities worldwide</span></div>
+        <div class="about_today-fact"><span class="about_today-fact-mark">—</span><span class="about_today-fact-text">A fast-growing <strong>creative &amp; tech</strong> economy</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10 — EXPLORE BY INTEREST ============ -->
+<section class="about_explore" id="explore" aria-labelledby="explore-title">
+  <div class="about_kicker reveal">
+    <div class="about_kicker-text">
+      <p class="section-eyebrow">Explore by Interest</p>
+      <h2 class="about_title" id="explore-title">Go Deeper Into the Philippines.</h2>
+    </div>
+    <span class="about_num" aria-hidden="true">08</span>
+  </div>
+
+  <div class="about_explore-list">
+    <a href="history.html" class="about_explore-row reveal">
+      <span class="about_explore-index">01</span>
+      <span class="about_explore-name">History</span>
+      <span class="about_explore-desc">Trace the events, people, and movements that shaped the nation.</span>
+      <span class="about_explore-arrow" aria-hidden="true">
+        <svg width="18" height="14" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+    <a href="culture.html" class="about_explore-row reveal">
+      <span class="about_explore-index">02</span>
+      <span class="about_explore-name">Culture</span>
+      <span class="about_explore-desc">Explore traditions, celebrations, art, language, and identity.</span>
+      <span class="about_explore-arrow" aria-hidden="true">
+        <svg width="18" height="14" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+    <a href="food.html" class="about_explore-row reveal">
+      <span class="about_explore-index">03</span>
+      <span class="about_explore-name">Food</span>
+      <span class="about_explore-desc">Discover the flavors and stories behind Filipino cuisine.</span>
+      <span class="about_explore-arrow" aria-hidden="true">
+        <svg width="18" height="14" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+    <a href="people.html" class="about_explore-row reveal">
+      <span class="about_explore-index">04</span>
+      <span class="about_explore-name">People &amp; Traditions</span>
+      <span class="about_explore-desc">Meet the communities and customs that give the Philippines its character.</span>
+      <span class="about_explore-arrow" aria-hidden="true">
+        <svg width="18" height="14" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+    <a href="geography.html" class="about_explore-row reveal">
+      <span class="about_explore-index">05</span>
+      <span class="about_explore-name">Geography</span>
+      <span class="about_explore-desc">Understand the islands, landscapes, regions, and natural wonders.</span>
+      <span class="about_explore-arrow" aria-hidden="true">
+        <svg width="18" height="14" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ 11 — CLOSING EDITORIAL CTA ============ -->
+<section class="about_final-cta">
+  <div class="about_final-cta-media">
+    <img src="https://picsum.photos/seed/tara-closing-island/1800/1300" alt="A remote island silhouetted at golden hour" loading="lazy" />
+  </div>
+  <div class="about_final-cta-scrim" aria-hidden="true"></div>
+
+  <div class="about_final-cta-content reveal">
+    <p class="about_final-cta-eyebrow">Keep Exploring</p>
+    <h2 class="about_final-cta-title">There Is Always Another Island to Discover.</h2>
+    <p class="about_final-cta-lede">From ancient traditions to modern cities, quiet mountain villages to vibrant coastal communities, the Philippines is a country that reveals itself one story at a time.</p>
+    <div class="about_final-cta-ctas">
+      <a href="attractions.html" class="btn btn--primary">Explore Attractions</a>
+      <a href="news.html" class="btn btn--ghost">Read Our Stories</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ SITE FOOTER — same structure/classes as homepage ============ -->
+<footer class="site-footer">
+  <div class="site-footer_top">
+    <div class="site-footer_brand">
+      <span class="brand_word">Tara<span class="brand_dot">.</span></span>
+      <p>Discover the Philippines beyond the usual spots — attractions, destinations, experiences, and local stories across 7,641 islands.</p>
+    </div>
+
+    <nav class="site-footer_nav" aria-label="Footer">
+      <div class="site-footer_col">
+        <p class="site-footer_col-title">About Philippines</p>
+        <a href="about.html">Overview</a>
+        <a href="history.html">History</a>
+        <a href="culture.html">Culture</a>
+        <a href="food.html">Food</a>
+        <a href="people.html">People &amp; Traditions</a>
+        <a href="geography.html">Geography</a>
+      </div>
+      <div class="site-footer_col">
+        <p class="site-footer_col-title">Explore</p>
+        <a href="attractions.html">Attractions</a>
+        <a href="news.html">News</a>
+        <a href="directory.html">Directory</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </nav>
+
+    <div class="site-footer_social">
+      <p class="site-footer_col-title">Follow</p>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">TikTok</a>
+    </div>
+  </div>
+
+  <div class="site-footer_bottom">
+    <p>&copy; 2026 Tara. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="about.js"></script>
+</body>
+</html>

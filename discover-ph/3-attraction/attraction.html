@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Tara. — 7,641 Islands. Countless Stories.</title>
+<meta name="description" content="Discover the Philippines beyond the usual spots — attractions, destinations, experiences, and local stories across 7,641 islands." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============ SITE HEADER (sticky / glass) ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="site-header_inner">
+
+    <a href="index.html" class="brand" aria-label="Tara. Home">
+      <span class="brand_mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="30" height="30">
+          <circle cx="20" cy="20" r="8" fill="currentColor"/>
+          <g stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+            <line x1="20" y1="2" x2="20" y2="9"/>
+            <line x1="20" y1="31" x2="20" y2="38"/>
+            <line x1="2" y1="20" x2="9" y2="20"/>
+            <line x1="31" y1="20" x2="38" y2="20"/>
+            <line x1="7.5" y1="7.5" x2="12.5" y2="12.5"/>
+            <line x1="27.5" y1="27.5" x2="32.5" y2="32.5"/>
+            <line x1="32.5" y1="7.5" x2="27.5" y2="12.5"/>
+            <line x1="12.5" y1="27.5" x2="7.5" y2="32.5"/>
+          </g>
+        </svg>
+      </span>
+      <span class="brand_word">Tara<span class="brand_dot">.</span></span>
+    </a>
+
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <ul class="primary-nav_list">
+        <li><a href="index.html" class="primary-nav_link is-active" data-nav>Home</a></li>
+
+        <li class="nav-item nav-item--has-dropdown">
+          <a
+            href="about.html"
+            class="primary-nav_link"
+            data-nav
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            About Philippines
+            <svg class="primary-nav_chevron" width="10" height="7" viewBox="0 0 10 7" fill="none" aria-hidden="true">
+              <path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <div class="primary-nav_dropdown" data-dropdown>
+            <a href="about.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Overview</span>
+              <span class="primary-nav_dropdown-desc">Explore the Philippines at a glance.</span>
+            </a>
+            <a href="history.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">History</span>
+              <span class="primary-nav_dropdown-desc">Stories that shaped the nation.</span>
+            </a>
+            <a href="culture.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Culture</span>
+              <span class="primary-nav_dropdown-desc">Filipino traditions and identity.</span>
+            </a>
+            <a href="food.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Food</span>
+              <span class="primary-nav_dropdown-desc">Dishes, flavors, and traditions.</span>
+            </a>
+            <a href="people.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">People &amp; Traditions</span>
+              <span class="primary-nav_dropdown-desc">Communities, customs, celebrations.</span>
+            </a>
+            <a href="geography.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Geography</span>
+              <span class="primary-nav_dropdown-desc">Islands, regions, and landscapes.</span>
+            </a>
+          </div>
+        </li>
+
+        <li><a href="news.html" class="primary-nav_link" data-nav>News</a></li>
+
+        <li class="nav-item nav-item--has-dropdown">
+          <a
+            href="attractions.html"
+            class="primary-nav_link"
+            data-nav
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Attractions
+            <svg class="primary-nav_chevron" width="10" height="7" viewBox="0 0 10 7" fill="none" aria-hidden="true">
+              <path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <div class="primary-nav_dropdown primary-nav_dropdown--single" data-dropdown>
+            <a href="attractions.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">All Attractions</span>
+            </a>
+            <a href="attractions.html?category=beaches" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Beaches</span>
+            </a>
+            <a href="attractions.html?category=islands" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Islands</span>
+            </a>
+            <a href="attractions.html?category=mountains" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Mountains</span>
+            </a>
+            <a href="attractions.html?category=waterfalls" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Waterfalls</span>
+            </a>
+            <a href="attractions.html?category=adventure" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Adventure</span>
+            </a>
+            <a href="attractions.html?category=heritage" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Heritage Sites</span>
+            </a>
+          </div>
+        </li>
+
+        <li><a href="directory.html" class="primary-nav_link" data-nav>Directory</a></li>
+        <li><a href="contact.html" class="primary-nav_link" data-nav>Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span class="menu-toggle_bar"></span>
+      <span class="menu-toggle_bar"></span>
+      <span class="menu-toggle_bar"></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- ============ MOBILE NAV DRAWER ============ -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <nav aria-label="Mobile">
+    <ul class="mobile-nav_list">
+      <li><a href="index.html" class="mobile-nav_link is-active">Home</a></li>
+
+      <li class="mobile-nav_item">
+        <div class="mobile-nav_row">
+          <a href="about.html" class="mobile-nav_link">About Philippines</a>
+          <button
+            type="button"
+            class="mobile-nav_submenu-toggle"
+            aria-expanded="false"
+            aria-controls="mobileSubmenuAbout"
+            aria-label="Toggle About Philippines submenu"
+          >
+            <svg class="mobile-nav_chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <ul class="mobile-nav_submenu" id="mobileSubmenuAbout">
+          <li><a href="about.html" class="mobile-nav_submenu-link">Overview</a></li>
+          <li><a href="history.html" class="mobile-nav_submenu-link">History</a></li>
+          <li><a href="culture.html" class="mobile-nav_submenu-link">Culture</a></li>
+          <li><a href="food.html" class="mobile-nav_submenu-link">Food</a></li>
+          <li><a href="people.html" class="mobile-nav_submenu-link">People &amp; Traditions</a></li>
+          <li><a href="geography.html" class="mobile-nav_submenu-link">Geography</a></li>
+        </ul>
+      </li>
+
+      <li><a href="news.html" class="mobile-nav_link">News</a></li>
+
+      <li class="mobile-nav_item">
+        <div class="mobile-nav_row">
+          <a href="attractions.html" class="mobile-nav_link">Attractions</a>
+          <button
+            type="button"
+            class="mobile-nav_submenu-toggle"
+            aria-expanded="false"
+            aria-controls="mobileSubmenuAttractions"
+            aria-label="Toggle Attractions submenu"
+          >
+            <svg class="mobile-nav_chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <ul class="mobile-nav_submenu" id="mobileSubmenuAttractions">
+          <li><a href="attractions.html" class="mobile-nav_submenu-link">All Attractions</a></li>
+          <li><a href="attractions.html?category=beaches" class="mobile-nav_submenu-link">Beaches</a></li>
+          <li><a href="attractions.html?category=islands" class="mobile-nav_submenu-link">Islands</a></li>
+          <li><a href="attractions.html?category=mountains" class="mobile-nav_submenu-link">Mountains</a></li>
+          <li><a href="attractions.html?category=waterfalls" class="mobile-nav_submenu-link">Waterfalls</a></li>
+          <li><a href="attractions.html?category=adventure" class="mobile-nav_submenu-link">Adventure</a></li>
+          <li><a href="attractions.html?category=heritage" class="mobile-nav_submenu-link">Heritage Sites</a></li>
+        </ul>
+      </li>
+
+      <li><a href="directory.html" class="mobile-nav_link">Directory</a></li>
+      <li><a href="contact.html" class="mobile-nav_link">Contact Us</a></li>
+    </ul>
+  </nav>
+  <p class="mobile-nav_tagline">7,641 islands. Countless stories.</p>
+</div>
+<div class="mobile-nav_scrim" id="mobileNavScrim"></div>

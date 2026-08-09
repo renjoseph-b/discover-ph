@@ -1,0 +1,1214 @@
+/* ==========================================================================
+   TARA. — About page stylesheet
+   Self-contained: defines its own design tokens + base reset, then styles
+   every .about_* and shared site-header/nav/footer class used in about.html.
+
+   NOTE ON COLOR VALUES: the exact brand hex codes from the original
+   style.css were not available when this file was rebuilt, so the values
+   below are reasonable placeholders that match the described palette
+   (dark ink/forest teal, turquoise/mango/coral accents, warm sand
+   backgrounds). Swap the :root values for your real brand hexes if they
+   differ — everything else references these variables, so updating them
+   here updates the whole page.
+   ========================================================================== */
+
+:root{
+  /* Core palette */
+  --ink: #08262b;            /* near-black teal, primary text/dark bg */
+  --forest: #0e2f2a;         /* deep green-teal, section bg */
+  --teal: #0e5f68;           /* mid teal, accents/tags */
+  --yellow: #d3c01b;      /* bright accent */
+  --mango: #f4a640;          /* warm accent */
+  --coral: #ff6b57;          /* warm accent / stat numbers */
+  --sand: #f7f1e6;           /* light warm bg */
+  --sand-dim: #efe6d6;       /* slightly darker warm bg */
+  --white: #ffffff;
+
+  /* Type */
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  /* Layout */
+  --gutter: 24px;
+  --page-max: 1280px;
+  --section-pad: 96px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Header */
+  --header-h: 84px;
+  --header-h-mobile: 64px;
+  --glass-bg: rgba(8, 38, 43, 0.55);
+  --glass-bg-scroll: rgba(8, 38, 43, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-highlight: rgba(255, 255, 255, 0.08);
+}
+
+/* --------------------------------------------------------------------
+   Base reset
+   -------------------------------------------------------------------- */
+*, *::before, *::after{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--sand);
+  -webkit-font-smoothing: antialiased;
+}
+
+ul{ list-style: none; margin: 0; padding: 0; }
+a{ text-decoration: none; color: inherit; }
+img{ display: block; max-width: 100%; }
+button{ font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
+
+.text-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.96rem;
+  color: var(--teal);
+  transition: gap 0.3s var(--ease), color 0.25s ease;
+}
+.text-link:hover{ gap: 12px; color: var(--coral); }
+.text-link_arrow{ flex-shrink: 0; transition: transform 0.3s var(--ease); }
+.text-link--light{ color: var(--turquoise); }
+.text-link--light:hover{ color: var(--white); }
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.94rem;
+  letter-spacing: 0.01em;
+  transition: transform 0.3s var(--ease), background-color 0.25s ease, color 0.25s ease;
+}
+.btn--primary{ background: var(--coral); color: var(--white); }
+.btn--primary:hover{ transform: translateY(-2px); }
+.btn--ghost{ background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.4); }
+.btn--ghost:hover{ background: rgba(255,255,255,0.1); }
+
+.section-eyebrow{
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
+.section-eyebrow--light{ color: var(--turquoise); }
+
+/* --------------------------------------------------------------------
+   Shared container treatment — applied to the direct children that
+   need to line up in a centered reading column inside full-bleed
+   sections.
+   -------------------------------------------------------------------- */
+.about_kicker,
+.about_glance-stats,
+.about_island-rows,
+.about_landscape-feature,
+.about_landscape-grid,
+.about_landscape-footer,
+.about_culture-body,
+.about_food-body,
+.about_food-strip,
+.about_food-footer,
+.about_timeline,
+.about_history-footer,
+.about_today-body,
+.about_explore-list{
+  max-width: var(--page-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+/* ==========================================================================
+   Site header — sticky glass
+   ========================================================================== */
+.site-header{
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 1px 0 var(--glass-highlight) inset, 0 12px 30px -18px rgba(0,0,0,0.4);
+  transition: height 0.35s var(--ease), background-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+.site-header.is-scrolled{
+  height: 64px;
+  background: var(--glass-bg-scroll);
+  box-shadow: 0 1px 0 var(--glass-highlight) inset, 0 16px 36px -16px rgba(0,0,0,0.5);
+}
+.site-header_inner{
+  width: 100%;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand{ display: inline-flex; align-items: center; gap: 10px; color: var(--white); flex-shrink: 0; }
+.brand_mark{ color: var(--yellow); display: inline-flex; transition: transform 0.6s var(--ease); }
+.brand:hover .brand_mark{ transform: rotate(45deg); }
+.brand_word{ font-family: var(--font-display); font-weight: 600; font-size: 1.4rem; letter-spacing: 0.01em; }
+.brand_dot{ color: var(--mango); }
+
+.primary-nav_list{ display: flex; align-items: center; gap: clamp(18px, 2.2vw, 34px); }
+.primary-nav_link{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.94rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 8px 0;
+  transition: color 0.25s ease;
+}
+.primary-nav_link::after{
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+  background: var(--mango); border-radius: 2px;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s var(--ease);
+}
+.primary-nav_link:hover{ color: var(--white); }
+.primary-nav_link:hover::after,
+.primary-nav_link.is-active::after{ transform: scaleX(1); }
+.primary-nav_link.is-active{ color: var(--white); }
+
+.menu-toggle{
+  display: none; flex-direction: column; justify-content: center; align-items: center;
+  gap: 5px; width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+}
+.menu-toggle:hover{ background: rgba(255,255,255,0.08); }
+.menu-toggle_bar{ width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: transform 0.35s var(--ease), opacity 0.25s ease; }
+.menu-toggle[aria-expanded="true"] .menu-toggle_bar:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] .menu-toggle_bar:nth-child(2){ opacity: 0; }
+.menu-toggle[aria-expanded="true"] .menu-toggle_bar:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+
+/* --------------------------------------------------------------------
+   Desktop dropdown / submenu (About Philippines, Attractions)
+-------------------------------------------------------------------- */
+.nav-item{ position: relative; }
+
+.primary-nav_chevron{
+  display: inline-block;
+  color: var(--turquoise);
+  transition: transform 0.3s var(--ease);
+  flex-shrink: 0;
+}
+.nav-item.is-open > .primary-nav_link .primary-nav_chevron,
+.nav-item:hover > .primary-nav_link .primary-nav_chevron{
+  transform: rotate(180deg);
+  color: var(--mango);
+}
+
+.primary-nav_dropdown{
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translate(-50%, 8px);
+  min-width: 420px;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: rgba(8, 38, 43, 0.96);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), visibility 0.3s var(--ease);
+  z-index: 10;
+}
+.primary-nav_dropdown--single{
+  grid-template-columns: 1fr;
+  min-width: 220px;
+}
+.primary-nav_dropdown::before{
+  content: "";
+  position: absolute;
+  top: -6px; left: 0; right: 0;
+  height: 14px;
+}
+
+.nav-item:hover .primary-nav_dropdown,
+.nav-item.is-open .primary-nav_dropdown,
+.primary-nav_dropdown:hover,
+.primary-nav_dropdown:focus-within{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.primary-nav_dropdown-link{
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background-color 0.25s ease;
+}
+.primary-nav_dropdown-link:hover,
+.primary-nav_dropdown-link:focus-visible{
+  background: rgba(255, 255, 255, 0.06);
+}
+.primary-nav_dropdown-title{
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+}
+.primary-nav_dropdown-link:hover .primary-nav_dropdown-title,
+.primary-nav_dropdown-link:focus-visible .primary-nav_dropdown-title{
+  color: var(--turquoise);
+}
+.primary-nav_dropdown-desc{
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.56);
+}
+
+@media (max-width: 900px){
+  .primary-nav{ display: none; }
+  .menu-toggle{ display: flex; }
+}
+
+/* ==========================================================================
+   Mobile nav drawer
+   ========================================================================== */
+.mobile-nav_scrim{
+  position: fixed; inset: 0; z-index: 90;
+  background: rgba(4, 18, 20, 0.55);
+  backdrop-filter: blur(2px);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.4s var(--ease);
+}
+.mobile-nav_scrim.is-visible{ opacity: 1; pointer-events: auto; }
+
+.mobile-nav{
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 95;
+  width: min(84vw, 380px);
+  padding: calc(var(--header-h-mobile) + 28px) 32px 40px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  background: linear-gradient(180deg, rgba(9, 44, 49, 0.92), rgba(6, 28, 32, 0.97));
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  border-left: 1px solid var(--glass-border);
+  box-shadow: -24px 0 60px -20px rgba(0,0,0,0.5);
+  transform: translateX(100%);
+  transition: transform 0.5s var(--ease);
+  overflow-y: auto;
+}
+.mobile-nav.is-open{ transform: translateX(0); }
+.mobile-nav_list{ display: flex; flex-direction: column; gap: 4px; }
+.mobile-nav_link{
+  display: block; padding: 14px 4px;
+  font-family: var(--font-display); font-size: 1.55rem; font-weight: 500;
+  color: rgba(255,255,255,0.92);
+  transition: color 0.25s ease, padding-left 0.3s var(--ease);
+}
+.mobile-nav_link:hover, .mobile-nav_link.is-active{ color: var(--turquoise); padding-left: 12px; }
+.mobile-nav_tagline{ font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin: 0; }
+body.nav-open{ overflow: hidden; }
+
+/* mobile items without submenus keep the underline directly on the link */
+.mobile-nav_list > li:not(.mobile-nav_item) > .mobile-nav_link{
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* --------------------------------------------------------------------
+   Mobile submenu (About Philippines, Attractions)
+-------------------------------------------------------------------- */
+.mobile-nav_item{ border-bottom: 1px solid rgba(255,255,255,0.1); }
+.mobile-nav_row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.mobile-nav_row .mobile-nav_link{ flex: 1; padding-right: 0; }
+
+.mobile-nav_submenu-toggle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  color: var(--turquoise);
+  border-radius: 999px;
+  transition: background-color 0.25s ease;
+}
+.mobile-nav_submenu-toggle:hover{ background: rgba(255,255,255,0.08); }
+.mobile-nav_chevron{ transition: transform 0.35s var(--ease); }
+.mobile-nav_submenu-toggle[aria-expanded="true"] .mobile-nav_chevron{
+  transform: rotate(180deg);
+  color: var(--mango);
+}
+
+.mobile-nav_submenu{
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-left: 14px;
+  border-left: 1px solid rgba(255, 255, 255, 0.16);
+  margin-left: 4px;
+  transition: max-height 0.4s var(--ease), opacity 0.35s var(--ease), padding-bottom 0.4s var(--ease);
+}
+.mobile-nav_submenu.is-open{
+  max-height: 480px;
+  opacity: 1;
+  padding-bottom: 10px;
+}
+.mobile-nav_submenu-link{
+  display: block;
+  padding: 10px 4px 10px 14px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.72);
+  transition: color 0.25s ease, padding-left 0.3s var(--ease);
+}
+.mobile-nav_submenu-link:hover, .mobile-nav_submenu-link:focus-visible{
+  color: var(--turquoise);
+  padding-left: 18px;
+}
+
+/* ==========================================================================
+   Reveal-on-scroll utility (used by script)
+   ========================================================================== */
+.reveal{ opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.reveal.is-visible{ opacity: 1; transform: translateY(0); }
+
+/* --------------------------------------------------------------------
+   Shared "kicker" header — eyebrow + title + lede on the left,
+   a large decorative section number on the right. Reused across
+   most sections.
+   -------------------------------------------------------------------- */
+.about_kicker{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(20px, 6vw, 80px);
+  padding-top: var(--section-pad);
+  padding-bottom: clamp(40px, 6vw, 64px);
+}
+
+.about_kicker-text{ max-width: 720px; }
+
+.about_title{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.9rem, 4vw, 3.1rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-top: 14px;
+}
+.about_title--light{ color: var(--white); }
+
+.about_lede{
+  font-size: clamp(1rem, 1.4vw, 1.14rem);
+  line-height: 1.7;
+  color: rgba(8, 38, 43, 0.68);
+  max-width: 58ch;
+  margin-top: 18px;
+}
+.about_lede--light{ color: rgba(255, 255, 255, 0.72); }
+
+.about_num{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(3.2rem, 9vw, 6.4rem);
+  line-height: 1;
+  color: var(--coral);
+  opacity: 0.16;
+  flex-shrink: 0;
+  user-select: none;
+}
+.about_num--light{ color: var(--turquoise); opacity: 0.2; }
+
+@media (max-width: 700px){
+  .about_kicker{ flex-direction: column; align-items: flex-start; gap: 18px; }
+  .about_num{ font-size: 3rem; }
+}
+
+/* ==========================================================================
+   01 — Editorial hero
+   ========================================================================== */
+.about_hero{
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.about_hero-media{ position: absolute; inset: 0; }
+.about_hero-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about_hero-scrim{
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(8, 38, 43, 0.92) 0%, rgba(8, 38, 43, 0.45) 42%, rgba(8, 38, 43, 0.12) 68%, rgba(8, 38, 43, 0.35) 100%);
+}
+
+.about_hero-content{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter) clamp(80px, 12vw, 140px);
+  color: var(--white);
+}
+
+.about_hero-eyebrow{
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--turquoise);
+}
+
+.about_hero-title{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.6rem, 7vw, 5.4rem);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  max-width: 16ch;
+  margin-top: 18px;
+}
+
+.about_hero-lede{
+  font-size: clamp(1.02rem, 1.6vw, 1.28rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 46ch;
+  margin-top: 20px;
+}
+
+.about_hero-scroll{
+  position: absolute;
+  left: 50%;
+  bottom: 32px;
+  z-index: 2;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: opacity 0.3s var(--ease);
+}
+.about_hero-scroll-cue{
+  display: block;
+  width: 1px;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+.about_hero-scroll-cue span{
+  position: absolute;
+  left: 0;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--turquoise);
+  animation: about-scroll-cue 1.8s var(--ease) infinite;
+}
+@keyframes about-scroll-cue{
+  0%{ top: -100%; }
+  60%{ top: 100%; }
+  100%{ top: 100%; }
+}
+.about_hero-scroll-label{
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+@media (prefers-reduced-motion: reduce){
+  .about_hero-scroll-cue span{ animation: none; top: 0; }
+}
+@media (max-width: 700px){
+  .about_hero-scroll{ display: none; }
+}
+
+/* ==========================================================================
+   02 — Philippines at a glance
+   ========================================================================== */
+.about_glance{ background: var(--sand); padding-bottom: var(--section-pad); padding-top: var(--header-h); }
+
+.about_glance-stats{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(8, 38, 43, 0.1);
+  border: 1px solid rgba(8, 38, 43, 0.1);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.about_stat{
+  background: var(--sand);
+  padding: clamp(28px, 3.4vw, 40px) clamp(22px, 3vw, 32px);
+}
+
+.about_stat-value{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--coral);
+}
+
+.about_stat-label{
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(8, 38, 43, 0.62);
+  margin-top: 10px;
+  max-width: 26ch;
+}
+
+@media (max-width: 900px){
+  .about_glance-stats{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px){
+  .about_glance-stats{ grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   03 — A country of islands
+   ========================================================================== */
+.about_islands{ background: var(--sand-dim); padding-bottom: var(--section-pad); }
+
+.about_island-rows{
+  display: flex;
+  flex-direction: column;
+  gap: clamp(56px, 8vw, 96px);
+}
+
+.about_island-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+}
+.about_island-row--reverse{ direction: rtl; }
+.about_island-row--reverse > *{ direction: ltr; }
+
+.about_island-media{
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3.15;
+}
+.about_island-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+.about_island-row:hover .about_island-media img{ transform: scale(1.04); }
+
+.about_island-index{
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.about_island-name{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  color: var(--ink);
+  margin-top: 12px;
+}
+
+.about_island-desc{
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(8, 38, 43, 0.68);
+  margin-top: 14px;
+  max-width: 44ch;
+}
+
+.about_island-traits{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.about_island-traits li{
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--teal);
+  background: rgba(14, 95, 104, 0.09);
+  padding: 7px 14px;
+  border-radius: 999px;
+}
+
+.about_island-copy .text-link{ margin-top: 26px; }
+
+@media (max-width: 760px){
+  .about_island-row,
+  .about_island-row--reverse{ grid-template-columns: 1fr; direction: ltr; }
+}
+
+/* ==========================================================================
+   04 — The landscape of the Philippines
+   ========================================================================== */
+.about_landscape{ background: var(--sand); padding-bottom: var(--section-pad); }
+
+.about_landscape-feature{
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: clamp(20px, 3vw, 28px);
+}
+.about_landscape-feature img{
+  width: 100%;
+  height: clamp(260px, 42vw, 460px);
+  object-fit: cover;
+  display: block;
+}
+
+.about_landscape-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(12px, 1.6vw, 20px);
+}
+
+.about_landscape-item{
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+}
+.about_landscape-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease);
+}
+.about_landscape-item:hover img{ transform: scale(1.06); }
+.about_landscape-item-scrim{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8, 38, 43, 0.75) 0%, rgba(8, 38, 43, 0) 55%);
+}
+.about_landscape-item-label{
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  z-index: 2;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.02rem;
+}
+
+.about_landscape-footer{
+  display: flex;
+  justify-content: center;
+  padding-top: clamp(32px, 4vw, 48px);
+}
+
+@media (max-width: 760px){
+  .about_landscape-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ==========================================================================
+   05 — A culture shaped by many worlds
+   ========================================================================== */
+.about_culture{ background: var(--forest); }
+
+.about_culture-body{
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(36px, 5vw, 72px);
+  padding-bottom: var(--section-pad);
+}
+
+.about_culture-text p{
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.72);
+}
+.about_culture-text p + p{ margin-top: 18px; }
+.about_culture-text strong{ color: var(--white); font-weight: 600; }
+
+.about_culture-cta{ margin-top: 28px; }
+
+.about_culture-threads{
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+.about_culture-thread{
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+.about_culture-thread-mark{
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.92rem;
+  color: var(--mango);
+  flex-shrink: 0;
+}
+.about_culture-thread-label{
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+@media (max-width: 760px){
+  .about_culture-body{ grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   06 — The Filipino spirit
+   ========================================================================== */
+.about_spirit{
+  position: relative;
+  min-height: 84vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.about_spirit-media{ position: absolute; inset: 0; }
+.about_spirit-media img{ width: 100%; height: 100%; object-fit: cover; }
+
+.about_spirit-scrim{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(8, 38, 43, 0.92) 0%, rgba(8, 38, 43, 0.7) 42%, rgba(8, 38, 43, 0.3) 100%);
+}
+
+.about_spirit-content{
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: clamp(80px, 10vw, 140px) var(--gutter);
+}
+
+.about_spirit-title{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+  color: var(--white);
+  margin-top: 14px;
+  max-width: 14ch;
+}
+
+.about_spirit-text{
+  font-size: clamp(1rem, 1.3vw, 1.14rem);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 56ch;
+  margin-top: 20px;
+}
+
+.about_spirit-content .text-link{ margin-top: 28px; }
+
+/* ==========================================================================
+   07 — Food as storytelling
+   ========================================================================== */
+.about_food{ background: var(--sand-dim); padding-bottom: var(--section-pad); }
+
+.about_food-body{
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: clamp(16px, 2vw, 22px);
+}
+
+.about_food-feature{
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 380px;
+}
+.about_food-feature img{ width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+.about_food-feature-scrim{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8, 38, 43, 0.85) 0%, rgba(8, 38, 43, 0) 55%);
+}
+.about_food-feature-tag{
+  position: absolute;
+  left: 24px;
+  bottom: 22px;
+  right: 24px;
+  z-index: 2;
+  color: var(--white);
+}
+.about_dish-name{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+.about_dish-desc{
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 4px;
+}
+
+.about_food-side{
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 22px);
+}
+
+.about_dish-card{
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  flex: 1;
+  min-height: 170px;
+}
+.about_dish-card img{ width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+.about_dish-card-scrim{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8, 38, 43, 0.78) 0%, rgba(8, 38, 43, 0) 60%);
+}
+.about_dish-card-tag{
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  z-index: 2;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.about_food-strip{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  padding-top: clamp(36px, 4.5vw, 52px);
+  padding-bottom: clamp(36px, 4.5vw, 52px);
+  border-top: 1px solid rgba(8, 38, 43, 0.12);
+  margin-top: clamp(36px, 4.5vw, 52px);
+  font-size: 0.94rem;
+  color: rgba(8, 38, 43, 0.62);
+}
+.about_food-strip strong{ color: var(--ink); font-weight: 700; }
+
+.about_food-footer{ display: flex; justify-content: center; }
+
+@media (max-width: 760px){
+  .about_food-body{ grid-template-columns: 1fr; }
+  .about_food-feature{ min-height: 300px; }
+}
+
+/* ==========================================================================
+   08 — A short history of the Philippines
+   ========================================================================== */
+.about_history{ background: var(--ink); }
+
+.about_timeline{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--section-pad);
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+  margin-left: calc(var(--gutter) + 6px);
+  padding-left: clamp(28px, 4vw, 48px);
+}
+
+.about_timeline-item{
+  position: relative;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: clamp(16px, 3vw, 40px);
+  padding: clamp(20px, 2.6vw, 28px) 0;
+}
+.about_timeline-item::before{
+  content: '';
+  position: absolute;
+  left: calc(-1 * clamp(28px, 4vw, 48px) - 5px);
+  top: 28px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--mango);
+}
+
+.about_timeline-era{
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--turquoise);
+}
+
+.about_timeline-title{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.16rem, 1.6vw, 1.4rem);
+  color: var(--white);
+}
+
+.about_timeline-desc{
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.66);
+  margin-top: 8px;
+  max-width: 58ch;
+}
+
+.about_history-footer{
+  display: flex;
+  justify-content: center;
+  padding-bottom: var(--section-pad);
+}
+
+@media (max-width: 700px){
+  .about_timeline{ margin-left: var(--gutter); padding-left: 26px; }
+  .about_timeline-item{ grid-template-columns: 1fr; gap: 6px; }
+  .about_timeline-item::before{ left: -32px; }
+}
+
+/* ==========================================================================
+   09 — The Philippines today
+   ========================================================================== */
+.about_today{ background: var(--sand); padding-bottom: var(--section-pad); }
+
+.about_today-body{
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+}
+
+.about_today-media{ border-radius: 20px; overflow: hidden; }
+.about_today-media img{ width: 100%; height: 100%; object-fit: cover; }
+
+.about_today-text p{
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(8, 38, 43, 0.68);
+}
+.about_today-text p + p{ margin-top: 16px; }
+
+.about_today-facts{
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.about_today-fact{
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.about_today-fact-mark{ color: var(--coral); font-weight: 700; }
+.about_today-fact-text{ font-size: 0.98rem; color: rgba(8, 38, 43, 0.72); }
+.about_today-fact-text strong{ color: var(--ink); font-weight: 700; }
+
+@media (max-width: 760px){
+  .about_today-body{ grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   10 — Explore by interest
+   ========================================================================== */
+.about_explore{ background: var(--sand-dim); padding-bottom: var(--section-pad); }
+
+.about_explore-list{ border-top: 1px solid rgba(8, 38, 43, 0.14); }
+
+.about_explore-row{
+  display: grid;
+  grid-template-columns: 44px 1fr 2fr 24px;
+  align-items: center;
+  gap: 20px;
+  padding: clamp(20px, 2.6vw, 26px) 0;
+  border-bottom: 1px solid rgba(8, 38, 43, 0.14);
+  transition: padding-left 0.3s var(--ease);
+}
+.about_explore-row:hover{ padding-left: 10px; }
+
+.about_explore-index{
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--coral);
+}
+
+.about_explore-name{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  color: var(--ink);
+}
+
+.about_explore-desc{
+  font-size: 0.92rem;
+  color: rgba(8, 38, 43, 0.6);
+  max-width: 48ch;
+}
+
+.about_explore-arrow{
+  color: var(--ink);
+  justify-self: end;
+  transition: transform 0.3s var(--ease), color 0.3s var(--ease);
+}
+.about_explore-row:hover .about_explore-arrow{ transform: translateX(4px); color: var(--coral); }
+
+@media (max-width: 760px){
+  .about_explore-row{ grid-template-columns: 32px 1fr 20px; }
+  .about_explore-desc{ display: none; }
+}
+
+/* ==========================================================================
+   11 — Closing editorial CTA
+   ========================================================================== */
+.about_final-cta{
+  position: relative;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.about_final-cta-media{ position: absolute; inset: 0; }
+.about_final-cta-media img{ width: 100%; height: 100%; object-fit: cover; }
+
+.about_final-cta-scrim{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 38, 43, 0.55) 0%, rgba(8, 38, 43, 0.78) 100%);
+}
+
+.about_final-cta-content{
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: clamp(60px, 8vw, 100px) var(--gutter);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about_final-cta-eyebrow{
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--turquoise);
+}
+
+.about_final-cta-title{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 4.4vw, 3.2rem);
+  line-height: 1.1;
+  color: var(--white);
+  margin-top: 16px;
+}
+
+.about_final-cta-lede{
+  font-size: clamp(1rem, 1.4vw, 1.16rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.78);
+  margin-top: 18px;
+}
+
+.about_final-cta-ctas{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+/* ==========================================================================
+   Site footer
+   ========================================================================== */
+.site-footer{ background: var(--ink); color: rgba(255,255,255,0.7); }
+
+.site-footer_top{
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: clamp(56px, 7vw, 88px) var(--gutter) clamp(40px, 5vw, 56px);
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+}
+
+.site-footer_brand p{
+  margin-top: 14px;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.55);
+  max-width: 34ch;
+}
+
+.site-footer_nav{ display: contents; }
+.site-footer_col{ display: flex; flex-direction: column; gap: 12px; }
+.site-footer_col-title{
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.42);
+  margin-bottom: 4px;
+}
+.site-footer_col a,
+.site-footer_social a{
+  font-size: 0.94rem;
+  color: rgba(255,255,255,0.72);
+  transition: color 0.25s ease;
+}
+.site-footer_col a:hover,
+.site-footer_social a:hover{ color: var(--turquoise); }
+.site-footer_social{ display: flex; flex-direction: column; gap: 12px; }
+
+.site-footer_bottom{
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 22px var(--gutter);
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.42);
+}
+
+@media (max-width: 760px){
+  .site-footer_top{ grid-template-columns: 1fr; }
+}

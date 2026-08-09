@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Tara. — Discover the Philippines</title>
+<meta name="description" content="7,641 islands, one invitation. Discover the attractions, news, and stories of the Philippines." />
+
+<!-- Fonts: Fraunces (display) + Plus Jakarta Sans (body/UI) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============ SITE HEADER (sticky / glass) ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="site-header_inner">
+
+    <a href="#home" class="brand" aria-label="Tara. Home">
+      <span class="brand_mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="30" height="30">
+          <circle cx="20" cy="20" r="8" fill="currentColor"/>
+          <g stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+            <line x1="20" y1="2" x2="20" y2="9"/>
+            <line x1="20" y1="31" x2="20" y2="38"/>
+            <line x1="2" y1="20" x2="9" y2="20"/>
+            <line x1="31" y1="20" x2="38" y2="20"/>
+            <line x1="7.5" y1="7.5" x2="12.5" y2="12.5"/>
+            <line x1="27.5" y1="27.5" x2="32.5" y2="32.5"/>
+            <line x1="32.5" y1="7.5" x2="27.5" y2="12.5"/>
+            <line x1="12.5" y1="27.5" x2="7.5" y2="32.5"/>
+          </g>
+        </svg>
+      </span>
+      <span class="brand_word">Tara<span class="brand_dot">.</span></span>
+    </a>
+
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <ul class="primary-nav_list">
+        <li><a href="#home" class="primary-nav_link is-active">Home</a></li>
+        <li><a href="#about" class="primary-nav_link">About Philippines</a></li>
+        <li><a href="#news" class="primary-nav_link">News</a></li>
+        <li><a href="#attractions" class="primary-nav_link">Attractions</a></li>
+        <li><a href="#directory" class="primary-nav_link">Directory</a></li>
+        <li><a href="#contact" class="primary-nav_link">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span class="menu-toggle_bar"></span>
+      <span class="menu-toggle_bar"></span>
+      <span class="menu-toggle_bar"></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- ============ MOBILE NAV DRAWER ============ -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <nav aria-label="Mobile">
+    <ul class="mobile-nav_list">
+      <li><a href="#home" class="mobile-nav_link is-active">Home</a></li>
+      <li><a href="#about" class="mobile-nav_link">About Philippines</a></li>
+      <li><a href="#map" class="mobile-nav_link">Map</a></li>
+      <li><a href="#attractions" class="mobile-nav_link">Attractions</a></li>
+      <li><a href="#directory" class="mobile-nav_link">Directory</a></li>
+      <li><a href="#contact" class="mobile-nav_link">Contact Us</a></li>
+    </ul>
+  </nav>
+  <p class="mobile-nav_tagline">7,641 islands. One invitation.</p>
+</div>
+<div class="mobile-nav_scrim" id="mobileNavScrim"></div>
+
+<!-- ============ HERO ============ -->
+<main id="home">
+  <section class="hero">
+    <div class="hero_media" aria-hidden="true">
+      <img
+        src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1920&q=80"
+        alt=""
+        class="hero_img"
+        loading="eager"
+      />
+      <div class="hero_scrim"></div>
+    </div>
+
+    <div class="hero_content">
+      <p class="hero_eyebrow">7,641 Islands &nbsp;·&nbsp; Countless Stories</p>
+      <h1 class="hero_title">
+        Tara,<br /><em>Philippines.</em>
+      </h1>
+      <p class="hero_lede">
+        Explore the Philippines beyond the usual spots — discover
+        hidden gems, local stories, unforgettable places, and the
+        experiences that make every journey worth taking.
+      </p>
+
+      <div class="hero_ctas">
+        <a href="#attractions" class="btn btn--primary">
+          Explore Attractions
+        </a>
+        <a href="#about" class="btn btn--ghost">
+          Discover the Islands
+        </a>
+      </div>
+    </div>
+
+    <a href="#about" class="hero_scroll-cue" aria-label="Scroll to learn more">
+      <span></span>
+    </a>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
