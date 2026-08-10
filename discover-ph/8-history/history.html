@@ -9,6 +9,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Fraunces:opsz,wght@9..144,900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="history.css" />
+<!-- [FIX] review item 14: canonical link, favicon, and Open Graph / Twitter
+     card tags were entirely missing — added below. Update the domain in
+     the canonical/og:url once the site's real production URL is known. -->
+<link rel="canonical" href="https://www.taraphilippines.com/history/" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Tara." />
+<meta property="og:title" content="History — Tara. A modern guide to the Philippines" />
+<meta property="og:description" content="Stories that shaped a nation — from precolonial barangays and Southeast Asian trade to revolution, war, and the Philippines being written today." />
+<meta property="og:url" content="https://www.taraphilippines.com/history/" />
+<meta property="og:image" content="https://www.taraphilippines.com/og-history.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="History — Tara. A modern guide to the Philippines" />
+<meta name="twitter:description" content="Stories that shaped a nation — from precolonial barangays and Southeast Asian trade to revolution, war, and the Philippines being written today." />
+<meta name="twitter:image" content="https://www.taraphilippines.com/og-history.jpg" />
 </head>
 <body>
 
@@ -24,46 +41,50 @@
 
     <nav class="primary-nav">
       <ul class="primary-nav_list">
+        <li><a href="../1-homepage/home.html" class="primary-nav_link">Home</a></li>
         <li class="nav-item">
-          <a href="#" class="primary-nav_link" aria-haspopup="true" aria-expanded="false">
+          <!-- [FIX] review item 10: was <a href="#">; since it never
+               navigates and only toggles a panel, it's now a <button>
+               with aria-controls pointing at the panel's id. -->
+          <button type="button" class="primary-nav_link primary-nav_trigger" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-about">
             About Philippines
             <svg class="primary-nav_chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </a>
-          <div class="primary-nav_dropdown">
+          </button>
+          <div class="primary-nav_dropdown" id="dropdown-about">
             <a href="../8-history/history.html" class="primary-nav_dropdown-link">
               <span class="primary-nav_dropdown-title">History</span>
               <span class="primary-nav_dropdown-desc">Thousands of years, one archipelago</span>
             </a>
-            <a href="#" class="primary-nav_dropdown-link">
+            <a href="#" class="primary-nav_dropdown-link link--soon">
               <span class="primary-nav_dropdown-title">Culture</span>
               <span class="primary-nav_dropdown-desc">Art, faith, and everyday life</span>
             </a>
-            <a href="#" class="primary-nav_dropdown-link">
+            <a href="#" class="primary-nav_dropdown-link link--soon">
               <span class="primary-nav_dropdown-title">People &amp; Traditions</span>
               <span class="primary-nav_dropdown-desc">Who Filipinos are, and why</span>
             </a>
-            <a href="#" class="primary-nav_dropdown-link">
+            <a href="#" class="primary-nav_dropdown-link link--soon">
               <span class="primary-nav_dropdown-title">Geography</span>
               <span class="primary-nav_dropdown-desc">7,641 islands, three regions</span>
             </a>
           </div>
         </li>
         <li class="nav-item">
-          <a href="#" class="primary-nav_link" aria-haspopup="true" aria-expanded="false">
+          <button type="button" class="primary-nav_link primary-nav_trigger" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-attractions">
             Attractions
             <svg class="primary-nav_chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </a>
-          <div class="primary-nav_dropdown primary-nav_dropdown--single">
-            <a href="#" class="primary-nav_dropdown-link">
+          </button>
+          <div class="primary-nav_dropdown primary-nav_dropdown--single" id="dropdown-attractions">
+            <a href="#" class="primary-nav_dropdown-link link--soon">
               <span class="primary-nav_dropdown-title">Islands &amp; Beaches</span>
             </a>
-            <a href="#" class="primary-nav_dropdown-link">
+            <a href="#" class="primary-nav_dropdown-link link--soon">
               <span class="primary-nav_dropdown-title">Cities &amp; Heritage Towns</span>
             </a>
           </div>
         </li>
-        <li><a href="#" class="primary-nav_link">Food</a></li>
-        <li><a href="#" class="primary-nav_link">Plan Your Trip</a></li>
+        <li><a href="#" class="primary-nav_link link--soon">Food</a></li>
+        <li><a href="#" class="primary-nav_link link--soon">Plan Your Trip</a></li>
       </ul>
     </nav>
 
@@ -78,6 +99,7 @@
 <div class="mobile-nav_scrim" id="mobileScrim"></div>
 <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
   <ul class="mobile-nav_list">
+    <li><a href="../1-homepage/home.html" class="mobile-nav_link">Home</a></li>
     <li class="mobile-nav_item">
       <div class="mobile-nav_row">
         <a href="#" class="mobile-nav_link">About Philippines</a>
@@ -87,9 +109,9 @@
       </div>
       <div class="mobile-nav_submenu">
         <a href="../8-history/history.html" class="mobile-nav_submenu-link is-active">History</a>
-        <a href="#" class="mobile-nav_submenu-link">Culture</a>
-        <a href="#" class="mobile-nav_submenu-link">People &amp; Traditions</a>
-        <a href="#" class="mobile-nav_submenu-link">Geography</a>
+        <a href="#" class="mobile-nav_submenu-link link--soon">Culture</a>
+        <a href="#" class="mobile-nav_submenu-link link--soon">People &amp; Traditions</a>
+        <a href="#" class="mobile-nav_submenu-link link--soon">Geography</a>
       </div>
     </li>
     <li class="mobile-nav_item">
@@ -100,12 +122,12 @@
         </button>
       </div>
       <div class="mobile-nav_submenu">
-        <a href="#" class="mobile-nav_submenu-link">Islands &amp; Beaches</a>
-        <a href="#" class="mobile-nav_submenu-link">Cities &amp; Heritage Towns</a>
+        <a href="#" class="mobile-nav_submenu-link link--soon">Islands &amp; Beaches</a>
+        <a href="#" class="mobile-nav_submenu-link link--soon">Cities &amp; Heritage Towns</a>
       </div>
     </li>
-    <li><a href="#" class="mobile-nav_link">Food</a></li>
-    <li><a href="#" class="mobile-nav_link">Plan Your Trip</a></li>
+    <li><a href="#" class="mobile-nav_link link--soon">Food</a></li>
+    <li><a href="#" class="mobile-nav_link link--soon">Plan Your Trip</a></li>
   </ul>
   <p class="mobile-nav_tagline">7,641 Islands. Countless Stories.</p>
 </nav>
@@ -117,11 +139,15 @@
      ========================================================================== -->
 <section class="h-hero">
   <div class="h-hero_bg" aria-hidden="true"></div>
+  <!-- [FIX] review item 3: these are above-the-fold decorative collage
+       images (aria-hidden), so loading="lazy" was delaying their paint
+       and hurting LCP. Switched to loading="eager" + fetchpriority hints
+       so they don't compete with anything below the fold. -->
   <div class="h-hero_collage" aria-hidden="true">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Laguna%20Copper-Plate%20Inscription%2C%20c.%2010th%20Century%20AD%20%2832154702683%29.jpg?width=600" alt="" loading="lazy" class="h-hero_collage-img h-hero_collage-img--a" />
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Puerto%20de%20Cavite%201734%20Velarde%20Map.jpg?width=600" alt="" loading="lazy" class="h-hero_collage-img h-hero_collage-img--b" />
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20full.jpg?width=500" alt="" loading="lazy" class="h-hero_collage-img h-hero_collage-img--c" />
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Corazon%20Aquino%20inauguration.jpg?width=600" alt="" loading="lazy" class="h-hero_collage-img h-hero_collage-img--d" />
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Laguna%20Copper-Plate%20Inscription%2C%20c.%2010th%20Century%20AD%20%2832154702683%29.jpg?width=600" alt="" loading="eager" decoding="async" class="h-hero_collage-img h-hero_collage-img--a" />
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Puerto%20de%20Cavite%201734%20Velarde%20Map.jpg?width=600" alt="" loading="eager" decoding="async" class="h-hero_collage-img h-hero_collage-img--b" />
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20full.jpg?width=500" alt="" loading="eager" decoding="async" class="h-hero_collage-img h-hero_collage-img--c" />
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Corazon%20Aquino%20inauguration.jpg?width=600" alt="" loading="eager" decoding="async" class="h-hero_collage-img h-hero_collage-img--d" />
   </div>
   <div class="h-hero_grain" aria-hidden="true"></div>
   <div class="h-hero_inner">
@@ -147,7 +173,7 @@
 
   <figure class="h-artifact reveal">
     <div class="h-artifact_media">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Laguna%20Copper-Plate%20Inscription%2C%20c.%2010th%20Century%20AD%20%2832154702683%29.jpg?width=1000" alt="The Laguna Copperplate Inscription, a copper document dated to 900 CE and inscribed in Old Malay, Sanskrit, and Old Javanese or Old Tagalog script." loading="lazy" />
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Laguna%20Copper-Plate%20Inscription%2C%20c.%2010th%20Century%20AD%20%2832154702683%29.jpg?width=1000" alt="The Laguna Copperplate Inscription, a copper document dated to 900 CE and inscribed in Old Malay, Sanskrit, and Old Javanese or Old Tagalog script." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Laguna%20Copper-Plate%20Inscription%2C%20c.%2010th%20Century%20AD%20%2832154702683%29.jpg?width=500 500w, https://commons.wikimedia.org/wiki/Special:FilePath/Laguna%20Copper-Plate%20Inscription%2C%20c.%2010th%20Century%20AD%20%2832154702683%29.jpg?width=1000 1000w, https://commons.wikimedia.org/wiki/Special:FilePath/Laguna%20Copper-Plate%20Inscription%2C%20c.%2010th%20Century%20AD%20%2832154702683%29.jpg?width=1600 1600w" sizes="(max-width: 1080px) 92vw, 62vw"/>
     </div>
     <figcaption class="h-artifact_caption">
       <span class="h-artifact_tag">Artifact — Historical Document</span>
@@ -199,7 +225,7 @@
 
     <figure class="h-artifact h-artifact--light reveal">
       <div class="h-artifact_media">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Puerto%20de%20Cavite%201734%20Velarde%20Map.jpg?width=1000" alt="Detail of the Murillo Velarde map of 1734, the first scientific map of the Philippine archipelago, showing the port of Cavite." loading="lazy" />
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Puerto%20de%20Cavite%201734%20Velarde%20Map.jpg?width=1000" alt="Detail of the Murillo Velarde map of 1734, the first scientific map of the Philippine archipelago, showing the port of Cavite." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Puerto%20de%20Cavite%201734%20Velarde%20Map.jpg?width=500 500w, https://commons.wikimedia.org/wiki/Special:FilePath/Puerto%20de%20Cavite%201734%20Velarde%20Map.jpg?width=1000 1000w, https://commons.wikimedia.org/wiki/Special:FilePath/Puerto%20de%20Cavite%201734%20Velarde%20Map.jpg?width=1600 1600w" sizes="(max-width: 1080px) 92vw, 62vw"/>
       </div>
       <figcaption class="h-artifact_caption">
         <span class="h-artifact_tag h-artifact_tag--light">Artifact — Historical Map</span>
@@ -247,7 +273,7 @@
 
     <figure class="h-artifact h-artifact--dark reveal">
       <div class="h-artifact_media">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mactan%20Shrine%20In%20Punta%20Enga%C3%B1o%2C%20Lapu-Lapu%20City%2C%20Cebu.jpg?width=1000" alt="The Lapu-Lapu Monument, a 20-metre bronze statue at the Mactan Shrine in Lapu-Lapu City, Cebu, erected in 1981 to commemorate the datu's victory over Magellan's landing force." loading="lazy" />
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mactan%20Shrine%20In%20Punta%20Enga%C3%B1o%2C%20Lapu-Lapu%20City%2C%20Cebu.jpg?width=1000" alt="The Lapu-Lapu Monument, a 20-metre bronze statue at the Mactan Shrine in Lapu-Lapu City, Cebu, erected in 1981 to commemorate the datu's victory over Magellan's landing force." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Mactan%20Shrine%20In%20Punta%20Enga%C3%B1o%2C%20Lapu-Lapu%20City%2C%20Cebu.jpg?width=500 500w, https://commons.wikimedia.org/wiki/Special:FilePath/Mactan%20Shrine%20In%20Punta%20Enga%C3%B1o%2C%20Lapu-Lapu%20City%2C%20Cebu.jpg?width=1000 1000w, https://commons.wikimedia.org/wiki/Special:FilePath/Mactan%20Shrine%20In%20Punta%20Enga%C3%B1o%2C%20Lapu-Lapu%20City%2C%20Cebu.jpg?width=1600 1600w" sizes="(max-width: 1080px) 92vw, 62vw"/>
       </div>
       <figcaption class="h-artifact_caption">
         <span class="h-artifact_tag">Modern Photograph — Not a Historical Image</span>
@@ -277,7 +303,7 @@
 
   <figure class="h-artifact reveal">
     <div class="h-artifact_media">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fort%20Santiago%2C%20Intramuros.JPG?width=1100" alt="Fort Santiago, the citadel at the heart of Intramuros, Manila's walled Spanish colonial city, photographed in the present day." loading="lazy" />
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fort%20Santiago%2C%20Intramuros.JPG?width=1100" alt="Fort Santiago, the citadel at the heart of Intramuros, Manila's walled Spanish colonial city, photographed in the present day." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Fort%20Santiago%2C%20Intramuros.JPG?width=550 550w, https://commons.wikimedia.org/wiki/Special:FilePath/Fort%20Santiago%2C%20Intramuros.JPG?width=1100 1100w, https://commons.wikimedia.org/wiki/Special:FilePath/Fort%20Santiago%2C%20Intramuros.JPG?width=1760 1760w" sizes="(max-width: 1080px) 92vw, 62vw"/>
     </div>
     <figcaption class="h-artifact_caption">
       <span class="h-artifact_tag">Contemporary Photograph</span>
@@ -346,7 +372,7 @@
   <div class="h-identity_layout">
     <figure class="h-artifact h-artifact--portrait reveal">
       <div class="h-artifact_media">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20full.jpg?width=700" alt="Portrait photograph of José Rizal, taken in the 1890s, shortly before the Propaganda Movement gave way to armed revolution." loading="lazy" />
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20full.jpg?width=700" alt="Portrait photograph of José Rizal, taken in the 1890s, shortly before the Propaganda Movement gave way to armed revolution." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20full.jpg?width=350 350w, https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20full.jpg?width=700 700w, https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20full.jpg?width=1120 1120w" sizes="(max-width: 1080px) 92vw, 62vw"/>
       </div>
       <figcaption class="h-artifact_caption">
         <span class="h-artifact_tag">Historical Photograph</span>
@@ -389,7 +415,7 @@
     <div class="h-revolution_portraits">
       <figure class="h-artifact h-artifact--dark h-artifact--portrait reveal">
         <div class="h-artifact_media">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Andr%C3%A9s%20Bonifacio.jpg?width=700" alt="The only surviving photograph believed to depict Andrés Bonifacio, founder of the Katipunan, circa 1896." loading="lazy" />
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Andr%C3%A9s%20Bonifacio.jpg?width=700" alt="The only surviving photograph believed to depict Andrés Bonifacio, founder of the Katipunan, circa 1896." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Andr%C3%A9s%20Bonifacio.jpg?width=350 350w, https://commons.wikimedia.org/wiki/Special:FilePath/Andr%C3%A9s%20Bonifacio.jpg?width=700 700w, https://commons.wikimedia.org/wiki/Special:FilePath/Andr%C3%A9s%20Bonifacio.jpg?width=1120 1120w" sizes="(max-width: 1080px) 92vw, 62vw"/>
         </div>
         <figcaption class="h-artifact_caption">
           <span class="h-artifact_tag">Historical Photograph</span>
@@ -400,7 +426,7 @@
       </figure>
       <figure class="h-artifact h-artifact--dark h-artifact--portrait reveal">
         <div class="h-artifact_media">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Emilio%20Aguinaldo%20%28ca.%201898%29.jpg?width=700" alt="Portrait photograph of Emilio Aguinaldo, circa 1898, the year he declared Philippine independence and led the First Philippine Republic." loading="lazy" />
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Emilio%20Aguinaldo%20%28ca.%201898%29.jpg?width=700" alt="Portrait photograph of Emilio Aguinaldo, circa 1898, the year he declared Philippine independence and led the First Philippine Republic." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Emilio%20Aguinaldo%20%28ca.%201898%29.jpg?width=350 350w, https://commons.wikimedia.org/wiki/Special:FilePath/Emilio%20Aguinaldo%20%28ca.%201898%29.jpg?width=700 700w, https://commons.wikimedia.org/wiki/Special:FilePath/Emilio%20Aguinaldo%20%28ca.%201898%29.jpg?width=1120 1120w" sizes="(max-width: 1080px) 92vw, 62vw"/>
         </div>
         <figcaption class="h-artifact_caption">
           <span class="h-artifact_tag">Historical Photograph</span>
@@ -491,7 +517,7 @@
 
     <figure class="h-artifact h-artifact--dark reveal">
       <div class="h-artifact_media">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Photograph%20of%20American%20Prisoners%20Using%20Improvised%20Litters%20to%20Carry%20Comrades%2C%2005-1942%20-%20NARA%20-%20535564.tif?width=1000" alt="American prisoners of war using improvised litters to carry wounded comrades during the Bataan Death March, May 1942." loading="lazy" />
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Photograph%20of%20American%20Prisoners%20Using%20Improvised%20Litters%20to%20Carry%20Comrades%2C%2005-1942%20-%20NARA%20-%20535564.tif?width=1000" alt="American prisoners of war using improvised litters to carry wounded comrades during the Bataan Death March, May 1942." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Photograph%20of%20American%20Prisoners%20Using%20Improvised%20Litters%20to%20Carry%20Comrades%2C%2005-1942%20-%20NARA%20-%20535564.tif?width=500 500w, https://commons.wikimedia.org/wiki/Special:FilePath/Photograph%20of%20American%20Prisoners%20Using%20Improvised%20Litters%20to%20Carry%20Comrades%2C%2005-1942%20-%20NARA%20-%20535564.tif?width=1000 1000w, https://commons.wikimedia.org/wiki/Special:FilePath/Photograph%20of%20American%20Prisoners%20Using%20Improvised%20Litters%20to%20Carry%20Comrades%2C%2005-1942%20-%20NARA%20-%20535564.tif?width=1600 1600w" sizes="(max-width: 1080px) 92vw, 62vw"/>
       </div>
       <figcaption class="h-artifact_caption">
         <span class="h-artifact_tag">Historical Photograph</span>
@@ -595,7 +621,7 @@
 
     <figure class="h-artifact h-artifact--edsa reveal">
       <div class="h-artifact_media">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Corazon%20Aquino%20inauguration.jpg?width=1000" alt="Corazon Aquino takes her oath of office as President of the Philippines at Club Filipino, San Juan, on February 25, 1986." loading="lazy" />
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Corazon%20Aquino%20inauguration.jpg?width=1000" alt="Corazon Aquino takes her oath of office as President of the Philippines at Club Filipino, San Juan, on February 25, 1986." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Corazon%20Aquino%20inauguration.jpg?width=500 500w, https://commons.wikimedia.org/wiki/Special:FilePath/Corazon%20Aquino%20inauguration.jpg?width=1000 1000w, https://commons.wikimedia.org/wiki/Special:FilePath/Corazon%20Aquino%20inauguration.jpg?width=1600 1600w" sizes="(max-width: 1080px) 92vw, 62vw"/>
       </div>
       <figcaption class="h-artifact_caption">
         <span class="h-artifact_tag">Historical Photograph</span>
@@ -652,58 +678,64 @@
   </div>
 
   <div class="h-people_grid">
-    <article class="h-people_card reveal">
+    <article class="h-people_card h-people_card--photo reveal">
+      <img class="h-people_photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Mactan%20Shrine%20In%20Punta%20Enga%C3%B1o%2C%20Lapu-Lapu%20City%2C%20Cebu.jpg?width=400" alt="The Lapu-Lapu Monument at the Mactan Shrine, Lapu-Lapu City, Cebu — no contemporary portrait of Lapulapu survives, so this modern memorial stands in for him." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Mactan%20Shrine%20In%20Punta%20Enga%C3%B1o%2C%20Lapu-Lapu%20City%2C%20Cebu.jpg?width=320 320w, https://commons.wikimedia.org/wiki/Special:FilePath/Mactan%20Shrine%20In%20Punta%20Enga%C3%B1o%2C%20Lapu-Lapu%20City%2C%20Cebu.jpg?width=400 400w, https://commons.wikimedia.org/wiki/Special:FilePath/Mactan%20Shrine%20In%20Punta%20Enga%C3%B1o%2C%20Lapu-Lapu%20City%2C%20Cebu.jpg?width=640 640w" sizes="(max-width: 760px) 100vw, (max-width: 1080px) 25vw, 20vw"/>
       <span class="h-people_period">d. 1521</span>
       <h3>Lapulapu</h3>
       <p class="h-people_role">Datu of Mactan</p>
       <p>Defeated Ferdinand Magellan's landing force at the Battle of Mactan, killing the explorer and delaying Spanish colonization by decades. What survives of him is mostly legend layered onto a single documented battle.</p>
     </article>
     <article class="h-people_card h-people_card--photo reveal">
-      <img class="h-people_photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20full.jpg?width=400" alt="Portrait photograph of José Rizal, circa 1890s." loading="lazy" />
+      <img class="h-people_photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20full.jpg?width=400" alt="Portrait photograph of José Rizal, circa 1890s." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20full.jpg?width=320 320w, https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20full.jpg?width=400 400w, https://commons.wikimedia.org/wiki/Special:FilePath/Jose%20Rizal%20full.jpg?width=640 640w" sizes="(max-width: 760px) 100vw, (max-width: 1080px) 25vw, 20vw"/>
       <span class="h-people_period">1861 – 1896</span>
       <h3>José Rizal</h3>
       <p class="h-people_role">Writer, reformist</p>
       <p>His novels exposed colonial abuse and shaped Filipino national consciousness, though he opposed the armed revolution he was executed for allegedly inspiring — a reformist, not the revolutionary he's often remembered as.</p>
     </article>
     <article class="h-people_card h-people_card--photo reveal">
-      <img class="h-people_photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Andr%C3%A9s%20Bonifacio.jpg?width=400" alt="Photograph believed to depict Andrés Bonifacio, circa 1896." loading="lazy" />
+      <img class="h-people_photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Andr%C3%A9s%20Bonifacio.jpg?width=400" alt="Photograph believed to depict Andrés Bonifacio, circa 1896." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Andr%C3%A9s%20Bonifacio.jpg?width=320 320w, https://commons.wikimedia.org/wiki/Special:FilePath/Andr%C3%A9s%20Bonifacio.jpg?width=400 400w, https://commons.wikimedia.org/wiki/Special:FilePath/Andr%C3%A9s%20Bonifacio.jpg?width=640 640w" sizes="(max-width: 760px) 100vw, (max-width: 1080px) 25vw, 20vw"/>
       <span class="h-people_period">1863 – 1897</span>
       <h3>Andrés Bonifacio</h3>
       <p class="h-people_role">Founder, Katipunan</p>
       <p>Organized the secret society that launched the armed revolution against Spain. Lost a leadership struggle to Aguinaldo's faction and was executed by fellow revolutionaries — a founding hero killed by the movement he founded.</p>
     </article>
     <article class="h-people_card h-people_card--photo reveal">
-      <img class="h-people_photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Emilio%20Aguinaldo%20%28ca.%201898%29.jpg?width=400" alt="Portrait photograph of Emilio Aguinaldo, circa 1898." loading="lazy" />
+      <img class="h-people_photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Emilio%20Aguinaldo%20%28ca.%201898%29.jpg?width=400" alt="Portrait photograph of Emilio Aguinaldo, circa 1898." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Emilio%20Aguinaldo%20%28ca.%201898%29.jpg?width=320 320w, https://commons.wikimedia.org/wiki/Special:FilePath/Emilio%20Aguinaldo%20%28ca.%201898%29.jpg?width=400 400w, https://commons.wikimedia.org/wiki/Special:FilePath/Emilio%20Aguinaldo%20%28ca.%201898%29.jpg?width=640 640w" sizes="(max-width: 760px) 100vw, (max-width: 1080px) 25vw, 20vw"/>
       <span class="h-people_period">1869 – 1964</span>
       <h3>Emilio Aguinaldo</h3>
       <p class="h-people_role">First Philippine President</p>
       <p>Led the revolutionary government and declared independence in 1898, then led resistance against the United States. His role in Bonifacio's execution remains one of the most debated episodes of the revolution.</p>
     </article>
-    <article class="h-people_card reveal">
+    <article class="h-people_card h-people_card--photo reveal">
+      <img class="h-people_photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Apolinario%20Mabini.jpg?width=400" alt="Portrait of Apolinario Mabini, Filipino lawyer, educator, and revolutionary leader." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Apolinario%20Mabini.jpg?width=320 320w, https://commons.wikimedia.org/wiki/Special:FilePath/Apolinario%20Mabini.jpg?width=400 400w, https://commons.wikimedia.org/wiki/Special:FilePath/Apolinario%20Mabini.jpg?width=640 640w" sizes="(max-width: 760px) 100vw, (max-width: 1080px) 25vw, 20vw"/>
       <span class="h-people_period">1864 – 1903</span>
       <h3>Apolinario Mabini</h3>
       <p class="h-people_role">"Brains of the Revolution"</p>
       <p>Paralyzed from the waist down, Mabini served as Aguinaldo's chief adviser and wrote much of the revolutionary government's political philosophy, arguing independence had to be paired with genuine reform, not just a change of rulers.</p>
     </article>
-    <article class="h-people_card reveal">
+    <article class="h-people_card h-people_card--photo reveal">
+      <img class="h-people_photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Gabriela%20Silang%20Monument%2C%20Ayala%20Triangle%2C%20Makati%20City.jpg?width=400" alt="The Gabriela Silang Monument at Ayala Triangle, Makati City — no portrait from her lifetime survives, since she died before the invention of photography." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Gabriela%20Silang%20Monument%2C%20Ayala%20Triangle%2C%20Makati%20City.jpg?width=320 320w, https://commons.wikimedia.org/wiki/Special:FilePath/Gabriela%20Silang%20Monument%2C%20Ayala%20Triangle%2C%20Makati%20City.jpg?width=400 400w, https://commons.wikimedia.org/wiki/Special:FilePath/Gabriela%20Silang%20Monument%2C%20Ayala%20Triangle%2C%20Makati%20City.jpg?width=640 640w" sizes="(max-width: 760px) 100vw, (max-width: 1080px) 25vw, 20vw"/>
       <span class="h-people_period">1731 – 1763</span>
       <h3>Gabriela Silang</h3>
       <p class="h-people_role">Revolutionary leader, Ilocos</p>
       <p>Took command of an anti-Spanish uprising in the Ilocos region after her husband Diego's assassination, leading fighters for months before being captured and executed — among the earliest recorded women to lead an armed revolt in the islands.</p>
     </article>
-    <article class="h-people_card reveal">
+    <article class="h-people_card h-people_card--photo reveal">
+      <img class="h-people_photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Marcelo%20Hilario%20del%20Pilar%20y%20Gatmait%C3%A1n%20%281850-1896%29%20portrait.jpg?width=400" alt="Portrait of Marcelo H. del Pilar, Filipino writer, journalist, and Propaganda Movement leader." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Marcelo%20Hilario%20del%20Pilar%20y%20Gatmait%C3%A1n%20%281850-1896%29%20portrait.jpg?width=320 320w, https://commons.wikimedia.org/wiki/Special:FilePath/Marcelo%20Hilario%20del%20Pilar%20y%20Gatmait%C3%A1n%20%281850-1896%29%20portrait.jpg?width=400 400w, https://commons.wikimedia.org/wiki/Special:FilePath/Marcelo%20Hilario%20del%20Pilar%20y%20Gatmait%C3%A1n%20%281850-1896%29%20portrait.jpg?width=640 640w" sizes="(max-width: 760px) 100vw, (max-width: 1080px) 25vw, 20vw"/>
       <span class="h-people_period">1850 – 1896</span>
       <h3>Marcelo H. del Pilar</h3>
       <p class="h-people_role">Propagandist, journalist</p>
       <p>Edited the reformist newspaper <em>La Solidaridad</em> from exile in Spain, using satire and legal argument to attack friar abuses — a strategist of the Propaganda Movement's public campaign.</p>
     </article>
-    <article class="h-people_card reveal">
+    <article class="h-people_card h-people_card--photo reveal">
+      <img class="h-people_photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Jaena1l.jpg?width=400" alt="Portrait photograph of Graciano López Jaena." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Jaena1l.jpg?width=320 320w, https://commons.wikimedia.org/wiki/Special:FilePath/Jaena1l.jpg?width=400 400w, https://commons.wikimedia.org/wiki/Special:FilePath/Jaena1l.jpg?width=640 640w" sizes="(max-width: 760px) 100vw, (max-width: 1080px) 25vw, 20vw"/>
       <span class="h-people_period">1856 – 1896</span>
       <h3>Graciano López Jaena</h3>
       <p class="h-people_role">Orator, founding editor</p>
       <p>Founded <em>La Solidaridad</em> and used his skill as an orator to argue for Filipino representation and reform, dying in poverty in Spain before seeing any of it realized.</p>
     </article>
-    <article class="h-people_card reveal">
+    <article class="h-people_card h-people_card--photo reveal">
+      <img class="h-people_photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Sultan%20Dipatuan%20Kudarat%20-%20Cotabato%20City.jpg?width=400" alt="Monument to Sultan Dipatuan Kudarat at Tantawan Park, Cotabato City — no portrait from his lifetime survives." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Sultan%20Dipatuan%20Kudarat%20-%20Cotabato%20City.jpg?width=320 320w, https://commons.wikimedia.org/wiki/Special:FilePath/Sultan%20Dipatuan%20Kudarat%20-%20Cotabato%20City.jpg?width=400 400w, https://commons.wikimedia.org/wiki/Special:FilePath/Sultan%20Dipatuan%20Kudarat%20-%20Cotabato%20City.jpg?width=640 640w" sizes="(max-width: 760px) 100vw, (max-width: 1080px) 25vw, 20vw"/>
       <span class="h-people_period">c. 1619 – 1671</span>
       <h3>Sultan Kudarat</h3>
       <p class="h-people_role">Sultan of Maguindanao</p>
@@ -716,7 +748,7 @@
       <p>The most prominent political critic of Marcos's martial law government, imprisoned for years before exile. His 1983 assassination on returning home became the catalyst for the movement that ended Marcos's rule.</p>
     </article>
     <article class="h-people_card h-people_card--photo reveal">
-      <img class="h-people_photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Corazon%20Aquino%20inauguration.jpg?width=400" alt="Corazon Aquino at her inauguration as President of the Philippines, February 25, 1986." loading="lazy" />
+      <img class="h-people_photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Corazon%20Aquino%20inauguration.jpg?width=400" alt="Corazon Aquino at her inauguration as President of the Philippines, February 25, 1986." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Corazon%20Aquino%20inauguration.jpg?width=320 320w, https://commons.wikimedia.org/wiki/Special:FilePath/Corazon%20Aquino%20inauguration.jpg?width=400 400w, https://commons.wikimedia.org/wiki/Special:FilePath/Corazon%20Aquino%20inauguration.jpg?width=640 640w" sizes="(max-width: 760px) 100vw, (max-width: 1080px) 25vw, 20vw"/>
       <span class="h-people_period">1933 – 2009</span>
       <h3>Corazon Aquino</h3>
       <p class="h-people_role">11th President</p>
@@ -761,9 +793,9 @@
   <div class="h-tn_grid">
     <figure class="h-tn_card reveal" style="--tn-pos:50%">
       <div class="h-tn_frame">
-        <img class="h-tn_before" src="https://commons.wikimedia.org/wiki/Special:FilePath/Manila%20Walled%20City%20Destruction%20May%201945.jpg?width=1000" alt="Intramuros, Manila's walled city, reduced to ruins after the Battle of Manila, May 1945." loading="lazy" />
+        <img class="h-tn_before" src="https://commons.wikimedia.org/wiki/Special:FilePath/Manila%20Walled%20City%20Destruction%20May%201945.jpg?width=1000" alt="Intramuros, Manila's walled city, reduced to ruins after the Battle of Manila, May 1945." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Manila%20Walled%20City%20Destruction%20May%201945.jpg?width=500 500w, https://commons.wikimedia.org/wiki/Special:FilePath/Manila%20Walled%20City%20Destruction%20May%201945.jpg?width=1000 1000w, https://commons.wikimedia.org/wiki/Special:FilePath/Manila%20Walled%20City%20Destruction%20May%201945.jpg?width=1600 1600w" sizes="(max-width: 1080px) 90vw, 340px"/>
         <div class="h-tn_after">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fort%20Santiago%2C%20Intramuros.JPG?width=1000" alt="Fort Santiago, Intramuros, restored and photographed in the present day." loading="lazy" />
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fort%20Santiago%2C%20Intramuros.JPG?width=1000" alt="Fort Santiago, Intramuros, restored and photographed in the present day." loading="lazy" srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Fort%20Santiago%2C%20Intramuros.JPG?width=500 500w, https://commons.wikimedia.org/wiki/Special:FilePath/Fort%20Santiago%2C%20Intramuros.JPG?width=1000 1000w, https://commons.wikimedia.org/wiki/Special:FilePath/Fort%20Santiago%2C%20Intramuros.JPG?width=1600 1600w" sizes="(max-width: 1080px) 92vw, 62vw"/>
         </div>
         <div class="h-tn_handle" aria-hidden="true"></div>
       </div>
@@ -915,10 +947,10 @@
     <p class="h-closing_text reveal">It's thousands of them — barangays and sultanates, missionaries and revolutionaries, soldiers and survivors, migrants and stay-behinds. Every region carries a version of this history that a single page can only gesture toward. The most honest way to understand it is the way Filipinos have always understood it: locally, in fragments, passed down and argued over, still being written.</p>
     <a href="#before" class="h-closing_cta reveal">Continue exploring the Philippines</a>
     <nav class="h-closing_links reveal" aria-label="Continue exploring">
-      <a href="#">Culture</a>
-      <a href="#">People &amp; Traditions</a>
-      <a href="#">Geography</a>
-      <a href="#">Food</a>
+      <a href="#" class="link--soon">Culture</a>
+      <a href="#" class="link--soon">People &amp; Traditions</a>
+      <a href="#" class="link--soon">Geography</a>
+      <a href="#" class="link--soon">Food</a>
     </nav>
   </div>
 </section>
@@ -927,10 +959,47 @@
 
 <footer class="h-footer">
   <div class="h-footer_inner">
-    <a href="../1-homepage/home.html" class="brand">
-      <span class="brand_word">Tara<span class="brand_dot">.</span></span>
-    </a>
-    <p>7,641 Islands. Countless Stories.</p>
+    <div class="h-footer_brand">
+      <a href="../1-homepage/home.html" class="brand">
+        <span class="brand_word">Tara<span class="brand_dot">.</span></span>
+      </a>
+      <p>7,641 islands. Countless stories.</p>
+    </div>
+
+    <div class="h-footer_col">
+      <p class="h-footer_col-title">Site</p>
+      <ul class="h-footer_links">
+        <li><a href="../1-homepage/home.html">Home</a></li>
+        <li><a href="#" class="link--soon">About Philippines</a></li>
+        <li><a href="#" class="link--soon">News</a></li>
+        <li><a href="#" class="link--soon">Attractions</a></li>
+        <li><a href="#" class="link--soon">Directory</a></li>
+        <li><a href="#" class="link--soon">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="h-footer_col">
+      <p class="h-footer_col-title">Explore</p>
+      <ul class="h-footer_links">
+        <li><a href="#" class="link--soon">Travel Guides</a></li>
+        <li><a href="#" class="link--soon">Destinations</a></li>
+        <li><a href="#" class="link--soon">Experiences</a></li>
+        <li><a href="#" class="link--soon">Privacy Policy</a></li>
+        <li><a href="#" class="link--soon">Terms</a></li>
+      </ul>
+    </div>
+
+    <div class="h-footer_col">
+      <p class="h-footer_col-title">Follow</p>
+      <ul class="h-footer_links">
+        <li><a href="#" class="link--soon">Facebook</a></li>
+        <li><a href="#" class="link--soon">Instagram</a></li>
+        <li><a href="#" class="link--soon">YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="h-footer_bottom">
+    <p>© 2026 Tara. All rights reserved.</p>
   </div>
 </footer>
 

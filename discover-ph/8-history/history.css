@@ -13,6 +13,9 @@
   --sand:       #FBF3E3;   /* warm cream/off-white */
   --sand-dim:   #F3E9D6;   /* slightly deeper cream for section separation */
   --white:      #FFFFFF;
+  --void:       #000000;   /* true black — used sparingly for deep-shadow sections */
+  --ink-deep:   #061518;   /* darker-than-ink shade for somber sections (war) */
+  --ink-deep-2: #061a1e;   /* darker-than-ink shade for martial-law cards */
 
   --glass-bg:         rgba(8, 38, 43, 0.38);
   --glass-bg-scroll:  rgba(8, 38, 43, 0.62);
@@ -88,6 +91,26 @@ ul{ margin: 0; padding: 0; list-style: none; }
   margin: 0 0 16px;
 }
 .section-eyebrow--light{ color: var(--turquoise); }
+
+/* [FIX] Shared card-title/card-body utilities (review item 12).
+   Several sections (.h-precolonial_card h3, .h-american_item h3,
+   .h-today_col h3, .h-places_card h3, etc.) were independently
+   redeclaring "font-family: var(--font-display); font-weight: 600;"
+   for their headings. These utility classes consolidate that pattern
+   so new sections can opt in with a single class instead of a fresh
+   redeclaration. Existing section-specific h3 rules are left in place
+   (removing them is a larger, riskier pass across every section) but
+   they can be migrated to these classes incrementally. */
+.h-card-title{
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink);
+}
+.h-card-body{
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: rgba(8,38,43,0.7);
+}
 
 .text-link{
   display: inline-flex;
@@ -225,6 +248,18 @@ ul{ margin: 0; padding: 0; list-style: none; }
 .primary-nav_link.is-active::after{ transform: scaleX(1); }
 .primary-nav_link.is-active{ color: var(--white); }
 
+/* [FIX] "About Philippines" / "Attractions" dropdown triggers are now
+   real <button> elements (see history.html) instead of <a href="#">,
+   since they only toggle a panel and never navigate. Buttons reset to
+   browser defaults, so re-declare the same look the anchor had. */
+.primary-nav_trigger{
+  font: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
 .menu-toggle{
   display: none; flex-direction: column; justify-content: center; align-items: center;
   gap: 5px; width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
@@ -321,6 +356,36 @@ ul{ margin: 0; padding: 0; list-style: none; }
   font-size: 0.78rem;
   line-height: 1.4;
   color: rgba(255, 255, 255, 0.56);
+}
+
+/* [FIX] "Coming soon" affordance for placeholder (href="#") links —
+   review item 15. Applied via .link--soon in the HTML wherever a page
+   doesn't exist yet, so visitors get a visual cue instead of clicking
+   through to nothing. Dims the label and appends a small pill. */
+.link--soon{
+  opacity: 0.6;
+  cursor: default;
+}
+.link--soon::after{
+  content: "Soon";
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 7px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  vertical-align: middle;
+  background: rgba(255, 157, 27, 0.16);
+  color: var(--mango);
+}
+.primary-nav_dropdown-link.link--soon::after,
+.mobile-nav_submenu-link.link--soon::after{ margin-left: 6px; }
+.h-footer_links a.link--soon::after,
+.h-closing_links a.link--soon::after{
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* ==========================================================================
@@ -486,9 +551,91 @@ body.nav-open{ overflow: hidden; }
 }
 
 /* ==========================================================================
+   HERO
+   ========================================================================== */
+.h-hero{
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--sand);
+  padding: calc(var(--header-h) + 40px) var(--gutter) 100px;
+}
+.h-hero_bg{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(60% 55% at 82% 18%, rgba(47, 212, 203, 0.14), transparent 70%),
+    radial-gradient(50% 45% at 15% 85%, rgba(255, 157, 27, 0.12), transparent 70%),
+    var(--sand);
+}
+.h-hero_grain{
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+.h-hero_inner{
+  position: relative;
+  z-index: 3;
+  max-width: var(--page-max);
+  width: 100%;
+  margin: 0 auto;
+}
+.h-hero_eyebrow{
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin: 0 0 22px;
+}
+.h-hero_title{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.6rem, 6.4vw, 5rem);
+  line-height: 1.05;
+  color: var(--ink);
+  margin: 0 0 28px;
+  max-width: 16ch;
+}
+.h-hero_lede{
+  font-size: clamp(1.05rem, 1.5vw, 1.24rem);
+  line-height: 1.65;
+  color: rgba(8,38,43,0.74);
+  max-width: 62ch;
+  margin: 0 0 44px;
+}
+.h-hero_scroll{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+.h-hero_scroll-dot{
+  animation: h-hero-scroll-bounce 1.8s ease-in-out infinite;
+}
+@keyframes h-hero-scroll-bounce{
+  0%, 100%{ transform: translateY(0); opacity: 1; }
+  50%{ transform: translateY(6px); opacity: 0.5; }
+}
+
+/* ==========================================================================
    IMAGE / ARTIFACT SYSTEM
    Real archival, historical, and contemporary photography — captioned with
    date, location, subject, and source per the site's sourcing standard.
+   [FIX] review item 2 (CLS): every image container in this system already
+   had explicit height reserved via min-height + object-fit: cover, so the
+   layout doesn't actually shift as images load. Added explicit
+   aspect-ratio here too as a belt-and-suspenders fix, since it reserves
+   space correctly even if a future edit removes the min-height.
    ========================================================================== */
 .h-artifact{
   max-width: var(--page-max);
@@ -506,6 +653,7 @@ body.nav-open{ overflow: hidden; }
   background: var(--ink);
   overflow: hidden;
   min-height: 280px;
+  aspect-ratio: 4 / 3;
 }
 .h-artifact_media img{
   width: 100%;
@@ -543,11 +691,17 @@ body.nav-open{ overflow: hidden; }
   margin: 0 0 10px;
 }
 .h-artifact_caption p:last-of-type{ margin-bottom: 0; }
-.h-artifact_source{
-  font-size: 0.78rem !important;
+/* [FIX] review item 8: !important removed. The old rule needed it because
+   ".h-artifact_caption p" (a plain descendant selector) was declared later
+   in the cascade and would otherwise win on source order alone against the
+   more specific ".h-artifact_source" class for font-size/color. Chaining
+   the parent class ".h-artifact_caption" onto the selector raises its
+   specificity above the plain "p" rule without forcing the cascade. */
+.h-artifact_caption .h-artifact_source{
+  font-size: 0.78rem;
   font-style: italic;
-  color: rgba(8,38,43,0.45) !important;
-  margin-top: 12px !important;
+  color: rgba(8,38,43,0.45);
+  margin-top: 12px;
 }
 .h-artifact_source--light{ color: rgba(255,255,255,0.55) !important; }
 
@@ -578,7 +732,7 @@ body.nav-open{ overflow: hidden; }
   max-width: 340px;
   margin: 0;
 }
-.h-artifact--portrait .h-artifact_media{ min-height: 380px; }
+.h-artifact--portrait .h-artifact_media{ min-height: 380px; aspect-ratio: 3 / 4; }
 .h-artifact--portrait .h-artifact_caption{ padding: 20px 22px; }
 
 /* ==========================================================================
@@ -738,10 +892,20 @@ body.nav-open{ overflow: hidden; }
 }
 .h-revolution_beat:last-child{ border-bottom: 1px solid rgba(255,255,255,0.14); }
 .h-revolution_year{
+  grid-column: 1;
+  grid-row: 1 / span 2;
   font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; color: var(--mango);
 }
-.h-revolution_beat h3{ font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; color: var(--white); margin: 0 0 8px; }
-.h-revolution_beat p{ font-size: 0.96rem; line-height: 1.62; color: rgba(255,255,255,0.72); margin: 0; }
+.h-revolution_beat h3{
+  grid-column: 2;
+  grid-row: 1;
+  font-family: var(--font-display); font-weight: 600; font-size: 1.14rem; color: var(--white); margin: 0 0 8px;
+}
+.h-revolution_beat p{
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 0.96rem; line-height: 1.62; color: rgba(255,255,255,0.72); margin: 0;
+}
 
 /* ==========================================================================
    9. NEW EMPIRE ARRIVES
@@ -767,8 +931,10 @@ body.nav-open{ overflow: hidden; }
 
 /* ==========================================================================
    11. WAR — somber, restrained
+   [FIX] review item 13: hardcoded dark colors promoted to tokens
+   (--ink-deep / --ink-deep-2), defined once in :root above.
    ========================================================================== */
-.h-section--war{ background: #061518; }
+.h-section--war{ background: var(--ink-deep); }
 .h-war_inner{ max-width: 820px; margin: 0 auto; }
 .h-section--war .section-eyebrow--light{ color: rgba(255,255,255,0.5); }
 .h-war_stack{ margin-top: clamp(36px, 5vw, 56px); }
@@ -812,7 +978,7 @@ body.nav-open{ overflow: hidden; }
   margin-top: clamp(36px, 5vw, 56px);
   background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1);
 }
-.h-martial_fact{ background: #061a1e; padding: clamp(26px, 3vw, 36px); }
+.h-martial_fact{ background: var(--ink-deep-2); padding: clamp(26px, 3vw, 36px); }
 .h-martial_fact h3{ font-family: var(--font-display); font-weight: 500; font-size: 1.08rem; color: var(--white); margin: 0 0 12px; }
 .h-martial_fact p{ font-size: 0.94rem; line-height: 1.64; color: rgba(255,255,255,0.62); margin: 0; }
 
@@ -892,6 +1058,14 @@ body.nav-open{ overflow: hidden; }
 
 /* ==========================================================================
    18B. THEN & NOW — drag-slider comparison
+   [FIX] review item 11: the visual "⟷" handle used to sit purely as a
+   decorative overlay (pointer-events: none) on top of the photo, while the
+   actual draggable <input type="range"> lived in a separate strip below
+   the frame — so dragging on the photo (where the UI visually invites it)
+   did nothing. The range input is now layered as a full-frame, transparent
+   overlay directly on top of .h-tn_frame, so the drag works exactly where
+   it looks like it should. Its native thumb is hidden and the visual
+   ⟷ handle (still driven by --tn-pos) is what's shown.
    ========================================================================== */
 .h-section--thennow{ background: var(--ink); }
 .h-section--thennow .section-eyebrow{ color: var(--mango); }
@@ -946,30 +1120,40 @@ body.nav-open{ overflow: hidden; }
   font-size: 1rem; font-weight: 700;
   box-shadow: 0 6px 20px rgba(0,0,0,0.35);
 }
+/* Full-frame transparent drag surface, layered directly over the photo. */
 .h-tn_range{
   -webkit-appearance: none;
   appearance: none;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: 34px;
-  margin-top: 14px;
+  height: 100%;
+  margin: 0;
   background: transparent;
   cursor: ew-resize;
+  z-index: 2;
 }
 .h-tn_range::-webkit-slider-runnable-track{
-  height: 4px; background: rgba(255,255,255,0.22); border-radius: 2px;
+  height: 100%;
+  background: transparent;
 }
 .h-tn_range::-webkit-slider-thumb{
   -webkit-appearance: none; appearance: none;
-  width: 20px; height: 20px; border-radius: 50%;
-  background: var(--mango); border: 3px solid var(--white);
-  margin-top: -8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  width: 40px; height: 40px;
+  background: transparent;
+  border: 0;
+  cursor: ew-resize;
 }
-.h-tn_range::-moz-range-track{ height: 4px; background: rgba(255,255,255,0.22); border-radius: 2px; }
+.h-tn_range::-moz-range-track{ height: 100%; background: transparent; border: 0; }
 .h-tn_range::-moz-range-thumb{
-  width: 20px; height: 20px; border-radius: 50%;
-  background: var(--mango); border: 3px solid var(--white);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  width: 40px; height: 40px;
+  background: transparent;
+  border: 0;
+  cursor: ew-resize;
+}
+.h-tn_range:focus-visible{
+  outline: 2px solid var(--turquoise);
+  outline-offset: -2px;
 }
 .h-tn_card figcaption{ margin-top: 16px; }
 .h-tn_card h3{ font-family: var(--font-display); font-weight: 600; font-size: 1.2rem; color: var(--white); margin: 0 0 8px; }
@@ -1045,19 +1229,18 @@ body.nav-open{ overflow: hidden; }
    RESPONSIVE
    ========================================================================== */
 
-    /* Tablet / smaller desktop */
-    @media (max-width: 1080px){
-    .h-sea_points,
-    .h-faith_grid,
-    .h-newempire_grid,
-    .h-american_grid,
-    .h-martial_facts,
-    .h-today_grid,
-    .h-people_grid,
-    .h-places_grid{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+/* Tablet / smaller desktop */
+@media (max-width: 1080px){
+  .h-sea_points,
+  .h-faith_grid,
+  .h-newempire_grid,
+  .h-american_grid,
+  .h-martial_facts,
+  .h-today_grid,
+  .h-people_grid,
+  .h-places_grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   .h-spanish_columns{
     grid-template-columns: 1fr;
@@ -1075,12 +1258,12 @@ body.nav-open{ overflow: hidden; }
     grid-template-columns: 1fr;
   }
 
-    .h-artifact_caption{
+  .h-artifact_caption{
     padding: clamp(24px, 3vw, 40px);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    }
+  }
 
   .h-artifact_media{
     min-height: 300px;
@@ -1097,8 +1280,7 @@ body.nav-open{ overflow: hidden; }
   .h-revolution_portraits{
     grid-template-columns: 1fr 1fr;
   }
-
-
+}
 
 /* Navigation collapse */
 @media (max-width: 980px){

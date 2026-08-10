@@ -52,14 +52,29 @@
     mobileScrim.addEventListener("click", closeMobileNav);
   }
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeMobileNav();
+    if (e.key !== "Escape") return;
+    closeMobileNav();
+    // [FIX] review item 9: Escape closed the mobile drawer but not the
+    // desktop "About Philippines" / "Attractions" dropdowns. Reuses the
+    // same is-open/aria-expanded toggling the click-outside handler below
+    // uses, so both paths stay in sync.
+    document.querySelectorAll(".nav-item.is-open").forEach(function (item) {
+      item.classList.remove("is-open");
+      var t = item.querySelector(".primary-nav_link");
+      if (t) t.setAttribute("aria-expanded", "false");
+    });
   });
-  // Close drawer when a real link inside it is followed
+  // [FIX] review item 4: previously only closed the drawer for links with
+  // a real href, so tapping a "#" placeholder link did nothing and left
+  // the drawer stuck open with no feedback. Now closes on any link tap —
+  // placeholder links are visually marked "Soon" (see .link--soon in
+  // history.css) so the tap still resolves into a clear result instead of
+  // a dead end. The "About Philippines" / "Attractions" row links are
+  // excluded since their job is to sit next to the submenu toggle, not to
+  // close the drawer.
   if (mobileNav) {
-    mobileNav.querySelectorAll(".mobile-nav_link, .mobile-nav_submenu-link").forEach(function (link) {
-      link.addEventListener("click", function () {
-        if (link.getAttribute("href") && link.getAttribute("href") !== "#") closeMobileNav();
-      });
+    mobileNav.querySelectorAll(".mobile-nav_submenu-link, .mobile-nav_list > li:not(.mobile-nav_item) > .mobile-nav_link").forEach(function (link) {
+      link.addEventListener("click", closeMobileNav);
     });
   }
 
@@ -155,6 +170,36 @@
       });
     });
   }
+
+  /* ------------------------------------------------------------------
+     [FIX] Then & Now — drag slider
+     Previously the .h-tn_range <input> existed in the markup and had
+     matching CSS (--tn-pos custom property + clip-path on .h-tn_after)
+     but nothing in this file ever listened for it changing, so dragging
+     the handle did nothing. This wires the input up to both the CSS
+     variable (moves the visible handle) and the clip-path (reveals more
+     or less of the "after" image), and keeps it in sync via keyboard
+     and pointer input too.
+  ------------------------------------------------------------------ */
+  document.querySelectorAll(".h-tn_card").forEach(function (card) {
+    var range = card.querySelector(".h-tn_range");
+    var after = card.querySelector(".h-tn_after");
+    if (!range || !after) return;
+
+    function setPosition(value) {
+      var pct = Math.max(0, Math.min(100, Number(value)));
+      card.style.setProperty("--tn-pos", pct + "%");
+      after.style.clipPath = "inset(0 0 0 " + pct + "%)";
+      range.setAttribute("aria-valuenow", String(pct));
+    }
+
+    // Initialize from the input's current value on load
+    setPosition(range.value);
+
+    range.addEventListener("input", function () {
+      setPosition(range.value);
+    });
+  });
 
   /* ------------------------------------------------------------------
      Hero scroll indicator — smooth scroll handled natively via
