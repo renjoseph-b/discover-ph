@@ -3,22 +3,23 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>Tara. — 7,641 Islands. Countless Stories.</title>
-<meta name="description" content="Discover the Philippines beyond the usual spots — attractions, destinations, experiences, and local stories across 7,641 islands." />
+<title>Attractions — Places Worth the Journey | Tara.</title>
+<meta name="description" content="Islands, mountains, waterfalls and heritage sites across the Philippines — a magazine-style guide to the destinations worth the journey." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="attraction.css" />
+<link rel="stylesheet" href="attractions-page.css" />
 </head>
-<body>
+<body class="magazine">
 
 <!-- ============ SITE HEADER (sticky / glass) ============ -->
 <header class="site-header" id="siteHeader">
   <div class="site-header_inner">
 
-    <a href="index.html" class="brand" aria-label="Tara. Home">
+    <a href="home.html" class="brand" aria-label="Tara. Home">
       <span class="brand_mark" aria-hidden="true">
         <svg viewBox="0 0 40 40" width="30" height="30">
           <circle cx="20" cy="20" r="8" fill="currentColor"/>
@@ -39,22 +40,15 @@
 
     <nav class="primary-nav" id="primaryNav" aria-label="Primary">
       <ul class="primary-nav_list">
-        <li><a href="index.html" class="primary-nav_link is-active" data-nav>Home</a></li>
+        <li><a href="home.html" class="primary-nav_link" data-nav>Home</a></li>
 
         <li class="nav-item nav-item--has-dropdown">
-          <a
-            href="about.html"
-            class="primary-nav_link"
-            data-nav
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
+          <a href="about.html" class="primary-nav_link" data-nav aria-haspopup="true" aria-expanded="false">
             About Philippines
             <svg class="primary-nav_chevron" width="10" height="7" viewBox="0 0 10 7" fill="none" aria-hidden="true">
               <path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-
           <div class="primary-nav_dropdown" data-dropdown>
             <a href="about.html" class="primary-nav_dropdown-link">
               <span class="primary-nav_dropdown-title">Overview</span>
@@ -86,41 +80,20 @@
         <li><a href="news.html" class="primary-nav_link" data-nav>News</a></li>
 
         <li class="nav-item nav-item--has-dropdown">
-          <a
-            href="attractions.html"
-            class="primary-nav_link"
-            data-nav
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
+          <a href="attractions.html" class="primary-nav_link is-active" data-nav aria-haspopup="true" aria-expanded="false">
             Attractions
             <svg class="primary-nav_chevron" width="10" height="7" viewBox="0 0 10 7" fill="none" aria-hidden="true">
               <path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-
           <div class="primary-nav_dropdown primary-nav_dropdown--single" data-dropdown>
-            <a href="attractions.html" class="primary-nav_dropdown-link">
-              <span class="primary-nav_dropdown-title">All Attractions</span>
-            </a>
-            <a href="attractions.html?category=beaches" class="primary-nav_dropdown-link">
-              <span class="primary-nav_dropdown-title">Beaches</span>
-            </a>
-            <a href="attractions.html?category=islands" class="primary-nav_dropdown-link">
-              <span class="primary-nav_dropdown-title">Islands</span>
-            </a>
-            <a href="attractions.html?category=mountains" class="primary-nav_dropdown-link">
-              <span class="primary-nav_dropdown-title">Mountains</span>
-            </a>
-            <a href="attractions.html?category=waterfalls" class="primary-nav_dropdown-link">
-              <span class="primary-nav_dropdown-title">Waterfalls</span>
-            </a>
-            <a href="attractions.html?category=adventure" class="primary-nav_dropdown-link">
-              <span class="primary-nav_dropdown-title">Adventure</span>
-            </a>
-            <a href="attractions.html?category=heritage" class="primary-nav_dropdown-link">
-              <span class="primary-nav_dropdown-title">Heritage Sites</span>
-            </a>
+            <a href="attractions.html" class="primary-nav_dropdown-link"><span class="primary-nav_dropdown-title">All Attractions</span></a>
+            <a href="attractions.html?category=beaches" class="primary-nav_dropdown-link"><span class="primary-nav_dropdown-title">Beaches</span></a>
+            <a href="attractions.html?category=islands" class="primary-nav_dropdown-link"><span class="primary-nav_dropdown-title">Islands</span></a>
+            <a href="attractions.html?category=mountains" class="primary-nav_dropdown-link"><span class="primary-nav_dropdown-title">Mountains</span></a>
+            <a href="attractions.html?category=waterfalls" class="primary-nav_dropdown-link"><span class="primary-nav_dropdown-title">Waterfalls</span></a>
+            <a href="attractions.html?category=adventure" class="primary-nav_dropdown-link"><span class="primary-nav_dropdown-title">Adventure</span></a>
+            <a href="attractions.html?category=heritage" class="primary-nav_dropdown-link"><span class="primary-nav_dropdown-title">Heritage Sites</span></a>
           </div>
         </li>
 
@@ -142,18 +115,12 @@
 <div class="mobile-nav" id="mobileNav" aria-hidden="true">
   <nav aria-label="Mobile">
     <ul class="mobile-nav_list">
-      <li><a href="index.html" class="mobile-nav_link is-active">Home</a></li>
+      <li><a href="home.html" class="mobile-nav_link">Home</a></li>
 
       <li class="mobile-nav_item">
         <div class="mobile-nav_row">
           <a href="about.html" class="mobile-nav_link">About Philippines</a>
-          <button
-            type="button"
-            class="mobile-nav_submenu-toggle"
-            aria-expanded="false"
-            aria-controls="mobileSubmenuAbout"
-            aria-label="Toggle About Philippines submenu"
-          >
+          <button type="button" class="mobile-nav_submenu-toggle" aria-expanded="false" aria-controls="mobileSubmenuAbout" aria-label="Toggle About Philippines submenu">
             <svg class="mobile-nav_chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
               <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -173,14 +140,8 @@
 
       <li class="mobile-nav_item">
         <div class="mobile-nav_row">
-          <a href="attractions.html" class="mobile-nav_link">Attractions</a>
-          <button
-            type="button"
-            class="mobile-nav_submenu-toggle"
-            aria-expanded="false"
-            aria-controls="mobileSubmenuAttractions"
-            aria-label="Toggle Attractions submenu"
-          >
+          <a href="attractions.html" class="mobile-nav_link is-active">Attractions</a>
+          <button type="button" class="mobile-nav_submenu-toggle" aria-expanded="false" aria-controls="mobileSubmenuAttractions" aria-label="Toggle Attractions submenu">
             <svg class="mobile-nav_chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
               <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -204,3 +165,595 @@
   <p class="mobile-nav_tagline">7,641 islands. Countless stories.</p>
 </div>
 <div class="mobile-nav_scrim" id="mobileNavScrim"></div>
+
+<main>
+
+  <!-- ============ 01 — CINEMATIC HERO ============ -->
+  <section class="hero" data-carousel>
+    <div class="hero_media">
+      <img src="https://picsum.photos/seed/tara-hero-palawan/1800/1200" alt="Aerial view of limestone cliffs and turquoise lagoon, Palawan" />
+    </div>
+    <div class="hero_scrim"></div>
+    <div class="hero_content">
+      <p class="hero_eyebrow">Attractions · Philippines</p>
+      <h1 class="hero_title">Places Worth<br>the Journey.</h1>
+      <p class="hero_lede">From hidden islands and wild landscapes to places shaped by centuries of Filipino history, discover the destinations that make the Philippines impossible to forget.</p>
+      <div class="hero_actions">
+        <a href="#categories" class="btn btn--primary">Explore Attractions</a>
+        <a href="#introduction" class="btn btn--ghost">Find Your Escape ↓</a>
+      </div>
+      <div class="hero_control">
+        <span class="hero_control-count" data-carousel-count>01 / 05</span>
+        <div class="hero_control-buttons">
+          <button type="button" class="carousel-btn" data-carousel-prev aria-label="Previous video">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M10 2L4 8L10 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button type="button" class="carousel-btn carousel-btn--play" aria-label="Play background film">
+            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5L14 8L4 13.5V2.5Z"/></svg>
+          </button>
+          <button type="button" class="carousel-btn" data-carousel-next aria-label="Next video">
+            <svg viewBox="0 0 16 16" fill="none"><path d="M6 2L12 8L6 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 — EDITORIAL INTRODUCTION ============ -->
+  <section class="section-pad" id="introduction">
+    <div class="wrap intro_grid reveal">
+      <div>
+        <p class="intro_label">More Than a Destination</p>
+        <h2 class="headline-serif intro_heading">The Philippines isn't one place.</h2>
+      </div>
+      <div class="intro_body">
+        <p>It's thousands of places waiting to become part of your story. Wander through islands where the sea meets limestone cliffs. Follow roads into quiet mountain towns. Swim beneath waterfalls, walk through landscapes shaped by generations, or simply find a place where the world feels a little farther away.</p>
+        <figure class="intro_figure">
+          <div class="intro_figure-frame">
+            <img src="https://picsum.photos/seed/tara-banaue/800/1000" alt="Rice terraces carved into mountainside, Banaue" />
+          </div>
+          <figcaption class="intro_caption">Banaue, Ifugao · Northern Philippines</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 — DESTINATION CATEGORY GRID ============ -->
+  <section class="section-pad" id="categories">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="section-head_label">Where Do You Want to Go?</p>
+          <h2 class="headline-serif section-head_heading">Find the landscape that calls you.</h2>
+        </div>
+      </div>
+
+      <div class="cat-grid reveal">
+        <a href="attractions.html?category=islands" class="cat-tile cat-tile--lg">
+          <div class="cat-tile_bg"><img src="https://picsum.photos/seed/tara-islands/900/900" alt="Scattered limestone islands"></div>
+          <div class="cat-tile_scrim"></div>
+          <div class="cat-tile_content">
+            <span class="cat-tile_num">02</span>
+            <h3 class="cat-tile_name">Islands</h3>
+            <div class="cat-tile_line">
+              <p class="cat-tile_desc">"For getting wonderfully lost."</p>
+              <span class="cat-tile_arrow"><svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="attractions.html?category=beaches" class="cat-tile cat-tile--md">
+          <div class="cat-tile_bg"><img src="https://picsum.photos/seed/tara-beaches/700/420" alt="White sand beach"></div>
+          <div class="cat-tile_scrim"></div>
+          <div class="cat-tile_content">
+            <span class="cat-tile_num">01</span>
+            <h3 class="cat-tile_name">Beaches</h3>
+            <div class="cat-tile_line">
+              <p class="cat-tile_desc">"For days measured by tides."</p>
+              <span class="cat-tile_arrow"><svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="attractions.html?category=mountains" class="cat-tile cat-tile--sm">
+          <div class="cat-tile_bg"><img src="https://picsum.photos/seed/tara-mountains/450/420" alt="Mountain ridge at sunrise"></div>
+          <div class="cat-tile_scrim"></div>
+          <div class="cat-tile_content">
+            <span class="cat-tile_num">03</span>
+            <h3 class="cat-tile_name">Mountains</h3>
+            <div class="cat-tile_line">
+              <p class="cat-tile_desc">"Chasing the horizon."</p>
+              <span class="cat-tile_arrow"><svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="attractions.html?category=waterfalls" class="cat-tile cat-tile--sm">
+          <div class="cat-tile_bg"><img src="https://picsum.photos/seed/tara-waterfalls/450/420" alt="Waterfall in a jungle canyon"></div>
+          <div class="cat-tile_scrim"></div>
+          <div class="cat-tile_content">
+            <span class="cat-tile_num">04</span>
+            <h3 class="cat-tile_name">Waterfalls</h3>
+            <div class="cat-tile_line">
+              <p class="cat-tile_desc">"Cool water, wild places."</p>
+              <span class="cat-tile_arrow"><svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="attractions.html?category=adventure" class="cat-tile cat-tile--md">
+          <div class="cat-tile_bg"><img src="https://picsum.photos/seed/tara-adventure/700/420" alt="Traveler on a cliffside trail"></div>
+          <div class="cat-tile_scrim"></div>
+          <div class="cat-tile_content">
+            <span class="cat-tile_num">05</span>
+            <h3 class="cat-tile_name">Adventure</h3>
+            <div class="cat-tile_line">
+              <p class="cat-tile_desc">"Stories worth telling twice."</p>
+              <span class="cat-tile_arrow"><svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="attractions.html?category=heritage" class="cat-tile cat-tile--md">
+          <div class="cat-tile_bg"><img src="https://picsum.photos/seed/tara-heritage/700/420" alt="Old Spanish-era church facade"></div>
+          <div class="cat-tile_scrim"></div>
+          <div class="cat-tile_content">
+            <span class="cat-tile_num">06</span>
+            <h3 class="cat-tile_name">Heritage Sites</h3>
+            <div class="cat-tile_line">
+              <p class="cat-tile_desc">"Walking through the past."</p>
+              <span class="cat-tile_arrow"><svg viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 — VIDEO STORY CAROUSEL ============ -->
+  <section class="section-pad" style="background: var(--sand-dim);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="section-head_label">Watch the Philippines</p>
+          <h2 class="headline-serif section-head_heading">A country best experienced in motion.</h2>
+        </div>
+      </div>
+
+      <div class="reveal" data-carousel>
+        <div class="video-carousel_track" data-carousel-track>
+
+          <article class="video-card" data-video-card data-carousel-item>
+            <div class="video-card_bg"><img src="https://picsum.photos/seed/tara-vid-palawan/700/900" alt="Palawan coastline"></div>
+            <div class="video-card_scrim"></div>
+            <div class="video-card_top"><span class="video-card_duration">01:24</span></div>
+            <button type="button" class="video-card_play" data-video-play aria-label="Play Palawan film">
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5L14 8L4 13.5V2.5Z"/></svg>
+            </button>
+            <div class="video-card_bottom">
+              <p class="video-card_location">Palawan</p>
+              <h3 class="video-card_title">Where the sea meets stone</h3>
+            </div>
+          </article>
+
+          <article class="video-card" data-video-card data-carousel-item>
+            <div class="video-card_bg"><img src="https://picsum.photos/seed/tara-vid-sagada/700/900" alt="Sagada mountain fog"></div>
+            <div class="video-card_scrim"></div>
+            <div class="video-card_top"><span class="video-card_duration">02:03</span></div>
+            <button type="button" class="video-card_play" data-video-play aria-label="Play Sagada film">
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5L14 8L4 13.5V2.5Z"/></svg>
+            </button>
+            <div class="video-card_bottom">
+              <p class="video-card_location">Sagada</p>
+              <h3 class="video-card_title">Above the clouds</h3>
+            </div>
+          </article>
+
+          <article class="video-card" data-video-card data-carousel-item>
+            <div class="video-card_bg"><img src="https://picsum.photos/seed/tara-vid-cebu/700/900" alt="Cebu canyon river"></div>
+            <div class="video-card_scrim"></div>
+            <div class="video-card_top"><span class="video-card_duration">01:47</span></div>
+            <button type="button" class="video-card_play" data-video-play aria-label="Play Cebu film">
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5L14 8L4 13.5V2.5Z"/></svg>
+            </button>
+            <div class="video-card_bottom">
+              <p class="video-card_location">Cebu</p>
+              <h3 class="video-card_title">Into the wild</h3>
+            </div>
+          </article>
+
+          <article class="video-card" data-video-card data-carousel-item>
+            <div class="video-card_bg"><img src="https://picsum.photos/seed/tara-vid-bohol/700/900" alt="Bohol chocolate hills"></div>
+            <div class="video-card_scrim"></div>
+            <div class="video-card_top"><span class="video-card_duration">01:12</span></div>
+            <button type="button" class="video-card_play" data-video-play aria-label="Play Bohol film">
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5L14 8L4 13.5V2.5Z"/></svg>
+            </button>
+            <div class="video-card_bottom">
+              <p class="video-card_location">Bohol</p>
+              <h3 class="video-card_title">A landscape unlike any other</h3>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="carousel-controls">
+          <span class="carousel-controls_count" data-carousel-count>01 / 04</span>
+          <div class="carousel-controls_buttons">
+            <button type="button" class="carousel-btn carousel-btn--dark" data-carousel-prev aria-label="Previous film">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M10 2L4 8L10 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button type="button" class="carousel-btn carousel-btn--dark" data-carousel-next aria-label="Next film">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M6 2L12 8L6 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 — FEATURED ATTRACTIONS ============ -->
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="section-head_label">Worth the Journey</p>
+          <h2 class="headline-serif section-head_heading">Some places don't just deserve a visit. They stay with you.</h2>
+        </div>
+      </div>
+
+      <div class="reveal" data-carousel>
+        <div class="featured_track" data-carousel-track>
+
+          <article class="feature-card feature-card--first" data-carousel-item>
+            <div class="feature-card_frame">
+              <span class="feature-card_badge">Editor's Pick</span>
+              <img src="https://picsum.photos/seed/tara-kayangan/1000/720" alt="Kayangan Lake surrounded by limestone cliffs">
+            </div>
+            <p class="feature-card_location">Coron, Palawan</p>
+            <h3 class="feature-card_name">Kayangan Lake</h3>
+            <p class="feature-card_desc">Often called the cleanest lake in the country — a climb through limestone rewarded by water so clear it barely looks real.</p>
+            <a href="attractions.html?category=islands" class="text-link">Discover <span class="text-link_arrow">→</span></a>
+          </article>
+
+          <article class="feature-card" data-carousel-item>
+            <div class="feature-card_frame">
+              <img src="https://picsum.photos/seed/tara-chocolatehills/700/900" alt="Rows of Chocolate Hills at dusk">
+            </div>
+            <p class="feature-card_location">Bohol</p>
+            <h3 class="feature-card_name">Chocolate Hills</h3>
+            <p class="feature-card_desc">Over a thousand grass-covered mounds rolling to the horizon, turning cocoa-brown at the end of the dry season.</p>
+            <a href="attractions.html?category=heritage" class="text-link">Discover <span class="text-link_arrow">→</span></a>
+          </article>
+
+          <article class="feature-card" data-carousel-item>
+            <div class="feature-card_frame">
+              <img src="https://picsum.photos/seed/tara-banauericefields/700/900" alt="Banaue Rice Terraces carved into the mountains">
+            </div>
+            <p class="feature-card_location">Ifugao</p>
+            <h3 class="feature-card_name">Banaue Rice Terraces</h3>
+            <p class="feature-card_desc">Carved by hand two thousand years ago — still farmed, still standing, still called the eighth wonder of the world.</p>
+            <a href="attractions.html?category=mountains" class="text-link">Discover <span class="text-link_arrow">→</span></a>
+          </article>
+
+          <article class="feature-card" data-carousel-item>
+            <div class="feature-card_frame">
+              <img src="https://picsum.photos/seed/tara-kawasan/700/900" alt="Kawasan Falls turquoise cascade">
+            </div>
+            <p class="feature-card_location">Cebu</p>
+            <h3 class="feature-card_name">Kawasan Falls</h3>
+            <p class="feature-card_desc">Three tiers of impossibly blue water, best reached by canyoneering down the ravine that feeds it.</p>
+            <a href="attractions.html?category=waterfalls" class="text-link">Discover <span class="text-link_arrow">→</span></a>
+          </article>
+
+          <article class="feature-card" data-carousel-item>
+            <div class="feature-card_frame">
+              <img src="https://picsum.photos/seed/tara-nacpan/700/900" alt="Nacpan Beach golden sand">
+            </div>
+            <p class="feature-card_location">Palawan</p>
+            <h3 class="feature-card_name">Nacpan Beach</h3>
+            <p class="feature-card_desc">Four kilometres of golden sand with barely another footprint in sight, even at the height of summer.</p>
+            <a href="attractions.html?category=beaches" class="text-link">Discover <span class="text-link_arrow">→</span></a>
+          </article>
+
+        </div>
+
+        <div class="carousel-controls">
+          <span class="carousel-controls_count" data-carousel-count>01 / 05</span>
+          <div class="carousel-controls_buttons">
+            <button type="button" class="carousel-btn carousel-btn--dark" data-carousel-prev aria-label="Previous destination">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M10 2L4 8L10 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button type="button" class="carousel-btn carousel-btn--dark" data-carousel-next aria-label="Next destination">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M6 2L12 8L6 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 — FULL-BLEED EDITORIAL STORY ============ -->
+  <section class="story">
+    <div class="story_bg"><img src="https://picsum.photos/seed/tara-hiddentrail/1800/1400" alt="Traveler on a quiet trail overlooking the sea"></div>
+    <div class="story_scrim"></div>
+    <div class="wrap">
+      <div class="story_content reveal">
+        <p class="story_eyebrow">Beyond the Postcard</p>
+        <h2 class="headline-serif story_heading" style="color: var(--white);">The best stories often begin off the beaten path.</h2>
+        <p class="story_body">Go beyond the places everyone knows. Find quiet islands, forgotten trails, hidden waterfalls, and landscapes that don't always make the list — but stay with you long after you leave.</p>
+        <a href="#hidden-gems" class="text-link text-link--light" style="margin-left:0;">Discover Hidden Gems <span class="text-link_arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 07 — HIDDEN GEMS COLLAGE ============ -->
+  <section class="section-pad" id="hidden-gems">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="section-head_label">Hidden Gems</p>
+          <h2 class="headline-serif section-head_heading">The Philippines, off the postcard.</h2>
+        </div>
+      </div>
+
+      <div class="collage reveal" style="position: relative;">
+        <a href="attractions.html?category=islands" class="collage-item collage-item--a">
+          <img src="https://picsum.photos/seed/tara-apoisland/600/700" alt="Apo Island reef">
+          <div class="collage-item_scrim"></div>
+          <div class="collage-item_label"><span class="collage-item_kicker">Negros Oriental</span><h3 class="collage-item_name">Apo Island</h3></div>
+        </a>
+        <a href="attractions.html?category=adventure" class="collage-item collage-item--b">
+          <img src="https://picsum.photos/seed/tara-marlborohills/600/400" alt="Marlboro Hills rolling grassland">
+          <div class="collage-item_scrim"></div>
+          <div class="collage-item_label"><span class="collage-item_kicker">Batanes</span><h3 class="collage-item_name">Marlboro Hills</h3></div>
+        </a>
+        <a href="attractions.html?category=beaches" class="collage-item collage-item--c">
+          <img src="https://picsum.photos/seed/tara-calaguas/400/900" alt="Calaguas Island white sand">
+          <div class="collage-item_scrim"></div>
+          <div class="collage-item_label"><span class="collage-item_kicker">Camarines Norte</span><h3 class="collage-item_name">Calaguas</h3></div>
+        </a>
+        <a href="attractions.html?category=waterfalls" class="collage-item collage-item--d">
+          <img src="https://picsum.photos/seed/tara-asikasik/400/450" alt="Asik-Asik Falls curtain of water">
+          <div class="collage-item_scrim"></div>
+          <div class="collage-item_label"><span class="collage-item_kicker">North Cotabato</span><h3 class="collage-item_name">Asik-Asik Falls</h3></div>
+        </a>
+        <a href="attractions.html?category=mountains" class="collage-item collage-item--e">
+          <img src="https://picsum.photos/seed/tara-hiddenpeak/400/450" alt="Quiet mountain peak at sunrise">
+          <div class="collage-item_scrim"></div>
+          <div class="collage-item_label"><span class="collage-item_kicker">Benguet</span><h3 class="collage-item_name">Mt. Ulap</h3></div>
+        </a>
+        <a href="attractions.html?category=heritage" class="collage-item collage-item--f">
+          <img src="https://picsum.photos/seed/tara-heritagetown/600/300" alt="Old heritage town street">
+          <div class="collage-item_scrim"></div>
+          <div class="collage-item_label"><span class="collage-item_kicker">Ilocos Sur</span><h3 class="collage-item_name">Vigan Heritage Village</h3></div>
+        </a>
+        <span class="collage_overlap-text" aria-hidden="true">a little farther</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 08 — TRAVEL MOODS ============ -->
+  <section class="section-pad" style="padding-bottom: 0;">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="section-head_label">Pick Your Pace</p>
+          <h2 class="headline-serif section-head_heading">What kind of escape are you after?</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="moods reveal">
+      <div class="mood-card">
+        <span class="mood-card_icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 15a9 9 0 0118 0" stroke="currentColor" stroke-width="1.6"/><path d="M3 15h18M12 15V6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        <div>
+          <h3 class="mood-card_title">Slow Down</h3>
+          <p class="mood-card_desc">Find a quiet beach. Leave your notifications behind.</p>
+        </div>
+      </div>
+      <div class="mood-card">
+        <span class="mood-card_icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 19L9 8l4 6 3-4 5 9H3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+        <div>
+          <h3 class="mood-card_title">Go Higher</h3>
+          <p class="mood-card_desc">Trade the city skyline for mountain horizons.</p>
+        </div>
+      </div>
+      <div class="mood-card">
+        <span class="mood-card_icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12c3-4 6-4 9 0s6 4 9 0M3 17c3-4 6-4 9 0s6 4 9 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        <div>
+          <h3 class="mood-card_title">Get Wild</h3>
+          <p class="mood-card_desc">Follow rivers, forests, and waterfalls into the unknown.</p>
+        </div>
+      </div>
+      <div class="mood-card">
+        <span class="mood-card_icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20L14 4l2 5 4-3-3 9-5 5-8-0z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+        <div>
+          <h3 class="mood-card_title">Chase Adventure</h3>
+          <p class="mood-card_desc">For the trips that start with "Tara, try natin."</p>
+        </div>
+      </div>
+      <div class="mood-card">
+        <span class="mood-card_icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 21V9l8-6 8 6v12M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+        <div>
+          <h3 class="mood-card_title">Step Into the Past</h3>
+          <p class="mood-card_desc">Walk through places where Filipino history still lives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Pull quote ============ -->
+  <div class="wrap">
+    <div class="pull-quote reveal">
+      <p class="pull-quote_text">"You don't travel to see a place. You travel to become someone who has seen it."</p>
+      <p class="pull-quote_cite">Tara. Field Notes</p>
+    </div>
+  </div>
+
+  <!-- ============ 09 — MAGAZINE STORIES ============ -->
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="section-head_label">Stories From the Road</p>
+          <h2 class="headline-serif section-head_heading">Places are better when you know the stories behind them.</h2>
+        </div>
+        <a href="news.html" class="text-link">All stories <span class="text-link_arrow">→</span></a>
+      </div>
+
+      <div class="articles reveal">
+        <a href="news.html" class="article-card article-card--feature">
+          <div class="article-card_frame">
+            <img src="https://picsum.photos/seed/tara-sagadastory/900/560" alt="Foggy morning over Sagada">
+          </div>
+          <p class="article-card_meta">Mountains <span class="article-card_time">7 min read</span></p>
+          <h3 class="article-card_title">A Weekend Above the Clouds</h3>
+          <p class="article-card_excerpt">Sagada. Mountains, caves, coffee farms, and morning fog — a slow itinerary for a place that rewards unhurried travel.</p>
+          <span class="text-link">Read Story <span class="text-link_arrow">→</span></span>
+        </a>
+
+        <div class="articles_side">
+          <a href="news.html" class="article-card article-card--sub">
+            <div class="article-card_frame">
+              <img src="https://picsum.photos/seed/tara-palawanstory/300/300" alt="Palawan lagoon">
+            </div>
+            <div>
+              <p class="article-card_meta">Islands <span class="article-card_time">5 min</span></p>
+              <h3 class="article-card_title">Why Palawan Keeps Calling Us Back</h3>
+            </div>
+          </a>
+          <a href="news.html" class="article-card article-card--sub">
+            <div class="article-card_frame">
+              <img src="https://picsum.photos/seed/tara-heritagestory/300/300" alt="Heritage street scene">
+            </div>
+            <div>
+              <p class="article-card_meta">Heritage <span class="article-card_time">6 min</span></p>
+              <h3 class="article-card_title">Walking Through a Living Heritage</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 10 — DISCOVERY MAP ============ -->
+  <section class="section-pad" style="background: var(--sand-dim);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="section-head_label">Where Will You Go Next?</p>
+          <h2 class="headline-serif section-head_heading">Explore the Philippines.</h2>
+        </div>
+      </div>
+
+      <div class="map-section reveal">
+        <div class="map-figure">
+          <svg viewBox="0 0 200 260" fill="none" aria-hidden="true">
+            <path d="M96 6c9 10 6 24 14 30 10 8 4 20 12 26 9 7 3 18 10 24 8 7 2 16 9 22-3 10 4 16-2 26-5 9 6 14 1 24-4 9 5 15-1 24-5 8 4 15-3 22-6 7 2 15-5 20-6 5 3 12-4 16l-8-14c-6-9 2-16-4-24-5-8 4-15-3-22-6-7 2-14-4-21-6-8 3-15-4-22-6-7 2-14-5-20-6-6 3-13-4-19-5-6 2-13-6-18-4-6 3-12-4-17-4-5 3-11-5-16-4-4 3-10-4-13-3-4 4-9-3-11-2-4 4-8-4-9z" fill="var(--teal)" opacity="0.85"/>
+          </svg>
+          <span class="map-pin" style="top: 22%; left: 40%;" aria-hidden="true"></span>
+          <span class="map-pin" style="top: 46%; left: 58%;" aria-hidden="true"></span>
+          <span class="map-pin" style="top: 62%; left: 46%;" aria-hidden="true"></span>
+          <span class="map-pin" style="top: 30%; left: 52%;" aria-hidden="true"></span>
+        </div>
+
+        <div class="map-list">
+          <a href="attractions.html?region=palawan" class="map-list_item">
+            <div><h3 class="map-list_name">Palawan</h3><p class="map-list_meta">Islands &amp; Beaches</p></div>
+            <span class="text-link">86 places <span class="text-link_arrow">→</span></span>
+          </a>
+          <a href="attractions.html?region=cebu" class="map-list_item">
+            <div><h3 class="map-list_name">Cebu</h3><p class="map-list_meta">Adventure &amp; Waterfalls</p></div>
+            <span class="text-link">54 places <span class="text-link_arrow">→</span></span>
+          </a>
+          <a href="attractions.html?region=bohol" class="map-list_item">
+            <div><h3 class="map-list_name">Bohol</h3><p class="map-list_meta">Heritage &amp; Islands</p></div>
+            <span class="text-link">37 places <span class="text-link_arrow">→</span></span>
+          </a>
+          <a href="attractions.html?region=ifugao" class="map-list_item">
+            <div><h3 class="map-list_name">Ifugao</h3><p class="map-list_meta">Mountains &amp; Heritage</p></div>
+            <span class="text-link">21 places <span class="text-link_arrow">→</span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11 — IMAGE + TEXT SPREAD ============ -->
+  <section class="section-pad">
+    <div class="wrap spread reveal">
+      <div class="spread_frame">
+        <img src="https://picsum.photos/seed/tara-travelerview/700/900" alt="Traveler looking out toward a Philippine landscape">
+      </div>
+      <div>
+        <p class="section-head_label">Start Small</p>
+        <h2 class="spread_quote">"You don't need to see it all."</h2>
+        <p class="spread_sub">One island. One mountain. One road you've never taken. The journey doesn't need a full itinerary to be worth it.</p>
+        <a href="#categories" class="text-link">Start Somewhere <span class="text-link_arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 12 — FINAL CINEMATIC CTA ============ -->
+  <section class="final-cta">
+    <div class="final-cta_bg"><img src="https://picsum.photos/seed/tara-finalcta/1800/1200" alt="Sunset over Philippine islands"></div>
+    <div class="final-cta_scrim"></div>
+    <div class="final-cta_content reveal">
+      <p class="final-cta_eyebrow">Tara.</p>
+      <h2 class="headline-serif final-cta_heading">Your next story starts somewhere.</h2>
+      <p class="final-cta_sub">The Philippines is waiting.</p>
+      <div class="final-cta_actions">
+        <a href="attractions.html" class="btn btn--primary">Explore All Attractions →</a>
+        <a href="contact.html" class="btn btn--ghost">Plan Your Journey</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="site-footer_top">
+    <div class="site-footer_brand">
+      <span class="brand_word">Tara<span class="brand_dot">.</span></span>
+      <p>7,641 islands. Countless stories.</p>
+    </div>
+
+    <nav class="site-footer_nav" aria-label="Footer">
+      <div class="site-footer_col">
+        <p class="site-footer_col-title">Site</p>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Philippines</a>
+        <a href="news.html">News</a>
+        <a href="attractions.html">Attractions</a>
+        <a href="directory.html">Directory</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div class="site-footer_col">
+        <p class="site-footer_col-title">Attraction Categories</p>
+        <a href="attractions.html?category=beaches">Beaches</a>
+        <a href="attractions.html?category=islands">Islands</a>
+        <a href="attractions.html?category=mountains">Mountains</a>
+        <a href="attractions.html?category=waterfalls">Waterfalls</a>
+        <a href="attractions.html?category=adventure">Adventure</a>
+        <a href="attractions.html?category=heritage">Heritage Sites</a>
+      </div>
+    </nav>
+
+    <div class="site-footer_social">
+      <p class="site-footer_col-title">Follow</p>
+      <a href="#" aria-label="Tara. on Facebook">Facebook</a>
+      <a href="#" aria-label="Tara. on Instagram">Instagram</a>
+      <a href="#" aria-label="Tara. on YouTube">YouTube</a>
+    </div>
+  </div>
+
+  <div class="site-footer_bottom">
+    <p>&copy; 2026 Tara. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="attraction.js"></script>
+</body>
+</html>
