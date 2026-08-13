@@ -2,118 +2,372 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>Tara. — Discover the Philippines</title>
-<meta name="description" content="7,641 islands, one invitation. Discover the attractions, news, and stories of the Philippines." />
-
-<!-- Fonts: Fraunces (display) + Plus Jakarta Sans (body/UI) -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Us — Tara. A modern guide to the Philippines</title>
+<meta name="description" content="Get in touch with Tara., and meet the small team mapping the places, people, and stories of the Philippines." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="contact.css" />
 
-<link rel="stylesheet" href="style.css" />
+<link rel="canonical" href="https://www.taraphilippines.com/contact/" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Tara." />
+<meta property="og:title" content="Contact Us — Tara. A modern guide to the Philippines" />
+<meta property="og:description" content="Get in touch with Tara., and meet the small team mapping the places, people, and stories of the Philippines." />
+<meta property="og:url" content="https://www.taraphilippines.com/contact/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Contact Us — Tara." />
+<meta name="twitter:description" content="Get in touch with Tara., and meet the small team behind it." />
 </head>
 <body>
 
-<!-- ============ SITE HEADER (sticky / glass) ============ -->
+<!-- ==========================================================================
+     HEADER
+     ========================================================================== -->
 <header class="site-header" id="siteHeader">
   <div class="site-header_inner">
-
-    <a href="#home" class="brand" aria-label="Tara. Home">
-      <span class="brand_mark" aria-hidden="true">
-        <svg viewBox="0 0 40 40" width="30" height="30">
-          <circle cx="20" cy="20" r="8" fill="currentColor"/>
-          <g stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
-            <line x1="20" y1="2" x2="20" y2="9"/>
-            <line x1="20" y1="31" x2="20" y2="38"/>
-            <line x1="2" y1="20" x2="9" y2="20"/>
-            <line x1="31" y1="20" x2="38" y2="20"/>
-            <line x1="7.5" y1="7.5" x2="12.5" y2="12.5"/>
-            <line x1="27.5" y1="27.5" x2="32.5" y2="32.5"/>
-            <line x1="32.5" y1="7.5" x2="27.5" y2="12.5"/>
-            <line x1="12.5" y1="27.5" x2="7.5" y2="32.5"/>
-          </g>
-        </svg>
-      </span>
+    <a href="../1-homepage/home.html" class="brand">
+      <svg class="brand_mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2 L14.5 9.5 L22 12 L14.5 14.5 L12 22 L9.5 14.5 L2 12 L9.5 9.5 Z" fill="currentColor"/></svg>
       <span class="brand_word">Tara<span class="brand_dot">.</span></span>
     </a>
 
-    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+    <nav class="primary-nav">
       <ul class="primary-nav_list">
-        <li><a href="#home" class="primary-nav_link is-active">Home</a></li>
-        <li><a href="#about" class="primary-nav_link">About Philippines</a></li>
-        <li><a href="#news" class="primary-nav_link">News</a></li>
-        <li><a href="#attractions" class="primary-nav_link">Attractions</a></li>
-        <li><a href="#directory" class="primary-nav_link">Directory</a></li>
-        <li><a href="#contact" class="primary-nav_link">Contact Us</a></li>
+        <li><a href="../1-homepage/home.html" class="primary-nav_link">Home</a></li>
+
+        <li class="nav-item">
+          <button type="button" class="primary-nav_link primary-nav_trigger" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-about">
+            About Philippines
+            <svg class="primary-nav_chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+          <div class="primary-nav_dropdown" id="dropdown-about">
+            <a href="../8-history/history.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">History</span>
+            </a>
+            <a href="#" class="primary-nav_dropdown-link link--soon">
+              <span class="primary-nav_dropdown-title">Culture</span>
+            </a>
+            <a href="#" class="primary-nav_dropdown-link link--soon">
+              <span class="primary-nav_dropdown-title">People &amp; Traditions</span>
+            </a>
+            <a href="#" class="primary-nav_dropdown-link link--soon">
+              <span class="primary-nav_dropdown-title">Geography</span>
+            </a>
+          </div>
+        </li>
+
+        <li><a href="#" class="primary-nav_link link--soon">News</a></li>
+
+        <li class="nav-item">
+          <button type="button" class="primary-nav_link primary-nav_trigger" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-attractions">
+            Attractions
+            <svg class="primary-nav_chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+          <div class="primary-nav_dropdown primary-nav_dropdown--single" id="dropdown-attractions">
+            <a href="#" class="primary-nav_dropdown-link link--soon">
+              <span class="primary-nav_dropdown-title">Islands &amp; Beaches</span>
+            </a>
+            <a href="#" class="primary-nav_dropdown-link link--soon">
+              <span class="primary-nav_dropdown-title">Cities &amp; Heritage Towns</span>
+            </a>
+          </div>
+        </li>
+
+        <li><a href="#" class="primary-nav_link link--soon">Directory</a></li>
+        <li><a href="contact.html" class="primary-nav_link is-active">Contact Us</a></li>
       </ul>
     </nav>
 
-    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
       <span class="menu-toggle_bar"></span>
       <span class="menu-toggle_bar"></span>
       <span class="menu-toggle_bar"></span>
     </button>
-
   </div>
 </header>
 
-<!-- ============ MOBILE NAV DRAWER ============ -->
-<div class="mobile-nav" id="mobileNav" aria-hidden="true">
-  <nav aria-label="Mobile">
-    <ul class="mobile-nav_list">
-      <li><a href="#home" class="mobile-nav_link is-active">Home</a></li>
-      <li><a href="#about" class="mobile-nav_link">About Philippines</a></li>
-      <li><a href="#map" class="mobile-nav_link">Map</a></li>
-      <li><a href="#attractions" class="mobile-nav_link">Attractions</a></li>
-      <li><a href="#directory" class="mobile-nav_link">Directory</a></li>
-      <li><a href="#contact" class="mobile-nav_link">Contact Us</a></li>
-    </ul>
-  </nav>
-  <p class="mobile-nav_tagline">7,641 islands. One invitation.</p>
-</div>
-<div class="mobile-nav_scrim" id="mobileNavScrim"></div>
+<div class="mobile-nav_scrim" id="mobileScrim"></div>
+<nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <ul class="mobile-nav_list">
+    <li><a href="../1-homepage/home.html" class="mobile-nav_link">Home</a></li>
 
-<!-- ============ HERO ============ -->
-<main id="home">
-  <section class="hero">
-    <div class="hero_media" aria-hidden="true">
-      <img
-        src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1920&q=80"
-        alt=""
-        class="hero_img"
-        loading="eager"
-      />
-      <div class="hero_scrim"></div>
-    </div>
-
-    <div class="hero_content">
-      <p class="hero_eyebrow">7,641 Islands &nbsp;·&nbsp; Countless Stories</p>
-      <h1 class="hero_title">
-        Tara,<br /><em>Philippines.</em>
-      </h1>
-      <p class="hero_lede">
-        Explore the Philippines beyond the usual spots — discover
-        hidden gems, local stories, unforgettable places, and the
-        experiences that make every journey worth taking.
-      </p>
-
-      <div class="hero_ctas">
-        <a href="#attractions" class="btn btn--primary">
-          Explore Attractions
-        </a>
-        <a href="#about" class="btn btn--ghost">
-          Discover the Islands
-        </a>
+    <li class="mobile-nav_item">
+      <div class="mobile-nav_row">
+        <a href="#" class="mobile-nav_link">About Philippines</a>
+        <button class="mobile-nav_submenu-toggle" aria-expanded="false" aria-controls="mobileSubmenuAbout" aria-label="Toggle About Philippines submenu">
+          <svg class="mobile-nav_chevron" width="12" height="7" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
       </div>
+      <div class="mobile-nav_submenu" id="mobileSubmenuAbout">
+        <a href="../8-history/history.html" class="mobile-nav_submenu-link">History</a>
+        <a href="#" class="mobile-nav_submenu-link link--soon">Culture</a>
+        <a href="#" class="mobile-nav_submenu-link link--soon">People &amp; Traditions</a>
+        <a href="#" class="mobile-nav_submenu-link link--soon">Geography</a>
+      </div>
+    </li>
+
+    <li><a href="#" class="mobile-nav_link link--soon">News</a></li>
+
+    <li class="mobile-nav_item">
+      <div class="mobile-nav_row">
+        <a href="#" class="mobile-nav_link">Attractions</a>
+        <button class="mobile-nav_submenu-toggle" aria-expanded="false" aria-controls="mobileSubmenuAttractions" aria-label="Toggle Attractions submenu">
+          <svg class="mobile-nav_chevron" width="12" height="7" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="mobile-nav_submenu" id="mobileSubmenuAttractions">
+        <a href="#" class="mobile-nav_submenu-link link--soon">Islands &amp; Beaches</a>
+        <a href="#" class="mobile-nav_submenu-link link--soon">Cities &amp; Heritage Towns</a>
+      </div>
+    </li>
+
+    <li><a href="#" class="mobile-nav_link link--soon">Directory</a></li>
+    <li><a href="../2-about-page/about.html" class="mobile-nav_link is-active">Contact Us</a></li>
+  </ul>
+  <p class="mobile-nav_tagline">7,641 Islands. Countless Stories.</p>
+</nav>
+
+<main>
+
+  <!-- ============ 01 — CONTACT US ============ -->
+  <section class="c-hero">
+    <p class="section-eyebrow reveal">Get in touch</p>
+    <h1 class="c-hero_title reveal">Let&rsquo;s talk.</h1>
+    <p class="c-hero_lede reveal">
+      Have a question, suggestion, correction, or story to share?
+      We&rsquo;d love to hear from you.
+    </p>
+  </section>
+
+  <section class="h-section c-contact" id="contact">
+    <div class="c-contact_grid">
+
+      <!-- Left — contact information -->
+      <div class="c-info reveal">
+        <h2 class="c-info_title">Get in touch</h2>
+        <p class="c-info_statement">
+          Tara. is an independent project mapping the islands, stories,
+          and small discoveries that make the Philippines worth exploring.
+          Whether you&rsquo;re a traveler, a local, or someone who just
+          found a typo — we read everything.
+        </p>
+
+        <div class="c-info_block">
+          <p class="c-info_label">General inquiries</p>
+          <a href="mailto:hello@tara.ph" class="c-info_value">hello@tara.ph</a>
+        </div>
+
+        <div class="c-info_block">
+          <p class="c-info_label">Project &amp; collaborations</p>
+          <a href="mailto:collab@tara.ph" class="c-info_value">collab@tara.ph</a>
+        </div>
+
+        <div class="c-info_block">
+          <p class="c-info_label">Based in</p>
+          <p class="c-info_meta">Philippines &nbsp;·&nbsp; 7,641 islands</p>
+        </div>
+
+        <div class="c-info_block c-info_block--social">
+          <p class="c-info_label">Follow Tara.</p>
+          <div class="c-info_socials">
+            <a href="#" class="c-social-link" aria-label="Tara. on Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></svg>
+              <span>Instagram</span>
+            </a>
+            <a href="#" class="c-social-link" aria-label="Tara. on Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 8.5h2V5.2c-.35-.05-1.55-.15-2.95-.15-2.92 0-4.92 1.83-4.92 5.2v2.65H6.4v3.7h2.73V21h3.7v-4.4h2.72l.43-3.7h-3.15V10.6c0-1.07.29-1.8 1.17-1.8Z" fill="currentColor"/></svg>
+              <span>Facebook</span>
+            </a>
+            <a href="#" class="c-social-link" aria-label="Tara. on TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16.5 3c.4 2.2 1.9 3.6 4 3.8v2.9c-1.5.1-2.9-.4-4-1.2v6.6c0 3.2-2.4 5.4-5.4 5.4-2.8 0-5.3-2.1-5.3-5.4 0-3.1 2.6-5.4 5.6-5.3v3c-1.3-.2-2.6.6-2.6 2.3 0 1.3 1.1 2.3 2.4 2.3 1.5 0 2.6-1.2 2.6-2.9V3h2.7Z" fill="currentColor"/></svg>
+              <span>TikTok</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right — contact form -->
+      <div class="c-form-wrap reveal">
+        <form class="c-form" id="contactForm" novalidate>
+
+          <div class="form-field">
+            <label class="form-field_label" for="fullName">Full name</label>
+            <input class="form-field_control" type="text" id="fullName" name="fullName" data-required autocomplete="name" />
+            <span class="form-field_error">Please enter your name.</span>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field_label" for="email">Email address</label>
+            <input class="form-field_control" type="email" id="email" name="email" data-required autocomplete="email" />
+            <span class="form-field_error">Please enter a valid email.</span>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field_label" for="subject">Subject</label>
+            <input class="form-field_control" type="text" id="subject" name="subject" data-required />
+            <span class="form-field_error">Please add a subject.</span>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field_label" for="message">Message</label>
+            <textarea class="form-field_control form-field_control--textarea" id="message" name="message" rows="5" data-required></textarea>
+            <span class="form-field_error">Please write a short message.</span>
+          </div>
+
+          <button type="submit" class="btn btn--primary c-form_submit">Send message</button>
+
+          <p class="form-success" id="contactSuccess" role="status">
+            Thanks — your message is in. We&rsquo;ll get back to you soon.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ SECTION TRANSITION ============ -->
+  <section class="c-transition" aria-hidden="true">
+    <div class="c-transition_inner">
+      <span class="c-transition_step">01 / Contact</span>
+      <svg class="c-transition_arrow" width="34" height="14" viewBox="0 0 34 14" aria-hidden="true">
+        <path d="M0 7h31M25 1l7 6-7 6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="c-transition_step c-transition_step--current">02 / The people behind Tara.</span>
+    </div>
+  </section>
+
+  <!-- ============ 02 — MEET THE CREATORS ============ -->
+  <section class="h-section c-creators" id="creators">
+    <div class="h-section_intro c-creators_intro">
+      <p class="section-eyebrow reveal">The people behind Tara.</p>
+      <h2 class="h-section_title reveal">Meet the Creators</h2>
+      <p class="h-section_lede reveal">
+        Behind Tara. is a small team with a shared curiosity for the
+        Philippines — its places, people, stories, and culture.
+      </p>
     </div>
 
-    <a href="#about" class="hero_scroll-cue" aria-label="Scroll to learn more">
-      <span></span>
-    </a>
+    <div class="c-creators_grid">
+
+      <article class="c-creator c-creator--lead reveal">
+        <div class="c-creator_portrait c-creator_portrait--01">
+          <span class="c-creator_number">01</span>
+          <span class="c-creator_initials">RB</span>
+        </div>
+        <div class="c-creator_body">
+          <p class="c-creator_index">01</p>
+          <h3 class="c-creator_name">Renan Joseph Billion</h3>
+          <p class="c-creator_role">Web Developer &amp; Project Lead</p>
+          <p class="c-creator_bio">Responsible for the website development, structure, functionality, and overall technical implementation of Tara.</p>
+        </div>
+      </article>
+
+      <article class="c-creator c-creator--co-lead reveal">
+        <div class="c-creator_portrait c-creator_portrait--02">
+          <span class="c-creator_number">02</span>
+          <span class="c-creator_initials">EJ</span>
+        </div>
+        <div class="c-creator_body">
+          <p class="c-creator_index">02</p>
+          <h3 class="c-creator_name">Ellaine Javier</h3>
+          <p class="c-creator_role">UI/UX &amp; Creative Design</p>
+          <p class="c-creator_bio">Focused on the visual direction, user experience, layout, and creative details that shape the Tara. experience.</p>
+        </div>
+      </article>
+
+      <article class="c-creator c-creator--support reveal">
+        <div class="c-creator_portrait c-creator_portrait--03">
+          <span class="c-creator_number">03</span>
+          <span class="c-creator_initials">?</span>
+        </div>
+        <div class="c-creator_body">
+          <p class="c-creator_index">03</p>
+          <h3 class="c-creator_name">[Team Member Name]</h3>
+          <p class="c-creator_role">Content &amp; Research</p>
+          <p class="c-creator_bio">Researching Philippine history, culture, destinations, and stories.</p>
+        </div>
+      </article>
+
+      <article class="c-creator c-creator--support reveal">
+        <div class="c-creator_portrait c-creator_portrait--04">
+          <span class="c-creator_number">04</span>
+          <span class="c-creator_initials">?</span>
+        </div>
+        <div class="c-creator_body">
+          <p class="c-creator_index">04</p>
+          <h3 class="c-creator_name">[Team Member Name]</h3>
+          <p class="c-creator_role">Visual &amp; Media</p>
+          <p class="c-creator_bio">Photography, media selection, and visual storytelling.</p>
+        </div>
+      </article>
+
+      <article class="c-creator c-creator--support reveal">
+        <div class="c-creator_portrait c-creator_portrait--05">
+          <span class="c-creator_number">05</span>
+          <span class="c-creator_initials">?</span>
+        </div>
+        <div class="c-creator_body">
+          <p class="c-creator_index">05</p>
+          <h3 class="c-creator_name">[Team Member Name]</h3>
+          <p class="c-creator_role">Research &amp; Content Support</p>
+          <p class="c-creator_bio">Supporting research, content development, organization, and documentation.</p>
+        </div>
+      </article>
+
+    </div>
   </section>
+
+  <!-- ============ CLOSING ============ -->
+  <section class="c-closing">
+    <p class="c-closing_statement reveal">Five people. One project. One Philippines.</p>
+    <p class="c-closing_tagline reveal">Every destination has a story.<br />We built Tara. to help you discover it.</p>
+    <button type="button" class="btn btn--ghost c-back-to-top" id="backToTop">
+      <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 12V2M2 6l5-5 5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to top
+    </button>
+  </section>
+
 </main>
 
-<script src="script.js"></script>
+<footer class="h-footer">
+  <div class="h-footer_inner">
+    <div class="h-footer_brand">
+      <a href="../1-homepage/home.html" class="brand">
+        <span class="brand_word">Tara<span class="brand_dot">.</span></span>
+      </a>
+      <p>7,641 islands. Countless stories.</p>
+    </div>
+
+    <div class="h-footer_col">
+      <p class="h-footer_col-title">Site</p>
+      <ul class="h-footer_links">
+        <li><a href="../1-homepage/home.html">Home</a></li>
+        <li><a href="#" class="link--soon">About Philippines</a></li>
+        <li><a href="#" class="link--soon">News</a></li>
+        <li><a href="#" class="link--soon">Attractions</a></li>
+        <li><a href="#" class="link--soon">Directory</a></li>
+        <li><a href="../6-contact/contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="h-footer_col">
+      <p class="h-footer_col-title">Follow</p>
+      <ul class="h-footer_links">
+        <li><a href="#" class="link--soon">Facebook</a></li>
+        <li><a href="#" class="link--soon">Instagram</a></li>
+        <li><a href="#" class="link--soon">TikTok</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="h-footer_bottom">
+    <p>&copy; 2026 Tara. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="contact.js"></script>
 </body>
 </html>
