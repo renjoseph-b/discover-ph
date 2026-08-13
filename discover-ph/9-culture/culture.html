@@ -4,30 +4,639 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Culture — Tara.</title>
+<meta name="description" content="Many islands. Many stories. One living culture. Discover the traditions, festivals, art, language, and everyday life that shape the Philippines." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../1-homepage/style.css" />
-<style>
-  .placeholder{
-    min-height: 100svh;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    text-align:center; padding: 0 var(--gutter);
-    background: var(--sand);
-  }
-  .placeholder_eyebrow{ font-size:0.78rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color: var(--coral); margin: 0 0 18px; }
-  .placeholder_title{ font-family: var(--font-display); font-weight:600; font-size: clamp(2.2rem, 5vw, 3.6rem); color: var(--ink); margin: 0 0 20px; }
-  .placeholder_lede{ font-size: 1.05rem; color: rgba(8,38,43,0.68); max-width: 46ch; margin: 0 0 36px; }
-</style>
+<link rel="stylesheet" href="culture.css" />
 </head>
 <body>
 
-<section class="placeholder">
-  <p class="placeholder_eyebrow">Coming soon</p>
-  <h1 class="placeholder_title">Culture</h1>
-  <p class="placeholder_lede">This page is still being built. Check back soon for more on Culture.</p>
-  <a href="../1-homepage/home.html" class="btn btn--primary">Back to Home</a>
-</section>
+<!-- ============ SITE HEADER (sticky / glass) ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="site-header_inner">
 
+    <a href="../1-homepage/home.html" class="brand" aria-label="Tara. Home">
+      <span class="brand_mark" aria-hidden="true">
+        <svg viewBox="0 0 640 640" width="30" height="30" fill="currentColor">
+          <path d="M320 32C328.4 32 336.3 36.4 340.6 43.7L396.1 136.3L500.9 110C509.1 108 517.8 110.4 523.7 116.3C529.6 122.2 532 131 530 139.1L503.7 243.8L596.4 299.3C603.6 303.6 608.1 311.5 608.1 319.9C608.1 328.3 603.7 336.2 596.4 340.5L503.7 396.1L530 500.8C532 509 529.6 517.7 523.7 523.6C517.8 529.5 509 532 500.9 530L396.2 503.7L340.7 596.4C336.4 603.6 328.5 608.1 320.1 608.1C311.7 608.1 303.8 603.7 299.5 596.4L243.9 503.7L139.2 530C131 532 122.4 529.6 116.4 523.7C110.4 517.8 108 509 110 500.8L136.2 396.1L43.6 340.6C36.4 336.2 32 328.4 32 320C32 311.6 36.4 303.7 43.7 299.4L136.3 243.9L110 139.1C108 130.9 110.3 122.3 116.3 116.3C122.3 110.3 131 108 139.2 110L243.9 136.2L299.4 43.6L301.2 41C305.7 35.3 312.6 31.9 320 31.9zM320 176C240.5 176 176 240.5 176 320C176 399.5 240.5 464 320 464C399.5 464 464 399.5 464 320C464 240.5 399.5 176 320 176zM320 416C267 416 224 373 224 320C224 267 267 224 320 224C373 224 416 267 416 320C416 373 373 416 320 416z"/>
+        </svg>
+      </span>
+      <span class="brand_word">Tara<span class="brand_dot">.</span></span>
+    </a>
+
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <ul class="primary-nav_list">
+        <li>
+          <a href="../1-homepage/home.html" class="primary-nav_link" data-nav>Home</a>
+        </li>
+
+        <li class="nav-item nav-item--has-dropdown is-active">
+          <a
+            href="../2-about-page/about.html"
+            class="primary-nav_link is-active"
+            data-nav
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            About Philippines
+            <svg class="primary-nav_chevron" width="10" height="7" viewBox="0 0 10 7" fill="none" aria-hidden="true">
+              <path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <div class="primary-nav_dropdown" data-dropdown>
+            <a href="../2-about-page/about.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Overview</span>
+              <span class="primary-nav_dropdown-desc">Explore the Philippines at a glance.</span>
+            </a>
+            <a href="../8-history/history.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">History</span>
+              <span class="primary-nav_dropdown-desc">Stories that shaped the nation.</span>
+            </a>
+            <a href="culture.html" class="primary-nav_dropdown-link is-active">
+              <span class="primary-nav_dropdown-title">Culture</span>
+              <span class="primary-nav_dropdown-desc">Filipino traditions and identity.</span>
+            </a>
+            <a href="../10-food/food.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Food</span>
+              <span class="primary-nav_dropdown-desc">Dishes, flavors, and traditions.</span>
+            </a>
+            <a href="../11-people/people.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">People &amp; Traditions</span>
+              <span class="primary-nav_dropdown-desc">Communities, customs, celebrations.</span>
+            </a>
+            <a href="../12-geography/geography.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Geography</span>
+              <span class="primary-nav_dropdown-desc">Islands, regions, and landscapes.</span>
+            </a>
+          </div>
+        </li>
+
+        <li><a href="../7-news/news.html" class="primary-nav_link" data-nav>News</a></li>
+
+        <li class="nav-item nav-item--has-dropdown">
+          <a
+            href="../3-attraction-page/attraction.html"
+            class="primary-nav_link"
+            data-nav
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Attractions
+            <svg class="primary-nav_chevron" width="10" height="7" viewBox="0 0 10 7" fill="none" aria-hidden="true">
+              <path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <div class="primary-nav_dropdown primary-nav_dropdown--single" data-dropdown>
+            <a href="../3-attraction-page/attraction.html" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">All Attractions</span>
+            </a>
+            <a href="../3-attraction-page/attraction.html?category=beaches" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Beaches</span>
+            </a>
+            <a href="../3-attraction-page/attraction.html?category=islands" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Islands</span>
+            </a>
+            <a href="../3-attraction-page/attraction.html?category=mountains" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Mountains</span>
+            </a>
+            <a href="../3-attraction-page/attraction.html?category=waterfalls" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Waterfalls</span>
+            </a>
+            <a href="../3-attraction-page/attraction.html?category=adventure" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Adventure</span>
+            </a>
+            <a href="../3-attraction-page/attraction.html?category=heritage" class="primary-nav_dropdown-link">
+              <span class="primary-nav_dropdown-title">Heritage Sites</span>
+            </a>
+          </div>
+        </li>
+
+        <li><a href="../5-directory/directory.html" class="primary-nav_link" data-nav>Directory</a></li>
+        <li><a href="../4-contact-page/contact.html" class="primary-nav_link" data-nav>Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span class="menu-toggle_bar"></span>
+      <span class="menu-toggle_bar"></span>
+      <span class="menu-toggle_bar"></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- ============ MOBILE NAV DRAWER ============ -->
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <nav aria-label="Mobile">
+    <ul class="mobile-nav_list">
+      <li>
+        <a href="../1-homepage/home.html" class="mobile-nav_link">Home</a>
+      </li>
+      <li class="mobile-nav_item">
+        <div class="mobile-nav_row">
+          <a href="../2-about-page/about.html" class="mobile-nav_link is-active">About Philippines</a>
+          <button
+            type="button"
+            class="mobile-nav_submenu-toggle"
+            aria-expanded="false"
+            aria-controls="mobileSubmenuAbout"
+            aria-label="Toggle About Philippines submenu"
+          >
+            <svg class="mobile-nav_chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <ul class="mobile-nav_submenu" id="mobileSubmenuAbout">
+          <li><a href="../2-about-page/about.html" class="mobile-nav_submenu-link">Overview</a></li>
+          <li><a href="../8-history/history.html" class="mobile-nav_submenu-link">History</a></li>
+          <li><a href="culture.html" class="mobile-nav_submenu-link is-active">Culture</a></li>
+          <li><a href="../10-food/food.html" class="mobile-nav_submenu-link">Food</a></li>
+          <li><a href="../11-people/people.html" class="mobile-nav_submenu-link">People &amp; Traditions</a></li>
+          <li><a href="../12-geography/geography.html" class="mobile-nav_submenu-link">Geography</a></li>
+        </ul>
+      </li>
+
+      <li><a href="../7-news/news.html" class="mobile-nav_link">News</a></li>
+
+      <li class="mobile-nav_item">
+        <div class="mobile-nav_row">
+          <a href="../3-attraction-page/attraction.html" class="mobile-nav_link">Attractions</a>
+          <button
+            type="button"
+            class="mobile-nav_submenu-toggle"
+            aria-expanded="false"
+            aria-controls="mobileSubmenuAttractions"
+            aria-label="Toggle Attractions submenu"
+          >
+            <svg class="mobile-nav_chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <ul class="mobile-nav_submenu" id="mobileSubmenuAttractions">
+          <li><a href="../3-attraction-page/attraction.html" class="mobile-nav_submenu-link">All Attractions</a></li>
+          <li><a href="../3-attraction-page/attraction.html?category=beaches" class="mobile-nav_submenu-link">Beaches</a></li>
+          <li><a href="../3-attraction-page/attraction.html?category=islands" class="mobile-nav_submenu-link">Islands</a></li>
+          <li><a href="../3-attraction-page/attraction.html?category=mountains" class="mobile-nav_submenu-link">Mountains</a></li>
+          <li><a href="../3-attraction-page/attraction.html?category=waterfalls" class="mobile-nav_submenu-link">Waterfalls</a></li>
+          <li><a href="../3-attraction-page/attraction.html?category=adventure" class="mobile-nav_submenu-link">Adventure</a></li>
+          <li><a href="../3-attraction-page/attraction.html?category=heritage" class="mobile-nav_submenu-link">Heritage Sites</a></li>
+        </ul>
+      </li>
+
+      <li><a href="../5-directory/directory.html" class="mobile-nav_link">Directory</a></li>
+      <li><a href="../4-contact-page/contact.html" class="mobile-nav_link">Contact Us</a></li>
+    </ul>
+  </nav>
+  <p class="mobile-nav_tagline">7,641 islands. Countless stories.</p>
+</div>
+<div class="mobile-nav_scrim" id="mobileNavScrim"></div>
+
+<main>
+
+  <!-- ============ 01 — CINEMATIC HERO ============ -->
+  <section class="cul-hero">
+    <div class="cul-hero_media">
+      <img class="cul-hero_img" src="https://picsum.photos/seed/tara-culture-hero/1800/1100" alt="A Filipino community gathered together during a local celebration" />
+    </div>
+    <div class="cul-hero_scrim"></div>
+    <div class="cul-hero_content">
+      <p class="cul-hero_eyebrow">Culture</p>
+      <h1 class="cul-hero_title">Many islands.<br>Many stories.<br>One living culture.</h1>
+      <p class="cul-hero_lede">From ancestral traditions to modern Filipino life, discover the people, practices, art, and stories that shape the Philippines.</p>
+    </div>
+    <div class="cul-hero_scroll">
+      <span>Scroll to explore</span>
+      <span class="cul-hero_scroll-line" aria-hidden="true"></span>
+    </div>
+  </section>
+
+  <!-- ============ 02 — EDITORIAL INTRODUCTION ============ -->
+  <section class="cul-intro">
+    <div class="cul-intro_grid">
+      <figure class="cul-intro_media reveal">
+        <img src="https://picsum.photos/seed/tara-culture-intro/1000/1250" alt="Portrait of a Filipino family at home" />
+      </figure>
+      <div class="cul-intro_content">
+        <p class="section-eyebrow">What shapes us</p>
+        <h2 class="cul-intro_title reveal">What makes Filipino culture Filipino?</h2>
+        <div class="cul-intro_body">
+          <p class="reveal">Long before any outside influence reached these shores, Indigenous communities across the archipelago had already built their own systems of belief, craft, and kinship — traditions that still run beneath everything Filipino today.</p>
+          <p class="reveal">Centuries of trade brought Southeast Asian, Chinese, Spanish, and American influence, layering language, faith, food, and custom into something distinctly new. Nothing was simply adopted — it was localized, reshaped, made Filipino.</p>
+          <p class="reveal">And it hasn't stopped. Across more than seven thousand islands, culture keeps evolving in kitchens, chapels, barangays, and city streets — different by region, but recognizable as one people.</p>
+        </div>
+        <blockquote class="cul-intro_quote reveal">"Culture lives in the way we gather, celebrate, create, and remember."</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 — THE FILIPINO WAY (collage) ============ -->
+  <section class="cul-way">
+    <div class="cul-way_head">
+      <p class="section-eyebrow">The Filipino way</p>
+      <h2 class="cul-way_title reveal">Culture isn't somewhere else.<br>It's everyday life.</h2>
+    </div>
+
+    <div class="cul-way_collage">
+      <figure class="cul-way_img cul-way_img--a reveal">
+        <img src="https://picsum.photos/seed/tara-way-a/1000/1300" alt="Neighbors helping carry a house in a bayanihan tradition" />
+        <figcaption class="cul-way_label" style="--lx:8%; --ly:82%;">Bayanihan</figcaption>
+      </figure>
+      <figure class="cul-way_img cul-way_img--b reveal">
+        <img src="https://picsum.photos/seed/tara-way-b/900/700" alt="A Filipino family sharing a meal together" />
+        <figcaption class="cul-way_label" style="--lx:10%; --ly:14%;">Family</figcaption>
+      </figure>
+      <figure class="cul-way_img cul-way_img--c reveal">
+        <img src="https://picsum.photos/seed/tara-way-c/800/900" alt="A host welcoming guests into a home" />
+        <figcaption class="cul-way_label" style="--lx:12%; --ly:88%;">Hospitality</figcaption>
+      </figure>
+      <figure class="cul-way_img cul-way_img--d reveal">
+        <img src="https://picsum.photos/seed/tara-way-d/900/1100" alt="Neighbors gathered on a street for a community celebration" />
+        <figcaption class="cul-way_label" style="--lx:10%; --ly:10%;">Community</figcaption>
+      </figure>
+      <figure class="cul-way_img cul-way_img--e reveal">
+        <img src="https://picsum.photos/seed/tara-way-e/1000/800" alt="Children playing together in a neighborhood" />
+        <figcaption class="cul-way_label" style="--lx:8%; --ly:84%;">Belonging</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 04 — CULTURAL WORLDS ============ -->
+  <section class="cul-worlds">
+    <div class="cul-worlds_head">
+      <p class="section-eyebrow section-eyebrow--light">Cultural worlds</p>
+      <h2 class="cul-worlds_title reveal">Six ways into a living culture.</h2>
+    </div>
+
+    <div class="cul-worlds_grid">
+      <a href="#" class="cul-world cul-world--traditions reveal">
+        <span class="cul-world_media"><img src="https://picsum.photos/seed/tara-world-traditions/1000/1300" alt="An elder passing down a traditional craft to a younger generation" /></span>
+        <span class="cul-world_index">01</span>
+        <span class="cul-world_name">Traditions</span>
+        <span class="cul-world_desc">Customs and practices passed from generation to generation.</span>
+      </a>
+      <a href="#" class="cul-world cul-world--festivals reveal">
+        <span class="cul-world_media"><img src="https://picsum.photos/seed/tara-world-festivals/900/700" alt="Dancers in vivid costume during a street festival" /></span>
+        <span class="cul-world_index">02</span>
+        <span class="cul-world_name">Festivals</span>
+        <span class="cul-world_desc">Communities coming together through celebration, faith, music, dance, and color.</span>
+      </a>
+      <a href="#" class="cul-world cul-world--arts reveal">
+        <span class="cul-world_media"><img src="https://picsum.photos/seed/tara-world-arts/900/1100" alt="An artisan weaving traditional textile by hand" /></span>
+        <span class="cul-world_index">03</span>
+        <span class="cul-world_name">Arts &amp; Craft</span>
+        <span class="cul-world_desc">Weaving, carving, pottery, and tattooing rooted in island tradition.</span>
+      </a>
+      <a href="#" class="cul-world cul-world--music reveal">
+        <span class="cul-world_media"><img src="https://picsum.photos/seed/tara-world-music/1000/800" alt="Musicians performing traditional kulintang music" /></span>
+        <span class="cul-world_index">04</span>
+        <span class="cul-world_name">Music &amp; Dance</span>
+        <span class="cul-world_desc">From ancestral kulintang to a new generation of Filipino sound.</span>
+      </a>
+      <a href="#" class="cul-world cul-world--language reveal">
+        <span class="cul-world_media"><img src="https://picsum.photos/seed/tara-world-language/900/1150" alt="Signage in a regional Philippine language" /></span>
+        <span class="cul-world_index">05</span>
+        <span class="cul-world_name">Language</span>
+        <span class="cul-world_desc">A nation speaking in over 180 languages and counting.</span>
+      </a>
+      <a href="#" class="cul-world cul-world--everyday reveal">
+        <span class="cul-world_media"><img src="https://picsum.photos/seed/tara-world-everyday/1000/1250" alt="Daily life at a local Filipino market" /></span>
+        <span class="cul-world_index">06</span>
+        <span class="cul-world_name">Everyday Life</span>
+        <span class="cul-world_desc">Neighborhoods, markets, and the ordinary moments that reveal culture.</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ 05 — FESTIVALS CAROUSEL ============ -->
+  <section class="cul-fest">
+    <div class="cul-fest_head">
+      <p class="section-eyebrow">Festivals</p>
+      <h2 class="cul-fest_title reveal">When the Philippines celebrates, the streets come alive.</h2>
+    </div>
+
+    <div class="cul-fest_carousel">
+      <div class="cul-fest_track" id="festTrack">
+
+        <article class="cul-fest-card">
+          <img class="cul-fest-card_img" src="https://picsum.photos/seed/tara-fest-sinulog/1000/1250" alt="Sinulog festival dancers in vibrant costume in Cebu" />
+          <div class="cul-fest-card_scrim"></div>
+          <div class="cul-fest-card_content">
+            <h3 class="cul-fest-card_name">Sinulog</h3>
+            <p class="cul-fest-card_place">Cebu</p>
+            <p class="cul-fest-card_desc">A drumbeat procession honoring the Santo Niño, danced through the city for a week each January.</p>
+          </div>
+        </article>
+
+        <article class="cul-fest-card">
+          <img class="cul-fest-card_img" src="https://picsum.photos/seed/tara-fest-atiatihan/1000/1250" alt="Ati-Atihan festival dancers with tribal-inspired body paint in Aklan" />
+          <div class="cul-fest-card_scrim"></div>
+          <div class="cul-fest-card_content">
+            <h3 class="cul-fest-card_name">Ati-Atihan</h3>
+            <p class="cul-fest-card_place">Aklan</p>
+            <p class="cul-fest-card_desc">The "Mother of all Philippine festivals," where soot, color, and drumbeats fill the streets in tribute.</p>
+          </div>
+        </article>
+
+        <article class="cul-fest-card">
+          <img class="cul-fest-card_img" src="https://picsum.photos/seed/tara-fest-dinagyang/1000/1250" alt="Dinagyang festival performers in Iloilo" />
+          <div class="cul-fest-card_scrim"></div>
+          <div class="cul-fest-card_content">
+            <h3 class="cul-fest-card_name">Dinagyang</h3>
+            <p class="cul-fest-card_place">Iloilo</p>
+            <p class="cul-fest-card_desc">Tribes compete in choreographed drumbeats and war-dance routines across the city's avenues.</p>
+          </div>
+        </article>
+
+        <article class="cul-fest-card">
+          <img class="cul-fest-card_img" src="https://picsum.photos/seed/tara-fest-panagbenga/1000/1250" alt="Panagbenga flower festival float in Baguio" />
+          <div class="cul-fest-card_scrim"></div>
+          <div class="cul-fest-card_content">
+            <h3 class="cul-fest-card_name">Panagbenga</h3>
+            <p class="cul-fest-card_place">Baguio</p>
+            <p class="cul-fest-card_desc">A month-long bloom of flower floats and street dancing in the City of Pines.</p>
+          </div>
+        </article>
+
+        <article class="cul-fest-card">
+          <img class="cul-fest-card_img" src="https://picsum.photos/seed/tara-fest-pahiyas/1000/1250" alt="Pahiyas festival house decorated with produce in Quezon" />
+          <div class="cul-fest-card_scrim"></div>
+          <div class="cul-fest-card_content">
+            <h3 class="cul-fest-card_name">Pahiyas</h3>
+            <p class="cul-fest-card_place">Quezon</p>
+            <p class="cul-fest-card_desc">Homes are dressed entirely in harvest — rice, fruit, and woven kiping — as thanks for a good yield.</p>
+          </div>
+        </article>
+
+        <article class="cul-fest-card">
+          <img class="cul-fest-card_img" src="https://picsum.photos/seed/tara-fest-kadayawan/1000/1250" alt="Kadayawan festival performers with fruit and flower displays in Davao" />
+          <div class="cul-fest-card_scrim"></div>
+          <div class="cul-fest-card_content">
+            <h3 class="cul-fest-card_name">Kadayawan</h3>
+            <p class="cul-fest-card_place">Davao</p>
+            <p class="cul-fest-card_desc">A citywide thanksgiving for a bountiful harvest, led by Davao's Indigenous tribes.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="cul-fest_footer">
+        <span class="cul-fest_drag">Drag to explore</span>
+        <div class="cul-fest_controls">
+          <button class="cul-fest_nav-btn" id="festPrev" aria-label="Previous festival">
+            <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M6 1 1 6l5 5M1 6h14" stroke="currentColor" stroke-width="1.6"/></svg>
+          </button>
+          <span class="cul-fest_count"><span id="festCurrent">01</span> / 06</span>
+          <button class="cul-fest_nav-btn" id="festNext" aria-label="Next festival">
+            <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M10 1 15 6l-5 5M15 6H1" stroke="currentColor" stroke-width="1.6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 — LIVING TRADITIONS ============ -->
+  <section class="cul-living">
+    <div class="cul-living_head">
+      <p class="section-eyebrow">Living traditions</p>
+      <h2 class="cul-living_title reveal">Traditions that refuse to disappear.</h2>
+    </div>
+
+    <article class="cul-story reveal">
+      <figure class="cul-story_media">
+        <img src="https://picsum.photos/seed/tara-story-weaving/1100/1000" alt="A weaver working traditional Filipino textile on a loom" />
+      </figure>
+      <div class="cul-story_content">
+        <span class="cul-story_label">Weaving</span>
+        <h3 class="cul-story_title">Thread that carries a community's memory</h3>
+        <p class="cul-story_body">In highland and island villages alike, weaving communities still work patterns passed down through generations — each motif a form of language, recording history and identity in cloth long before it was written down.</p>
+      </div>
+    </article>
+
+    <article class="cul-story cul-story--reverse reveal">
+      <figure class="cul-story_media">
+        <img src="https://picsum.photos/seed/tara-story-tattoo/1100/1000" alt="Traditional Filipino hand-tap tattoo practice" />
+      </figure>
+      <div class="cul-story_content">
+        <span class="cul-story_label">Indigenous Tattooing</span>
+        <h3 class="cul-story_title">Marks earned, not simply worn</h3>
+        <p class="cul-story_body">Batok, the hand-tapped tattoo tradition, once marked achievement, status, and protection. Today a new generation of mambabatok are reviving the practice — not as ornament, but as a reclaiming of identity.</p>
+      </div>
+    </article>
+
+    <article class="cul-story reveal">
+      <figure class="cul-story_media">
+        <img src="https://picsum.photos/seed/tara-story-dance/1100/1000" alt="Traditional Filipino folk dancers performing" />
+      </figure>
+      <div class="cul-story_content">
+        <span class="cul-story_label">Traditional Dance</span>
+        <h3 class="cul-story_title">Stories told with the whole body</h3>
+        <p class="cul-story_body">From the bamboo-clacking rhythm of tinikling to the candle-balanced grace of pandanggo sa ilaw, Filipino folk dance turns history and daily labor into performance — still taught in schoolyards across the country.</p>
+      </div>
+    </article>
+
+    <article class="cul-story cul-story--reverse reveal">
+      <figure class="cul-story_media">
+        <img src="https://picsum.photos/seed/tara-story-craft/1100/1000" alt="An artisan carving wood by hand" />
+      </figure>
+      <div class="cul-story_content">
+        <span class="cul-story_label">Craftsmanship</span>
+        <h3 class="cul-story_title">Made by hand, made to last</h3>
+        <p class="cul-story_body">Woodcarving, basketry, and pottery traditions endure in workshops across the islands, where skill is still measured in patience — objects built to be used, inherited, and eventually passed on.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ 07 — LANGUAGE / STATISTIC ============ -->
+  <section class="cul-lang">
+    <p class="section-eyebrow section-eyebrow--light">Language</p>
+    <p class="cul-lang_number reveal">180+</p>
+    <p class="cul-lang_headline reveal">languages spoken across the Philippines</p>
+    <div class="cul-lang_cloud reveal">
+      <span class="cul-lang_word cul-lang_word--xl">Filipino</span>
+      <span class="cul-lang_word cul-lang_word--lg">English</span>
+      <span class="cul-lang_word cul-lang_word--md">Cebuano</span>
+      <span class="cul-lang_word cul-lang_word--lg">Ilocano</span>
+      <span class="cul-lang_word cul-lang_word--sm">Hiligaynon</span>
+      <span class="cul-lang_word cul-lang_word--md">Waray</span>
+      <span class="cul-lang_word cul-lang_word--sm">Kapampangan</span>
+      <span class="cul-lang_word cul-lang_word--md">Pangasinan</span>
+    </div>
+  </section>
+
+  <!-- ============ 08 — CULTURE AROUND THE TABLE ============ -->
+  <section class="cul-table">
+    <div class="cul-table_head">
+      <div>
+        <p class="section-eyebrow">Around the table</p>
+        <h2 class="cul-table_title reveal">Culture tastes different at every table.</h2>
+      </div>
+      <a href="../10-food/food.html" class="text-link cul-table_cta">
+        Explore Filipino Food
+        <span class="text-link_arrow" aria-hidden="true"><svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M10 1 15 6l-5 5M15 6H1" stroke="currentColor" stroke-width="1.6"/></svg></span>
+      </a>
+    </div>
+
+    <div class="cul-table_strip">
+      <figure class="cul-table_item reveal">
+        <img src="https://picsum.photos/seed/tara-table-kamayan/700/900" alt="A kamayan meal laid out on banana leaves" />
+        <figcaption>Kamayan</figcaption>
+      </figure>
+      <figure class="cul-table_item reveal">
+        <img src="https://picsum.photos/seed/tara-table-fiesta/700/900" alt="A fiesta table filled with food for the whole community" />
+        <figcaption>Fiesta</figcaption>
+      </figure>
+      <figure class="cul-table_item reveal">
+        <img src="https://picsum.photos/seed/tara-table-palengke/700/900" alt="A vendor at a local palengke market" />
+        <figcaption>Palengke</figcaption>
+      </figure>
+      <figure class="cul-table_item reveal">
+        <img src="https://picsum.photos/seed/tara-table-family/700/900" alt="A Filipino family sharing a home-cooked meal" />
+        <figcaption>Family Meals</figcaption>
+      </figure>
+      <figure class="cul-table_item reveal">
+        <img src="https://picsum.photos/seed/tara-table-community/700/900" alt="Neighbors sharing food at a community gathering" />
+        <figcaption>Community</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 09 — CULTURE TODAY ============ -->
+  <section class="cul-today">
+    <div class="cul-today_head">
+      <p class="section-eyebrow section-eyebrow--light">Culture today</p>
+      <h2 class="cul-today_title reveal">Culture isn't stuck in the past.</h2>
+    </div>
+
+    <div class="cul-today_grid">
+      <a href="#" class="cul-today-card cul-today-card--art reveal">
+        <img class="cul-today-card_img" src="https://picsum.photos/seed/tara-today-art/900/1100" alt="A contemporary Filipino artist in their studio" />
+        <span class="cul-today-card_label">Contemporary Art</span>
+        <span class="cul-today-card_desc">New perspectives from a rising generation of Filipino artists.</span>
+      </a>
+      <a href="#" class="cul-today-card cul-today-card--opm reveal">
+        <img class="cul-today-card_img" src="https://picsum.photos/seed/tara-today-opm/900/700" alt="A Filipino musician performing live" />
+        <span class="cul-today-card_label">OPM</span>
+        <span class="cul-today-card_desc">A new generation of Filipino sound, streamed far beyond the islands.</span>
+      </a>
+      <a href="#" class="cul-today-card cul-today-card--fashion reveal">
+        <img class="cul-today-card_img" src="https://picsum.photos/seed/tara-today-fashion/900/1050" alt="A model wearing modern Filipino-inspired fashion" />
+        <span class="cul-today-card_label">Filipino Fashion</span>
+        <span class="cul-today-card_desc">Traditional weave and silhouette, reworked for the modern wardrobe.</span>
+      </a>
+      <a href="#" class="cul-today-card cul-today-card--street reveal">
+        <img class="cul-today-card_img" src="https://picsum.photos/seed/tara-today-street/900/750" alt="Street scene in a Filipino city" />
+        <span class="cul-today-card_label">Street Culture</span>
+        <span class="cul-today-card_desc">The Philippines beyond the postcard — loud, young, and unmistakably local.</span>
+      </a>
+      <a href="#" class="cul-today-card cul-today-card--design reveal">
+        <img class="cul-today-card_img" src="https://picsum.photos/seed/tara-today-design/900/1000" alt="A contemporary Filipino interior design space" />
+        <span class="cul-today-card_label">Filipino Design</span>
+        <span class="cul-today-card_desc">Where heritage materials meet contemporary creativity.</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ 10 — REGIONAL CULTURE MAP ============ -->
+  <section class="map-section cul-regional">
+    <div class="map-section_head">
+      <p class="section-eyebrow section-eyebrow--light">Regional culture</p>
+      <h2 class="map-section_title reveal">One country.<br>Countless cultural identities.</h2>
+      <p class="map-section_lede reveal">Select a region to see how culture shifts from island to island.</p>
+    </div>
+
+    <div class="map-section_body">
+      <div class="map-visual">
+        <svg class="map-svg" viewBox="0 0 300 420" role="img" aria-label="Stylized map of the Philippines divided into Luzon, Visayas, and Mindanao">
+          <path class="map-landmass" data-region="luzon" d="M120 10 C150 8 175 30 172 60 C190 70 195 95 180 115 C195 130 190 155 170 165 C178 185 165 205 145 205 C150 220 135 235 118 228 C100 240 80 225 85 205 C65 200 55 180 68 160 C50 150 48 125 65 112 C55 95 62 70 85 62 C82 40 100 15 120 10 Z"></path>
+          <path class="map-landmass" data-region="visayas" d="M95 245 C115 240 135 250 138 268 C155 265 168 280 160 298 C175 300 180 320 165 330 C170 345 155 358 138 352 C130 365 110 365 102 350 C85 355 72 340 80 325 C65 320 62 300 78 292 C70 278 80 260 95 245 Z"></path>
+          <path class="map-landmass" data-region="mindanao" d="M130 370 C155 365 180 375 190 395 C210 398 215 418 198 428 C200 445 178 458 160 450 C148 465 122 462 115 445 C95 448 82 432 92 418 C78 408 82 388 100 382 C102 368 118 372 130 370 Z"></path>
+        </svg>
+        <div class="map-legend" id="mapLegend">
+          <button class="map-legend_item is-active" data-region="luzon"><span class="map-legend_dot"></span>Luzon</button>
+          <button class="map-legend_item" data-region="visayas"><span class="map-legend_dot"></span>Visayas</button>
+          <button class="map-legend_item" data-region="mindanao"><span class="map-legend_dot"></span>Mindanao</button>
+        </div>
+      </div>
+
+      <div class="map-panel" id="mapPanel">
+        <p class="map-panel_eyebrow" id="mapPanelEyebrow">Luzon</p>
+        <ul class="map-panel_list" id="mapPanelList">
+          <li>Highlands</li>
+          <li>Lowlands</li>
+          <li>Indigenous communities</li>
+          <li>Colonial heritage</li>
+        </ul>
+        <a href="#" class="text-link map-panel_cta">
+          Explore Luzon
+          <span class="text-link_arrow" aria-hidden="true"><svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M10 1 15 6l-5 5M15 6H1" stroke="currentColor" stroke-width="1.6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11 — FINAL CINEMATIC STATEMENT ============ -->
+  <section class="final-cta cul-final">
+    <div class="final-cta_media">
+      <img src="https://picsum.photos/seed/tara-culture-final/1800/1200" alt="An intimate moment between community members in the Philippines" />
+    </div>
+    <div class="final-cta_scrim"></div>
+    <div class="final-cta_content">
+      <h2 class="final-cta_title reveal">There is no single Filipino story.</h2>
+      <p class="final-cta_lede reveal">Across thousands of islands, generations have created traditions, languages, art, food, and stories that continue to evolve.</p>
+      <a href="#" class="btn btn--primary reveal">Explore the Philippines →</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="site-footer_top">
+    <div class="site-footer_brand">
+      <span class="brand_word">Tara<span class="brand_dot">.</span></span>
+      <p>7,641 islands. Countless stories.</p>
+    </div>
+
+    <nav class="site-footer_nav" aria-label="Footer">
+      <div class="site-footer_col">
+        <p class="site-footer_col-title">Site</p>
+        <a href="../1-homepage/home.html">Home</a>
+        <a href="../2-about-page/about.html">About Philippines</a>
+        <a href="../7-news/news.html">News</a>
+        <a href="../3-attraction-page/attraction.html">Attractions</a>
+        <a href="../5-directory/directory.html">Directory</a>
+        <a href="../4-contact-page/contact.html">Contact Us</a>
+      </div>
+      <div class="site-footer_col">
+        <p class="site-footer_col-title">Explore</p>
+        <a href="../7-news/news.html">Travel Guides</a>
+        <a href="../3-attraction-page/attraction.html">Destinations</a>
+        <a href="../8-history/history.html">History</a>
+        <a href="../10-food/food.html">Food</a>
+        <a href="../13-privacy/privacy.html">Privacy Policy</a>
+        <a href="../14-terms/terms.html">Terms</a>
+      </div>
+    </nav>
+
+    <div class="site-footer_social">
+      <p class="site-footer_col-title">Follow</p>
+      <a href="#" aria-label="Tara. on Facebook">Facebook</a>
+      <a href="#" aria-label="Tara. on Instagram">Instagram</a>
+      <a href="#" aria-label="Tara. on YouTube">YouTube</a>
+    </div>
+  </div>
+
+  <div class="site-footer_bottom">
+    <p>&copy; 2026 Tara. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="culture.js"></script>
 </body>
 </html>

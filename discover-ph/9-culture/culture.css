@@ -1,0 +1,374 @@
+/* ==========================================================================
+   TARA. — Culture page
+   Built on top of the shared design tokens in 1-homepage/style.css
+   (--ink, --forest, --teal, --turquoise, --mango, --coral, --sand, --sand-dim)
+   ========================================================================== */
+
+/* ==========================================================================
+   Nav active-state helpers (Culture page)
+   The shared stylesheet only styles .primary-nav_link.is-active;
+   these cover the dropdown + mobile submenu entries.
+   ========================================================================== */
+.primary-nav_dropdown-link.is-active .primary-nav_dropdown-title{ color: var(--turquoise); }
+.primary-nav_dropdown-link.is-active .primary-nav_dropdown-desc{ color: rgba(47, 212, 203, 0.6); }
+.mobile-nav_submenu-link.is-active{ color: var(--turquoise); }
+
+/* ==========================================================================
+   01 — Cinematic hero
+   ========================================================================== */
+.cul-hero{
+  position: relative;
+  min-height: 100svh;
+  display: flex; align-items: center;
+  overflow: hidden;
+  padding: calc(var(--header-h) + 40px) var(--gutter) 100px;
+}
+.cul-hero_media{ position: absolute; inset: 0; z-index: -2; }
+.cul-hero_img{ width: 100%; height: 100%; object-fit: cover; object-position: center 40%; transform: scale(1.05); }
+.cul-hero_scrim{
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(8,38,43,0.72) 0%, rgba(8,38,43,0.24) 42%, rgba(8,38,43,0.4) 68%, rgba(4,16,18,0.9) 100%);
+}
+.cul-hero_content{ position: relative; max-width: 720px; color: var(--white); }
+.cul-hero_eyebrow{
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--turquoise); margin: 0 0 22px;
+  opacity: 0; animation: cul-rise 0.8s var(--ease) 0.15s forwards;
+}
+.cul-hero_title{
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(2.9rem, 8vw, 5.8rem); line-height: 1.02; letter-spacing: -0.01em;
+  margin: 0 0 26px;
+  opacity: 0; animation: cul-rise 0.9s var(--ease) 0.3s forwards;
+}
+.cul-hero_lede{
+  font-size: clamp(1.02rem, 1.4vw, 1.2rem); line-height: 1.65; color: rgba(255,255,255,0.86);
+  max-width: 50ch; margin: 0;
+  opacity: 0; animation: cul-rise 0.9s var(--ease) 0.45s forwards;
+}
+@keyframes cul-rise{ from{ opacity: 0; transform: translateY(20px); } to{ opacity: 1; transform: translateY(0); } }
+
+.cul-hero_scroll{
+  position: absolute; left: var(--gutter); bottom: 40px; z-index: 1;
+  display: flex; align-items: center; gap: 14px;
+  color: rgba(255,255,255,0.75); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+}
+.cul-hero_scroll-line{ position: relative; width: 1px; height: 42px; background: rgba(255,255,255,0.3); overflow: hidden; }
+.cul-hero_scroll-line::after{
+  content: ""; position: absolute; left: 0; top: -100%; width: 100%; height: 100%;
+  background: var(--mango); animation: cul-scrollcue 2s ease-in-out infinite;
+}
+@keyframes cul-scrollcue{ 0%{ top: -100%; } 60%{ top: 100%; } 100%{ top: 100%; } }
+@media (max-width: 640px){ .cul-hero_scroll{ display: none; } }
+
+/* ==========================================================================
+   02 — Editorial introduction
+   ========================================================================== */
+.cul-intro{ background: var(--sand); padding: var(--section-pad) var(--gutter); }
+.cul-intro_grid{
+  max-width: var(--page-max); margin: 0 auto;
+  display: grid; grid-template-columns: 0.85fr 1fr; gap: clamp(32px, 5vw, 88px); align-items: center;
+}
+.cul-intro_media{ margin: 0; border-radius: 6px; overflow: hidden; aspect-ratio: 4 / 5; }
+.cul-intro_media img{ width: 100%; height: 100%; object-fit: cover; }
+.cul-intro_title{
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(2.1rem, 3.8vw, 3rem); line-height: 1.12; letter-spacing: -0.01em;
+  color: var(--ink); margin: 0 0 30px;
+}
+.cul-intro_body p{ font-size: 1.05rem; line-height: 1.75; color: rgba(8,38,43,0.72); margin: 0 0 20px; }
+.cul-intro_quote{
+  margin: 40px 0 0; padding-top: 32px; border-top: 1px solid rgba(8,38,43,0.16);
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-size: clamp(1.3rem, 2vw, 1.7rem); line-height: 1.4; color: var(--teal);
+}
+@media (max-width: 860px){ .cul-intro_grid{ grid-template-columns: 1fr; } }
+
+/* ==========================================================================
+   03 — The Filipino Way (asymmetric collage)
+   ========================================================================== */
+.cul-way{ background: var(--sand-dim); padding: var(--section-pad) var(--gutter); }
+.cul-way_head{ max-width: var(--page-max); margin: 0 auto clamp(48px, 6vw, 80px); }
+.cul-way_title{
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(2rem, 4vw, 3rem); line-height: 1.12; letter-spacing: -0.01em; color: var(--ink); margin: 0;
+}
+
+.cul-way_collage{ position: relative; max-width: var(--page-max); margin: 0 auto; height: clamp(760px, 82vw, 980px); }
+.cul-way_img{
+  position: absolute; margin: 0; overflow: hidden; border-radius: 4px;
+  border: 6px solid var(--sand); box-shadow: 0 30px 60px -24px rgba(8,38,43,0.3);
+}
+.cul-way_img img{ width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease); }
+.cul-way_img:hover img{ transform: scale(1.06); }
+.cul-way_label{
+  position: absolute; left: var(--lx, 10%); top: var(--ly, 85%); transform: translate(0, -50%);
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--white); background: rgba(8,38,43,0.55); backdrop-filter: blur(6px);
+  padding: 8px 14px; border-radius: 999px; white-space: nowrap;
+}
+.cul-way_img--a{ width: 42%; height: 82%; top: 0; left: 0; z-index: 2; }
+.cul-way_img--b{ width: 28%; height: 32%; top: 2%; right: 6%; z-index: 3; }
+.cul-way_img--c{ width: 24%; height: 40%; top: 38%; right: 26%; z-index: 4; }
+.cul-way_img--d{ width: 22%; height: 46%; bottom: 0; right: 0; z-index: 3; }
+.cul-way_img--e{ width: 32%; height: 26%; bottom: 0; left: 30%; z-index: 5; }
+
+.cul-way_statement{
+  max-width: var(--page-max); margin: clamp(48px, 6vw, 76px) auto 0;
+  font-family: var(--font-display); font-weight: 500; font-style: italic;
+  font-size: clamp(1.3rem, 2.2vw, 1.9rem); color: var(--ink); text-align: center;
+}
+
+@media (max-width: 860px){
+  .cul-way_collage{ height: auto; display: flex; flex-direction: column; gap: 16px; }
+  .cul-way_img{ position: static; width: 100% !important; height: auto !important; aspect-ratio: 4/3.4; }
+  .cul-way_img--a{ aspect-ratio: 4/4.6; }
+}
+
+/* ==========================================================================
+   04 — Cultural Worlds (dark asymmetric magazine grid)
+   ========================================================================== */
+.cul-worlds{ background: var(--ink); padding: var(--section-pad) var(--gutter); }
+.cul-worlds_head{ max-width: var(--page-max); margin: 0 auto clamp(44px, 6vw, 72px); }
+.cul-worlds_title{
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(2.1rem, 4.2vw, 3.1rem); line-height: 1.1; letter-spacing: -0.01em; color: var(--white); margin: 0;
+}
+
+.cul-worlds_grid{
+  max-width: var(--page-max); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: 380px 240px 320px; gap: 16px;
+  grid-template-areas:
+    "traditions traditions traditions festivals festivals festivals"
+    "arts arts music music language language"
+    "everyday everyday everyday everyday everyday everyday";
+}
+.cul-world--traditions{ grid-area: traditions; }
+.cul-world--festivals{ grid-area: festivals; }
+.cul-world--arts{ grid-area: arts; }
+.cul-world--music{ grid-area: music; }
+.cul-world--language{ grid-area: language; }
+.cul-world--everyday{ grid-area: everyday; }
+
+.cul-world{
+  position: relative; display: flex; flex-direction: column; justify-content: flex-end;
+  border-radius: 6px; overflow: hidden; isolation: isolate; padding: 26px;
+}
+.cul-world_media{ position: absolute; inset: 0; z-index: -2; }
+.cul-world_media img{ width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+.cul-world:hover .cul-world_media img{ transform: scale(1.06); }
+.cul-world::after{
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(8,38,43,0.05) 30%, rgba(6,24,27,0.88) 100%);
+}
+.cul-world_index{
+  font-family: var(--font-display); font-weight: 500; font-size: 0.95rem; color: var(--mango);
+  margin-bottom: auto;
+}
+.cul-world_name{
+  font-family: var(--font-display); font-weight: 600; color: var(--white); margin-top: 14px;
+  font-size: clamp(1.2rem, 1.8vw, 1.7rem);
+}
+.cul-worlds_grid > .cul-world--traditions .cul-world_name,
+.cul-worlds_grid > .cul-world--everyday .cul-world_name{ font-size: clamp(1.5rem, 2.2vw, 2.1rem); }
+.cul-world_desc{ color: rgba(255,255,255,0.72); font-size: 0.92rem; margin-top: 8px; max-width: 34ch; }
+
+@media (max-width: 900px){
+  .cul-worlds_grid{
+    grid-template-columns: none; grid-template-rows: none; grid-template-areas: none;
+    display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px;
+    margin: 0 calc(var(--gutter) * -1); padding-left: var(--gutter); padding-right: var(--gutter);
+  }
+  .cul-world{ flex: 0 0 78vw; height: 420px; scroll-snap-align: start; }
+}
+
+/* ==========================================================================
+   05 — Festivals carousel
+   ========================================================================== */
+.cul-fest{ background: var(--ink); padding: var(--section-pad) 0; overflow: hidden; }
+.cul-fest_head{ max-width: var(--page-max); margin: 0 auto clamp(36px, 5vw, 56px); padding: 0 var(--gutter); }
+.cul-fest_title{
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(2.1rem, 4.4vw, 3.3rem); line-height: 1.1; letter-spacing: -0.01em; color: var(--white);
+  margin: 0; max-width: 16ch;
+  background: linear-gradient(92deg, var(--white) 60%, var(--mango) 100%);
+  -webkit-background-clip: text; background-clip: text;
+}
+
+.cul-fest_track{
+  display: flex; gap: clamp(14px, 1.6vw, 22px);
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  padding: 4px var(--gutter) 8px; scrollbar-width: none;
+}
+.cul-fest_track::-webkit-scrollbar{ display: none; }
+
+.cul-fest-card{
+  position: relative; flex: 0 0 auto; width: min(78vw, 380px); aspect-ratio: 3 / 4.1;
+  border-radius: 8px; overflow: hidden; scroll-snap-align: start; isolation: isolate;
+}
+.cul-fest-card_img{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+.cul-fest-card:hover .cul-fest-card_img{ transform: scale(1.06); }
+.cul-fest-card_scrim{
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(8,38,43,0.05) 40%, rgba(6,24,27,0.92) 100%);
+}
+.cul-fest-card_content{ position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 26px; }
+.cul-fest-card_name{ font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 2vw, 1.9rem); color: var(--white); margin: 0; }
+.cul-fest-card_place{
+  font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mango);
+  margin: 8px 0 14px;
+}
+.cul-fest-card_desc{ color: rgba(255,255,255,0.82); font-size: 0.92rem; line-height: 1.5; margin: 0; }
+
+.cul-fest_footer{
+  max-width: var(--page-max); margin: clamp(28px, 4vw, 44px) auto 0; padding: 0 var(--gutter);
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.cul-fest_drag{ font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+.cul-fest_controls{ display: flex; align-items: center; gap: 16px; }
+.cul-fest_count{ font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.65); letter-spacing: 0.04em; }
+.cul-fest_nav-btn{
+  width: 46px; height: 46px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,0.28);
+  display: flex; align-items: center; justify-content: center; color: var(--white);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.cul-fest_nav-btn:hover{ background: var(--mango); border-color: var(--mango); color: var(--ink); }
+
+/* ==========================================================================
+   06 — Living traditions (alternating storytelling)
+   ========================================================================== */
+.cul-living{ background: var(--sand); padding: var(--section-pad) var(--gutter); }
+.cul-living_head{ max-width: var(--page-max); margin: 0 auto clamp(48px, 6vw, 80px); }
+.cul-living_title{
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(2.1rem, 4.2vw, 3.1rem); line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); margin: 0;
+}
+
+.cul-story{
+  max-width: var(--page-max); margin: 0 auto clamp(56px, 7vw, 96px);
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(28px, 4vw, 64px); align-items: center;
+}
+.cul-story:last-child{ margin-bottom: 0; }
+.cul-story--reverse{ grid-template-columns: 1fr 1.1fr; }
+.cul-story--reverse .cul-story_media{ order: 2; }
+.cul-story--reverse .cul-story_content{ order: 1; }
+.cul-story_media{ margin: 0; border-radius: 6px; overflow: hidden; aspect-ratio: 5 / 4; }
+.cul-story_media img{ width: 100%; height: 100%; object-fit: cover; }
+.cul-story_label{ display: inline-block; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--coral); margin-bottom: 14px; }
+.cul-story_title{ font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 2.3vw, 2rem); color: var(--ink); margin: 0 0 16px; line-height: 1.2; }
+.cul-story_body{ font-size: 1.02rem; line-height: 1.7; color: rgba(8,38,43,0.7); margin: 0; }
+
+@media (max-width: 780px){
+  .cul-story, .cul-story--reverse{ grid-template-columns: 1fr; }
+  .cul-story--reverse .cul-story_media, .cul-story--reverse .cul-story_content{ order: initial; }
+}
+
+/* ==========================================================================
+   07 — Language statistic (typographic installation)
+   ========================================================================== */
+.cul-lang{
+  background: var(--forest); padding: clamp(90px, 13vw, 160px) var(--gutter);
+  text-align: center; display: flex; flex-direction: column; align-items: center;
+}
+.cul-lang .section-eyebrow{ display: inline-flex; }
+.cul-lang_number{
+  font-family: var(--font-display); font-weight: 600; color: var(--white);
+  font-size: clamp(5rem, 16vw, 11rem); line-height: 0.9; letter-spacing: -0.02em; margin: 18px 0 0;
+}
+.cul-lang_headline{
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem); color: rgba(255,255,255,0.75); margin: 4px 0 clamp(48px, 7vw, 84px);
+}
+.cul-lang_cloud{
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center;
+  gap: clamp(12px, 2vw, 26px); max-width: 900px;
+}
+.cul-lang_word{ font-family: var(--font-display); font-weight: 500; color: rgba(255,255,255,0.85); }
+.cul-lang_word--xl{ font-size: clamp(2.2rem, 4vw, 3.4rem); color: var(--turquoise); font-weight: 600; }
+.cul-lang_word--lg{ font-size: clamp(1.6rem, 2.6vw, 2.2rem); color: var(--mango); }
+.cul-lang_word--md{ font-size: clamp(1.2rem, 1.8vw, 1.6rem); }
+.cul-lang_word--sm{ font-size: clamp(1rem, 1.3vw, 1.2rem); color: rgba(255,255,255,0.55); }
+
+/* ==========================================================================
+   08 — Culture around the table
+   ========================================================================== */
+.cul-table{ background: var(--sand-dim); padding: var(--section-pad) 0; }
+.cul-table_head{
+  max-width: var(--page-max); margin: 0 auto clamp(36px, 5vw, 56px); padding: 0 var(--gutter);
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+}
+.cul-table_title{
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(2rem, 4vw, 2.9rem); line-height: 1.1; letter-spacing: -0.01em; color: var(--ink); margin: 0;
+}
+.cul-table_cta{ flex-shrink: 0; }
+
+.cul-table_strip{
+  display: flex; gap: clamp(14px, 1.6vw, 22px);
+  overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px var(--gutter) 10px; scrollbar-width: none;
+}
+.cul-table_strip::-webkit-scrollbar{ display: none; }
+.cul-table_item{ position: relative; flex: 0 0 auto; width: min(58vw, 260px); aspect-ratio: 3 / 3.9; border-radius: 6px; overflow: hidden; margin: 0; isolation: isolate; }
+.cul-table_item img{ width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+.cul-table_item:hover img{ transform: scale(1.06); }
+.cul-table_item::after{ content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,38,43,0) 55%, rgba(6,24,27,0.75) 100%); }
+.cul-table_item figcaption{
+  position: absolute; left: 18px; bottom: 16px; z-index: 1;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white);
+}
+
+/* ==========================================================================
+   09 — Culture today (contemporary asymmetric grid)
+   ========================================================================== */
+.cul-today{ background: var(--ink); padding: var(--section-pad) var(--gutter); }
+.cul-today_head{ max-width: var(--page-max); margin: 0 auto clamp(44px, 6vw, 72px); }
+.cul-today_title{
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(2.1rem, 4.2vw, 3.1rem); line-height: 1.1; letter-spacing: -0.01em; color: var(--white); margin: 0;
+}
+
+.cul-today_grid{
+  max-width: var(--page-max); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: 340px 300px; gap: 16px;
+  grid-template-areas:
+    "art art opm opm fashion fashion"
+    "art art street street design design";
+}
+.cul-today-card--art{ grid-area: art; }
+.cul-today-card--opm{ grid-area: opm; }
+.cul-today-card--fashion{ grid-area: fashion; }
+.cul-today-card--street{ grid-area: street; }
+.cul-today-card--design{ grid-area: design; }
+
+.cul-today-card{
+  position: relative; display: flex; flex-direction: column; justify-content: flex-end;
+  border-radius: 6px; overflow: hidden; isolation: isolate; padding: 24px;
+}
+.cul-today-card_img{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); z-index: -2; }
+.cul-today-card:hover .cul-today-card_img{ transform: scale(1.06); }
+.cul-today-card::after{
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(8,38,43,0.05) 34%, rgba(6,24,27,0.9) 100%);
+}
+.cul-today-card_label{
+  font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--turquoise);
+  margin-bottom: 8px;
+}
+.cul-today-card--art .cul-today-card_label{ color: var(--mango); }
+.cul-today-card_desc{ color: rgba(255,255,255,0.78); font-size: 0.94rem; max-width: 30ch; }
+
+@media (max-width: 900px){
+  .cul-today_grid{
+    grid-template-columns: none; grid-template-rows: none; grid-template-areas: none;
+    display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+    margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter) 8px;
+  }
+  .cul-today-card{ flex: 0 0 78vw; height: 380px; scroll-snap-align: start; }
+}
+
+/* ==========================================================================
+   Reveal timing stagger (used across sections via .reveal, defined in shared css)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce){
+  .cul-hero_eyebrow, .cul-hero_title, .cul-hero_lede{ animation: none; opacity: 1; }
+  .cul-hero_scroll-line::after{ animation: none; }
+}
